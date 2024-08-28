@@ -1,6 +1,6 @@
 ---
 name: "<USER STORY> "
-about: Summarise briefly
+about: User Story
 title: ''
 labels: ''
 assignees: ''
