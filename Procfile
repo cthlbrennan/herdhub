@@ -1,1 +1,1 @@
-web: gunicorn livestock_manager.wsgi
+web: gunicorn livestock_manager.wsgi --log-file -
