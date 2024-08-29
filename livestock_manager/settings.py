@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)q(nsefc$i9v)&$drl-p6jn_65r#(=uv3=morz93=_5)o2(vfp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-cthlbrennan-herdhub-8v8u076wejz.ws.codeinstitute-ide.net'
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'herdhub',
 ]
 
 MIDDLEWARE = [

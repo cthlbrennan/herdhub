@@ -1,0 +1,1 @@
+web: gunicorn livestock_manager.wsgi
