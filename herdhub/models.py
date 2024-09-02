@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -41,19 +42,15 @@ class CalvingMethod(models.TextChoices):
     INDUCTION = 'IN', 'Induction'  
     EMERGENCY_ASSISTANCE = 'EA', 'Emergency Assistance'  
 
-class User(models.Model):
-    user_id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    username = models.CharField(max_length=25)
-    email = models.EmailField()
-    account_created = models.DateField()
-
 class Message(models.Model):
     message_id = models.AutoField(primary_key=True)
     user_profile = models.ForeignKey(User, on_delete=models.CASCADE)
     sent_on = models.DateField()
     message = models.TextField()
+
+    def __str__(self):
+        return f"Message {self.message_id}"
+
 
 class Bull(models.Model):
     bull_id = models.AutoField(primary_key=True)
@@ -112,7 +109,7 @@ class Breeding(models.Model):
     comments = models.TextField()
 
     def __str__(self):
-        return f"Breeding {self.breeding_id}"
+        return f"Breeding: {self.breeding_id}"
 
 
 class Calf(models.Model):
