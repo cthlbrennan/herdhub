@@ -88,7 +88,7 @@ class Cow(models.Model):
         default=HealthChoices.GOOD,
     )     
     pregnancy_status = models.CharField(
-        choices=PregancyStatus.choices,
+        choices=PregnancyStatus.choices,
         default=PregnancyStatus.NOT_PREGNANT
     )
     number_of_calvings = models.IntegerField()
