@@ -67,7 +67,6 @@ class Bull(models.Model):
     )   
     comments = models.TextField()
 
-
     def __str__(self):
         return f"Bull {self.registration_number}: Breed {self.breed}"
 
