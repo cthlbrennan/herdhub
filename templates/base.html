@@ -49,9 +49,15 @@
             </div>
         </div>
     </nav>
-
-    {% block body %}
-    {% endblock %}
+    <main class="flex-shrink-0 main-bg">
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">You are logged in as {{ user }}</p>
+        {% else %}
+        <p class="text-end m-3">You are not logged in</p>
+        {% endif %}
+        
+        {% block body %}
+        {% endblock %}
 </body>
 <script src="{% static 'js/script.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
