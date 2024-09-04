@@ -2,7 +2,8 @@
 
 {% block body %}
 {% if user.is_authenticated %}
-<h2>Add details of your cow here:</h2>
+<h2>Add details of your cow below:</h2>
+{{ form }}
 {% else %}
 <p>You must be signed in to access this feature.</p>
 {% endif %}
