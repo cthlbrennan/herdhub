@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<h2>Add details of your cow here:</h2>
+{% else %}
+<p>You must be signed in to access this feature.</p>
+{% endif %}
+{% endblock body %}

@@ -2,4 +2,9 @@
 
 {% block body %}
 <h2>Hello Hello</h2>
+{% if user.is_authenticated %}
+<p>Click <a href="add_cow">here</a> to add a cow</p>
+{% else %}
+<p> You need to be logged in.</p>
+{% endif %}
 {% endblock %}
