@@ -3,7 +3,11 @@
 {% block body %}
 {% if user.is_authenticated %}
 <h2>Add details of your cow below:</h2>
-{{ form }}
+<form method="POST" action="">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit">
+</form>
 {% else %}
 <p>You must be signed in to access this feature.</p>
 {% endif %}

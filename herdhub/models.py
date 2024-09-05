@@ -95,6 +95,9 @@ class Cow(models.Model):
     def __str__(self):
         return f"Cow {self.registration_number}: Breed {self.breed}"
 
+    class Meta:
+        db_table='Cow'
+
 class Breeding(models.Model):
     breeding_id = models.AutoField(primary_key=True)
     bull = models.ForeignKey(Bull, on_delete=models.CASCADE)
