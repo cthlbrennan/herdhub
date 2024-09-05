@@ -7,7 +7,9 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html', {
+        'cows' : Cow.objects.all()
+    })
 
 @login_required
 def add_cow(request):

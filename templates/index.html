@@ -4,6 +4,11 @@
 <h2>Hello Hello</h2>
 {% if user.is_authenticated %}
 <p>Click <a href="add_cow">here</a> to add a cow</p>
+<ul>
+    {% for cow in cows%}
+    <li>{{cow}}</li>
+    {% endfor %}
+</ul>
 {% else %}
 <p> You need to be logged in.</p>
 {% endif %}
