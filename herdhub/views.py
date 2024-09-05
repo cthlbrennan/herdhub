@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .forms import AddCowForm
 from .models import Cow, Breeding, Calf, Bull, User, Message
@@ -7,9 +7,12 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html', {
-        'cows' : Cow.objects.all()
-    })
+    if request.user.is_authenticated:
+        cows = Cow.objects.filter(user=request.user)  # Logged-in users
+    else:
+        cows = None  # No cows for anonymous users
+
+    return render(request, 'index.html', {'cows': cows})
 
 @login_required
 def add_cow(request):
@@ -39,3 +42,10 @@ def add_cow(request):
         return render(request, 'add_cow.html', {
             'form': AddCowForm()
         })
+
+@login_required
+def view_cow(request, cow_id):
+    cow = get_object_or_404(Cow, cow_id=cow_id, user=request.user)
+    return render(request, 'view_cow.html', {
+        'cow': cow
+    })

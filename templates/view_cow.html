@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Cow Details: {{ cow.registration_number }}</h1>
+
+<p><strong>Breed:</strong> {{ cow.breed }}</p>
+<p><strong>Date of Birth:</strong> {{ cow.dob }}</p>
+<p><strong>Health Status:</strong> {{ cow.health_status }}</p>
+<p><strong>Pregnancy Status:</strong> {{ cow.pregnancy_status }}</p>
+<p><strong>Number of Calvings:</strong> {{ cow.number_of_calvings }}</p>
+<p><strong>Last Calving Date:</strong> {{ cow.last_calving_date }}</p>
+<p><strong>Milk Production:</strong> {{ cow.milk_production }}</p>
+<p><strong>Comments:</strong> {{ cow.comments }}</p>
+
+<a href="{% url 'index' %}">Back to List</a></h2>
+
+{% endblock %}

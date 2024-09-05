@@ -6,7 +6,9 @@
 <p>Click <a href="add_cow">here</a> to add a cow</p>
 <ul>
     {% for cow in cows%}
-    <li>{{cow}}</li>
+    <li><a href="{% url 'view_cow' cow.cow_id %}">{{cow}}</a></li>
+    {% empty %}
+    <p>No cows added yet.</p>
     {% endfor %}
 </ul>
 {% else %}
