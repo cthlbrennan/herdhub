@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import AddCowForm
 from .models import Cow, Breeding, Calf, Bull, User, Message
@@ -28,7 +28,7 @@ def add_cow(request):
             )
             new_cow.save()
             
-            return redirect('')  
+            return redirect('index')  
         else:
             return render(request, 'add_cow.html', {
                 'form': form,
