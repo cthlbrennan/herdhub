@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .forms import AddCowForm, AddBullForm, AddBreedingForm
+from .forms import AddCowForm, AddBullForm, AddBreedingForm, AddCalfForm
 from .models import Cow, Breeding, Calf, Bull, User, Message
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
@@ -12,15 +12,19 @@ def index(request):
         cows = Cow.objects.filter(user=request.user) 
         bulls = Bull.objects.filter(user=request.user)
         breedings = Breeding.objects.filter(user=request.user)
+        calfs = Calf.objects.filter(user=request.user)
+
     else:
         cows = None  
         bulls = None
         breedings = None
+        calfs = None
 
     return render(request, 'index.html', {
         'cows': cows, 
         'bulls': bulls,
         'breedings': breedings,
+        'calfs' : calfs,
         })
 
 @login_required
@@ -175,7 +179,7 @@ def edit_bull(request, bull_id):
     bull = get_object_or_404(Bull, bull_id=bull_id, user=request.user)
     
     if request.method == 'POST':
-        form = AddBullFormBullForm(request.POST, instance=bull)
+        form = AddBullForm(request.POST, instance=bull)
         if form.is_valid():
             form.save()
             return redirect('index') 
@@ -191,4 +195,63 @@ def edit_bull(request, bull_id):
 def delete_bull(request, bull_id):
     bull = get_object_or_404(Bull, bull_id=bull_id, user=request.user)
     bull.delete()
+    return redirect('index') 
+
+
+
+
+
+@login_required
+def add_calf(request):
+    if request.method == "POST":
+        form = AddCalfForm(request.POST)
+        if form.is_valid():
+            new_calf = Calf(
+                user = request.user,
+                registration_number=form.cleaned_data['registration_number'],
+                dob=form.cleaned_data['dob'],
+                breeding=form.cleaned_data['breeding'],
+                sex=form.cleaned_data['sex'], 
+                calving_method=form.cleaned_data['calving_method'], 
+                comments=form.cleaned_data['comments']
+            )
+            new_calf.save()
+            
+            return redirect('index')  
+        else:
+            return render(request, 'add_calf.html', {
+                'form': form,
+            })
+    else:
+        return render(request, 'add_calf.html', {
+            'form': AddCalfForm()
+        })
+
+@login_required
+def view_calf(request, calf_id):
+    calf = get_object_or_404(Calf, calf_id=calf_id, user=request.user)
+    return render(request, 'view_calf.html', {
+        'calf': calf
+    })
+
+@login_required
+def edit_calf(request, calf_id):
+    calf = get_object_or_404(Calf, calf_id=calf_id, user=request.user)
+    if request.method == 'POST':
+        form = AddCalfForm(request.POST, instance=calf)
+        if form.is_valid():
+            form.save()
+            return redirect('index') 
+    else:
+        form = AddCalfForm(instance=calf)
+    
+    return render(request, 'edit_calf.html', {'form': form,
+        'calf' : calf,
+    })
+
+@login_required
+@require_POST
+def delete_calf(request, calf_id):
+    calf = get_object_or_404(Calf, calf_id=calf_id, user=request.user)
+    calf.delete()
     return redirect('index') 

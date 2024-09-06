@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Calf Details: {{ calf.registration_number }}</h1>
+
+<p><strong>Breeding:</strong> {{ calf.breeding }}</p>
+<p><strong>Date of Birth:</strong> {{ calf.dob }}</p>
+<p><strong>Sex:</strong> {{ calf.sex }}</p>
+<p><strong>Calving Method:</strong> {{ calf.calving_method }}</p>
+<p><strong>Comments:</strong> {{ calf.comments }}</p>
+
+<a href="{% url 'index' %}">Back to List</a></h2>
+
+{% endblock %}

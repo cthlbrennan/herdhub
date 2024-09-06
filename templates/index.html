@@ -14,7 +14,8 @@
             <button type="submit" onclick="return confirm('Are you sure you want to delete this cow?');">
                 Delete Cow
             </button>
-        </form>    </li>
+        </form>    
+    </li>
     {% empty %}
     <p>No cows added yet.</p>
     {% endfor %}
@@ -23,7 +24,7 @@
 <h2>Bulls</h2>
 <p>Click <a href="add_bull">here</a> to add a bull</p>
 <ul>
-    {% for bull in bulls%}
+    {% for bull in bulls %}
     <li>
         <a href="{% url 'view_bull' bull.bull_id %}">{{bull}}</a>
         <a href="{% url 'edit_bull' bull.bull_id %}">Edit</a>
@@ -32,7 +33,8 @@
             <button type="submit" onclick="return confirm('Are you sure you want to delete this bull?');">
                 Delete Bull
             </button>
-        </form>    </li>
+        </form>    
+    </li>
     {% empty %}
     <p>No bulls added yet.</p>
     {% endfor %}
@@ -50,9 +52,29 @@
             <button type="submit" onclick="return confirm('Are you sure you want to delete this record?');">
                 Delete Record
             </button>
-        </form>    </li>
+        </form>    
+    </li>
     {% empty %}
     <p>No breeding events recorded yet.</p>
+    {% endfor %}
+</ul>
+
+<h2>Calf</h2>
+<p>Click <a href="add_calf">here</a> to add a calf:</p>
+<ul>
+    {% for calf in calfs %}
+    <li>
+        <a href="{% url 'view_calf' calf.calf_id %}">{{calf}}</a>
+        <a href="{% url 'edit_calf' calf.calf_id %}">Edit</a>
+        <form method="post" action="{% url 'delete_calf' calf.calf_id %}">
+            {% csrf_token %}
+            <button type="submit" onclick="return confirm('Are you sure you want to delete this record?');">
+                Delete Calf
+            </button>
+        </form>    
+    </li>
+    {% empty %}
+    <p>No calfs added yet.</p>
     {% endfor %}
 </ul>
 

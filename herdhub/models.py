@@ -114,6 +114,7 @@ class Breeding(models.Model):
 
 class Calf(models.Model):
     calf_id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     registration_number = models.CharField(max_length=10)
     breeding = models.ForeignKey(Breeding, on_delete=models.CASCADE)
     sex = models.CharField(

@@ -15,5 +15,8 @@ urlpatterns = [
     path('view_breeding/<int:breeding_id>/', views.view_breeding, name='view_breeding'),  
     path('edit_breeding/<int:breeding_id>/', views.edit_breeding, name='edit_breeding'),  
     path('delete_breeding/<int:breeding_id>/', views.delete_breeding, name='delete_breeding'),
-
+    path('add_calf/', views.add_calf, name='add_calf'),  
+    path('view_calf/<int:calf_id>/', views.view_calf, name='view_calf'),  
+    path('edit_calf/<int:calf_id>/', views.edit_calf, name='edit_calf'),  
+    path('delete_calf/<int:calf_id>/', views.delete_calf, name='delete_calf'),
     ]
