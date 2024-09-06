@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .forms import AddCowForm, EditCowForm
 from .models import Cow, Breeding, Calf, Bull, User, Message
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 
 
 # Create your views here.
@@ -63,3 +64,10 @@ def edit_cow(request, cow_id):
         form = EditCowForm(instance=cow)
     
     return render(request, 'edit_cow.html', {'form': form, 'cow': cow})
+
+@login_required
+@require_POST
+def delete_cow(request, cow_id):
+    cow = get_object_or_404(Cow, cow_id=cow_id, user=request.user)
+    cow.delete()
+    return redirect('index') 
