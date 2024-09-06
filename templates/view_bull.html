@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Bull Details: {{ bull.registration_number }}</h1>
+
+<p><strong>Breed:</strong> {{ bull.breed }}</p>
+<p><strong>Date of Birth:</strong> {{ bull.dob }}</p>
+<p><strong>Health Status:</strong> {{ bull.health_status }}</p>
+<p><strong>Comments:</strong> {{ bull.comments }}</p>
+
+<a href="{% url 'index' %}">Back to List</a></h2>
+
+{% endblock %}

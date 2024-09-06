@@ -1,5 +1,5 @@
 from django import forms
-from .models import BreedChoices, HealthChoices, PregnancyStatus, Cow
+from .models import BreedChoices, HealthChoices, PregnancyStatus, Cow, Bull, Calf, Breeding
 
 class AddCowForm(forms.Form):
     registration_number = forms.CharField(label='Registration Number')
@@ -19,3 +19,26 @@ class EditCowForm(forms.ModelForm):
                   'pregnancy_status', 'number_of_calvings', 'last_calving_date', 
                   'milk_production', 'comments']
     
+class AddBullForm(forms.Form):
+    registration_number = forms.CharField(label='Registration Number')
+    dob = forms.DateField(label='Date of Birth')
+    breed = forms.ChoiceField(label='Breed', choices=BreedChoices.choices)
+    health_status = forms.ChoiceField(label='Health Status', choices=HealthChoices.choices)    
+    comments = forms.CharField(label='Comments')
+
+class EditBullForm(forms.ModelForm):
+    class Meta:
+        model = Bull
+        fields = ['registration_number', 'dob', 'breed', 'health_status', 'comments']
+
+class AddBullForm(forms.Form):
+    registration_number = forms.CharField(label='Registration Number')
+    dob = forms.DateField(label='Date of Birth')
+    breed = forms.ChoiceField(label='Breed', choices=BreedChoices.choices)
+    health_status = forms.ChoiceField(label='Health Status', choices=HealthChoices.choices)    
+    comments = forms.CharField(label='Comments')
+
+class EditBullForm(forms.ModelForm):
+    class Meta:
+        model = Bull
+        fields = ['registration_number', 'dob', 'breed', 'health_status', 'comments']
