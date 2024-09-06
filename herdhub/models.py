@@ -97,6 +97,7 @@ class Cow(models.Model):
 
 class Breeding(models.Model):
     breeding_id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     bull = models.ForeignKey(Bull, on_delete=models.CASCADE)
     cow = models.ForeignKey(Cow, on_delete=models.CASCADE)
     breeding_date = models.DateField()
@@ -108,7 +109,7 @@ class Breeding(models.Model):
     comments = models.TextField()
 
     def __str__(self):
-        return f"Breeding: {self.breeding_id}"
+        return f"Breeding: Bull {self.bull.registration_number} x Cow {self.cow.registration_number} on {self.breeding_date}"
 
 
 class Calf(models.Model):

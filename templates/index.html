@@ -38,6 +38,24 @@
     {% endfor %}
 </ul>
 
+<h2>Breeding</h2>
+<p>Click <a href="add_breeding_event">here</a> to record a breeding event</p>
+<ul>
+    {% for breeding in breedings %}
+    <li>
+        <a href="{% url 'view_breeding' breeding.breeding_id %}">{{breeding}}</a>
+        <a href="{% url 'edit_breeding' breeding.breeding_id %}">Edit</a>
+        <form method="post" action="{% url 'delete_breeding' breeding.breeding_id %}">
+            {% csrf_token %}
+            <button type="submit" onclick="return confirm('Are you sure you want to delete this record?');">
+                Delete Record
+            </button>
+        </form>    </li>
+    {% empty %}
+    <p>No breeding events recorded yet.</p>
+    {% endfor %}
+</ul>
+
 {% else %}
 <p> You need to be logged in.</p>
 {% endif %}

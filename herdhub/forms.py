@@ -42,3 +42,11 @@ class EditBullForm(forms.ModelForm):
     class Meta:
         model = Bull
         fields = ['registration_number', 'dob', 'breed', 'health_status', 'comments']
+
+class AddBreedingForm(forms.ModelForm):
+    class Meta:
+        model = Breeding
+        fields = ['bull', 'cow', 'breeding_date', 'breeding_method', 'resulting_pregnancy', 'comments']
+        widgets = {
+            'breeding_date': forms.DateInput(attrs={'type': 'date'}),
+        }

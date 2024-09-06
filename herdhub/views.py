@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .forms import AddCowForm, EditCowForm, AddBullForm, EditBullForm
+from .forms import AddCowForm, EditCowForm, AddBullForm, EditBullForm, AddBreedingForm
 from .models import Cow, Breeding, Calf, Bull, User, Message
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
@@ -10,14 +10,17 @@ from django.views.decorators.http import require_POST
 def index(request):
     if request.user.is_authenticated:
         cows = Cow.objects.filter(user=request.user) 
-        bulls = Bull.objects.filter(user=request.user) 
+        bulls = Bull.objects.filter(user=request.user)
+        breedings = Breeding.objects.filter(user=request.user)
     else:
         cows = None  
         bulls = None
+        breedings = None
 
     return render(request, 'index.html', {
         'cows': cows, 
         'bulls': bulls,
+        'breedings': breedings,
         })
 
 @login_required
@@ -80,9 +83,58 @@ def delete_cow(request, cow_id):
 
 
 
+@login_required
+def add_breeding_event(request):
+    if request.method == 'POST':
+        form = AddBreedingForm(request.POST)
+        if form.is_valid():
+            new_breeding = Breeding(
+                user=request.user,  
+                bull=form.cleaned_data['bull'],
+                cow=form.cleaned_data['cow'],
+                breeding_date=form.cleaned_data['breeding_date'],
+                breeding_method=form.cleaned_data['breeding_method'],
+                resulting_pregnancy=form.cleaned_data['resulting_pregnancy'],
+                comments=form.cleaned_data['comments']
+            )
+            new_breeding.save()
+            return redirect('index')
+        else:
+            return render(request, 'add_breeding_event.html', {
+                'form' : form,
+            })
+    else:
+        return render(request, 'add_breeding_event.html', {
+        'form': AddBreedingForm()
+    })
 
+@login_required
+def view_breeding(request, breeding_id):
+    breeding = get_object_or_404(Breeding, breeding_id=breeding_id, user=request.user)
+    return render(request, 'view_breeding.html', {
+        'breeding': breeding
+    })
 
+@login_required
+def edit_breeding(request, breeding_id):
+    breeding = get_object_or_404(Breeding, breeding_id=breeding_id, user=request.user)
+    
+    if request.method == 'POST':
+        form = AddBreedingForm(request.POST, instance=breeding)
+        if form.is_valid():
+            form.save()
+            return redirect('index') 
+    else:
+        form = AddBreedingForm(instance=breeding)
+    
+    return render(request, 'edit_breeding.html', {'form': form, 'breeding': breeding})
 
+@login_required
+@require_POST
+def delete_breeding(request, breeding_id):
+    breeding = get_object_or_404(Breeding, breeding_id=breeding_id, user=request.user)
+    breeding.delete()
+    return redirect('index') 
 
 
 

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Breeding Details: {{ breeding.breeding_id }}</h1>
+
+<p><strong>Bull:</strong> {{ breeding.bull }}</p>
+<p><strong>Cow:</strong> {{ breeding.cow }}</p>
+<p><strong>Breeding Date:</strong> {{ breeding.breeding_date }}</p>
+<p><strong>Breeding Method:</strong> {{ breeding.breeding_method }}</p>
+<p><strong>Resulting Pregnancy:</strong> {{ breeding.resulting_pregnancy }}</p>
+<p><strong>Comments:</strong> {{ breeding.comments }}</p>
+
+<a href="{% url 'index' %}">Back to List</a></h2>
+
+{% endblock %}
