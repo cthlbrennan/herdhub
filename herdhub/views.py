@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .forms import AddCowForm, EditCowForm, AddBullForm, EditBullForm, AddBreedingForm
+from .forms import AddCowForm, AddBullForm, AddBreedingForm
 from .models import Cow, Breeding, Calf, Bull, User, Message
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
@@ -64,12 +64,12 @@ def edit_cow(request, cow_id):
     cow = get_object_or_404(Cow, cow_id=cow_id, user=request.user)
     
     if request.method == 'POST':
-        form = EditCowForm(request.POST, instance=cow)
+        form = AddCowForm(request.POST, instance=cow)
         if form.is_valid():
             form.save()
             return redirect('index') 
     else:
-        form = EditCowForm(instance=cow)
+        form = AddCowForm(instance=cow)
     
     return render(request, 'edit_cow.html', {'form': form, 'cow': cow})
 
@@ -175,12 +175,12 @@ def edit_bull(request, bull_id):
     bull = get_object_or_404(Bull, bull_id=bull_id, user=request.user)
     
     if request.method == 'POST':
-        form = EditBullForm(request.POST, instance=bull)
+        form = AddBullFormBullForm(request.POST, instance=bull)
         if form.is_valid():
             form.save()
             return redirect('index') 
     else:
-        form = EditBullForm(instance=bull)
+        form = AddBullForm(instance=bull)
     
     return render(request, 'edit_bull.html', {'form': form,
         'bull' : bull,
