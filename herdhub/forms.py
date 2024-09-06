@@ -1,5 +1,5 @@
 from django import forms
-from .models import BreedChoices, HealthChoices, PregnancyStatus
+from .models import BreedChoices, HealthChoices, PregnancyStatus, Cow
 
 class AddCowForm(forms.Form):
     registration_number = forms.CharField(label='Registration Number')
@@ -11,3 +11,11 @@ class AddCowForm(forms.Form):
     last_calving_date = forms.DateField(label='Last Calving Date')
     milk_production = forms.IntegerField(label='Milk Produced Per Annum')
     comments = forms.CharField(label='Comments')
+
+class EditCowForm(forms.ModelForm):
+    class Meta:
+        model = Cow
+        fields = ['registration_number', 'dob', 'breed', 'health_status', 
+                  'pregnancy_status', 'number_of_calvings', 'last_calving_date', 
+                  'milk_production', 'comments']
+    

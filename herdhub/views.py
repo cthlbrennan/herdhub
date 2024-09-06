@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .forms import AddCowForm
+from .forms import AddCowForm, EditCowForm
 from .models import Cow, Breeding, Calf, Bull, User, Message
 from django.contrib.auth.decorators import login_required
 
@@ -49,3 +49,17 @@ def view_cow(request, cow_id):
     return render(request, 'view_cow.html', {
         'cow': cow
     })
+
+@login_required
+def edit_cow(request, cow_id):
+    cow = get_object_or_404(Cow, cow_id=cow_id, user=request.user)
+    
+    if request.method == 'POST':
+        form = EditCowForm(request.POST, instance=cow)
+        if form.is_valid():
+            form.save()
+            return redirect('index') 
+    else:
+        form = EditCowForm(instance=cow)
+    
+    return render(request, 'edit_cow.html', {'form': form, 'cow': cow})
