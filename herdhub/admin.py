@@ -5,7 +5,6 @@ from .models import Bull, Cow, Breeding, Message, Calf
 admin.site.register(Bull)
 admin.site.register(Cow)
 admin.site.register(Breeding)
-admin.site.register(Message)
 admin.site.register(Calf)
 
 class MessageAdmin(admin.ModelAdmin):
@@ -25,7 +24,5 @@ class MessageAdmin(admin.ModelAdmin):
     def mark_as_unread(self, request, queryset):
         queryset.update(read=False)
     mark_as_unread.short_description = "Mark selected messages as unread"
-
-admin.site.unregister(Message)
 
 admin.site.register(Message, MessageAdmin)
