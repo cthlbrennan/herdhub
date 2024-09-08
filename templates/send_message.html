@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<h2>Provide your message below, then click send:</h2>
+<form method="POST" action="">
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="Send Message">
+</form>
+{% else %}
+<p>You must be signed in to access this feature.</p>
+{% endif %}
+{% endblock body %}

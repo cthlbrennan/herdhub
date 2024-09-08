@@ -1,5 +1,5 @@
 from django import forms
-from .models import BreedChoices, HealthChoices, PregnancyStatus, Cow, Bull, Calf, Breeding
+from .models import BreedChoices, HealthChoices, PregnancyStatus, Cow, Bull, Calf, Breeding, Message
 
 class AddCowForm(forms.ModelForm):
     class Meta:
@@ -25,3 +25,8 @@ class AddCalfForm(forms.ModelForm):
     class Meta:
         model = Calf
         fields = ['registration_number', 'dob', 'breeding', 'sex', 'calving_method', 'comments']
+
+class SendMessageForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ['message']

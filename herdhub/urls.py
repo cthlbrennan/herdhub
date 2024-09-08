@@ -19,4 +19,5 @@ urlpatterns = [
     path('view_calf/<int:calf_id>/', views.view_calf, name='view_calf'),  
     path('edit_calf/<int:calf_id>/', views.edit_calf, name='edit_calf'),  
     path('delete_calf/<int:calf_id>/', views.delete_calf, name='delete_calf'),
+    path('send_message/', views.send_message, name='send_message'),
     ]

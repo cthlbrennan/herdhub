@@ -45,11 +45,13 @@ class CalvingMethod(models.TextChoices):
 class Message(models.Model):
     message_id = models.AutoField(primary_key=True)
     user_profile = models.ForeignKey(User, on_delete=models.CASCADE)
-    sent_on = models.DateField()
+    sent_on = models.CharField()
     message = models.TextField()
+    read = models.BooleanField(default=False)
+
 
     def __str__(self):
-        return f"Message {self.message_id}"
+        return f"Message from {self.user_profile}"
 
 
 class Bull(models.Model):

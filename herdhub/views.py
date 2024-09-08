@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .forms import AddCowForm, AddBullForm, AddBreedingForm, AddCalfForm
+from .forms import AddCowForm, AddBullForm, AddBreedingForm, AddCalfForm, SendMessageForm
 from .models import Cow, Breeding, Calf, Bull, User, Message
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
+from django.utils import timezone
 
 
 # Create your views here.
@@ -83,9 +84,6 @@ def delete_cow(request, cow_id):
     cow = get_object_or_404(Cow, cow_id=cow_id, user=request.user)
     cow.delete()
     return redirect('index') 
-
-
-
 
 @login_required
 def add_breeding_event(request):
@@ -255,3 +253,27 @@ def delete_calf(request, calf_id):
     calf = get_object_or_404(Calf, calf_id=calf_id, user=request.user)
     calf.delete()
     return redirect('index') 
+
+@login_required
+def send_message(request):
+    if request.method == "POST":
+        form = SendMessageForm(request.POST)
+        if form.is_valid():
+            now = timezone.now()
+            now_formatted = now.strftime("%H:%M %d/%m/%Y")
+            new_message = Message(
+                user_profile=request.user,
+                sent_on=now_formatted,
+                message=form.cleaned_data['message']
+            )
+            new_message.save()
+            
+            return redirect('index')  
+        else:
+            return render(request, 'send_message.html', {
+                'form': form,
+            })
+    else:
+        return render(request, 'send_message.html', {
+            'form': SendMessageForm()
+        })
