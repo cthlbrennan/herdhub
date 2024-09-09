@@ -3,19 +3,16 @@
 {% block body %}
 
 <h1>Calf Details: {{ calf.registration_number }}</h1>
-
-<p><strong>Sire:</strong><a href="{% url 'view_bull' bull_id%}">{{ sire }}</a></p>
 <p><strong>Sire:</strong>
-    {% if bull_id %}
-        <a href="{% url 'view_bull' bull_id=bull_id %}">{{ sire.registration_number }}</a>
+    {% if sire %}
+        <a href="{% url 'view_bull' sire.bull_id %}">{{ sire.registration_number }}</a>
     {% else %}
         Unknown
     {% endif %}
 </p>
-
 <p><strong>Dam:</strong>
-    {% if cow_id %}
-        <a href="{% url 'view_cow' cow_id=cow_id %}">{{ dam.registration_number }}</a>
+    {% if dam %}
+        <a href="{% url 'view_cow' dam.cow_id %}">{{ dam.registration_number }}</a>
     {% else %}
         Unknown
     {% endif %}

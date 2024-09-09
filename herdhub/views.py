@@ -232,7 +232,7 @@ def add_calf(request):
 @login_required
 def view_calf(request, calf_id):
     calf = get_object_or_404(Calf, calf_id=calf_id, user=request.user)
-    breeding = calf.breeding.get()
+    breeding = calf.breeding
     dam = breeding.cow
     sire = breeding.bull
 
@@ -240,8 +240,8 @@ def view_calf(request, calf_id):
         'calf': calf, 
         'dam' : dam,
         'sire' : sire, 
-        'bull_id': sire.pk if sire else None,
-        'cow_id': dam.pk if dam else None,
+        'bull_id': sire.bull_id if sire else None,
+        'cow_id': dam.cow_id if dam else None,
     })
 
 @login_required
