@@ -106,9 +106,13 @@ def add_breeding_event(request):
                 'form' : form,
             })
     else:
+        cows = Cow.objects.filter(user=request.user)
+        bulls = Cow.objects.filter(user=request.user)
+        not_enough_animals = cows.count() == 0 or bulls.count() == 0
         return render(request, 'add_breeding_event.html', {
-        'form': AddBreedingForm(user=request.user)
-    })
+        'form': AddBreedingForm(user=request.user), 
+        'number of animals' : not_enough_animals,
+        })
 
 @login_required
 def view_breeding(request, breeding_id):
