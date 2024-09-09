@@ -3,17 +3,20 @@
 {% load allauth account %}
 {% block body %}
 <h2>Sign In</h2>
-<p>If you have not created an account yet, then please <a href="signup.html">sign up</a> first.</p>
+<p>If you have not created an account yet, then please <a href="{% url 'account_signup' %}">sign up</a> first.</p>
 
-<form action="signin.php" method="POST">
+<form action="{% url 'account_login' %}" method="POST">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+    <input type="text" id="username" name="login" required value="{{ form.login.value|default_if_none:'' }}">
     <br><br>
 
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+    <input type="password" id="password" name="password" required value="{{ form.password.value|default_if_none:'' }}">
     <br><br>
 
+    {{ form.errors.password }}
     <button type="submit">Sign In</button>
 </form>
 {% endblock %}

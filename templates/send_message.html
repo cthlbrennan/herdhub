@@ -5,7 +5,10 @@
 <h2>Provide your message below, then click send:</h2>
 <form method="POST" action="">
 {% csrf_token %}
-{{ form }}
+<label for="message">Message:</label>
+<br>
+<textarea id="message" name="message" rows="5" cols="40"></textarea> 
+<br><br>
 <input type="submit" value="Send Message">
 </form>
 {% else %}
