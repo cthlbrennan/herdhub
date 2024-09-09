@@ -206,7 +206,7 @@ def delete_bull(request, bull_id):
 @login_required
 def add_calf(request):
     if request.method == "POST":
-        form = AddCalfForm(request.POST)
+        form = AddCalfForm(request.POST, user=request.user)
         if form.is_valid():
             new_calf = Calf(
                 user = request.user,
@@ -226,22 +226,22 @@ def add_calf(request):
             })
     else:
         return render(request, 'add_calf.html', {
-            'form': AddCalfForm()
+            'form': AddCalfForm(user=request.user)
         })
 
 @login_required
 def view_calf(request, calf_id):
     calf = get_object_or_404(Calf, calf_id=calf_id, user=request.user)
     breeding = calf.breeding.get()
-    dam = breeding.cow.get()
-    sire = breeding.bull.get()
+    dam = breeding.cow
+    sire = breeding.bull
 
     return render(request, 'view_calf.html', {
         'calf': calf, 
         'dam' : dam,
         'sire' : sire, 
-        'bull_id' : sire.pk, 
-        'cow_id' : dam.pk, 
+        'bull_id': sire.pk if sire else None,
+        'cow_id': dam.pk if dam else None,
     })
 
 @login_required
