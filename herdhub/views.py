@@ -107,11 +107,11 @@ def add_breeding_event(request):
             })
     else:
         cows = Cow.objects.filter(user=request.user)
-        bulls = Cow.objects.filter(user=request.user)
+        bulls = Bull.objects.filter(user=request.user)
         not_enough_animals = cows.count() == 0 or bulls.count() == 0
         return render(request, 'add_breeding_event.html', {
         'form': AddBreedingForm(user=request.user), 
-        'number of animals' : not_enough_animals,
+        'number_of_animals' : not_enough_animals,
         })
 
 @login_required
@@ -232,8 +232,16 @@ def add_calf(request):
 @login_required
 def view_calf(request, calf_id):
     calf = get_object_or_404(Calf, calf_id=calf_id, user=request.user)
+    breeding = calf.breeding.get()
+    dam = breeding.cow.get()
+    sire = breeding.bull.get()
+
     return render(request, 'view_calf.html', {
-        'calf': calf
+        'calf': calf, 
+        'dam' : dam,
+        'sire' : sire, 
+        'bull_id' : sire.pk, 
+        'cow_id' : dam.pk, 
     })
 
 @login_required

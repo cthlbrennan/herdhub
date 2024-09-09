@@ -2,7 +2,7 @@
 
 {% block body %}
 {% if user.is_authenticated %}
-{% if not number_of_animals %}
+{% if number_of_animals %}
 <h2>You need at least one cow and one bull registered on your account in order to record a breeding event.</h2>
 {% else %}
 <h2>Add details of the breeding event below:</h2>

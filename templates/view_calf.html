@@ -4,7 +4,8 @@
 
 <h1>Calf Details: {{ calf.registration_number }}</h1>
 
-<p><strong>Breeding:</strong> {{ calf.breeding }}</p>
+<p><strong>Sire:</strong><a href="{% url 'view_bull' bull_id%}">{{ sire }}</a></p>
+<p><strong>Dam:</strong><a href="{% url 'view_cow' cow_id %}">{{ dam }}</a></p>
 <p><strong>Date of Birth:</strong> {{ calf.dob }}</p>
 <p><strong>Sex:</strong> {{ calf.sex }}</p>
 <p><strong>Calving Method:</strong> {{ calf.calving_method }}</p>
