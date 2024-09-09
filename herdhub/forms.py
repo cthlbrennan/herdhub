@@ -20,6 +20,15 @@ class AddBreedingForm(forms.ModelForm):
         widgets = {
             'breeding_date': forms.DateInput(attrs={'type': 'date'}),
         }
+    def __init__(self, *args, **kwargs):
+        # Expecting the user to be passed as a keyword argument
+        user = kwargs.pop('user', None)
+        super(AddBreedingForm, self).__init__(*args, **kwargs)
+
+        if user:
+            # Limit bull queryset to the bulls and cows owned by the current user
+            self.fields['bull'].queryset = Bull.objects.filter(user=user)
+            self.fields['cow'].queryset = Cow.objects.filter(user=user)
 
 class AddCalfForm(forms.ModelForm):
     class Meta:

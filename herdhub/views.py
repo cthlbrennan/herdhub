@@ -88,7 +88,7 @@ def delete_cow(request, cow_id):
 @login_required
 def add_breeding_event(request):
     if request.method == 'POST':
-        form = AddBreedingForm(request.POST)
+        form = AddBreedingForm(request.POST, user=request.user)
         if form.is_valid():
             new_breeding = Breeding(
                 user=request.user,  
@@ -107,7 +107,7 @@ def add_breeding_event(request):
             })
     else:
         return render(request, 'add_breeding_event.html', {
-        'form': AddBreedingForm()
+        'form': AddBreedingForm(user=request.user)
     })
 
 @login_required
