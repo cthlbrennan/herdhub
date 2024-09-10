@@ -172,6 +172,11 @@ def edit_bull(request, bull_id):
     bull = get_object_or_404(Bull, bull_id=bull_id, user=request.user)
     
     if request.method == 'POST':
+        if 'remove_image' in request.POST:
+            bull.image_id = None  # This will remove the image
+            bull.save()
+            return redirect('edit_bull', bull_id=bull.bull_id)
+        
         form = AddBullForm(request.POST, request.FILES, instance=bull)
         if form.is_valid():
             if 'image' in request.FILES:
