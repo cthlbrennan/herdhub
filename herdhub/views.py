@@ -151,6 +151,8 @@ def add_bull(request):
         if form.is_valid():
             bull = form.save(commit=False)
             bull.user = request.user
+            if 'image' in request.FILES:
+                bull.image_id = request.FILES['image']
             bull.save()
             return redirect('view_bull', bull_id=bull.bull_id)
     else:
@@ -170,15 +172,18 @@ def edit_bull(request, bull_id):
     bull = get_object_or_404(Bull, bull_id=bull_id, user=request.user)
     
     if request.method == 'POST':
-        form = AddBullForm(request.POST, instance=bull)
+        form = AddBullForm(request.POST, request.FILES, instance=bull)
         if form.is_valid():
+            if 'image' in request.FILES:
+                bull.image_id = request.FILES['image']
             form.save()
-            return redirect('index') 
+            return redirect('view_bull', bull_id=bull.bull_id)
     else:
         form = AddBullForm(instance=bull)
     
-    return render(request, 'edit_bull.html', {'form': form,
-        'bull' : bull,
+    return render(request, 'edit_bull.html', {
+        'form': form,
+        'bull': bull,
     })
 
 @login_required

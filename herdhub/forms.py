@@ -1,5 +1,6 @@
 from django import forms
 from .models import BreedChoices, HealthChoices, PregnancyStatus, Cow, Bull, Calf, Breeding, Message
+from cloudinary.forms import CloudinaryFileField
 
 class AddCowForm(forms.ModelForm):
     class Meta:
@@ -15,10 +16,18 @@ class AddCowForm(forms.ModelForm):
         }
     
 class AddBullForm(forms.ModelForm):
-    image_id = forms.ImageField(required=False)  # Optional image upload
+    image = CloudinaryFileField(
+        options = {
+            'folder': 'bulls',
+            'allowed_formats': ['jpg', 'png'],
+            'public_id': None,
+        },
+        required=False
+    )    
+    
     class Meta:
         model = Bull
-        fields = ['registration_number', 'dob', 'breed', 'health_status', 'comments']
+        fields = ['registration_number', 'dob', 'breed', 'health_status', 'comments', 'image']
         widgets = {
             'dob': forms.DateInput(attrs={'type': 'date'}),
         }
