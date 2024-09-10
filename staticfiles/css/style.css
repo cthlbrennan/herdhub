@@ -1,3 +1,9 @@
 h2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.view_bull_image {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+}

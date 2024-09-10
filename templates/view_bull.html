@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
 <h1>Bull Details: {{ bull.registration_number }}</h1>
+
+{% if bull.image_id %}
+    <p><strong>Image:</strong></p>
+    <img class="view_bull_image card-img-top" src="{{ bull.image_id.url }}" alt="User uploaded image of {{ bull.registration_number }}">
+{% endif %}
 
 <p><strong>Breed:</strong> {{ bull.breed }}</p>
 <p><strong>Date of Birth:</strong> {{ bull.dob }}</p>

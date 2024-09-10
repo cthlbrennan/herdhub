@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -57,6 +58,7 @@ class Message(models.Model):
 class Bull(models.Model):
     bull_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image_id = CloudinaryField('image', blank=True, default='')  # CloudinaryField for images
     registration_number = models.CharField(max_length=10)
     dob = models.DateField()
     breed = models.CharField(

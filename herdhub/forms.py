@@ -15,6 +15,7 @@ class AddCowForm(forms.ModelForm):
         }
     
 class AddBullForm(forms.ModelForm):
+    image_id = forms.ImageField(required=False)  # Optional image upload
     class Meta:
         model = Bull
         fields = ['registration_number', 'dob', 'breed', 'health_status', 'comments']

@@ -146,28 +146,17 @@ def delete_breeding(request, breeding_id):
 
 @login_required
 def add_bull(request):
-    if request.method == "POST":
-        form = AddBullForm(request.POST)
+    if request.method == 'POST':
+        form = AddBullForm(request.POST, request.FILES)
         if form.is_valid():
-            new_bull = Bull(
-                user = request.user,
-                registration_number=form.cleaned_data['registration_number'],
-                dob=form.cleaned_data['dob'],
-                breed=form.cleaned_data['breed'],
-                health_status=form.cleaned_data['health_status'],   
-                comments=form.cleaned_data['comments']
-            )
-            new_bull.save()
-            
-            return redirect('index')  
-        else:
-            return render(request, 'add_bull.html', {
-                'form': form,
-            })
+            bull = form.save(commit=False)
+            bull.user = request.user
+            bull.save()
+            return redirect('view_bull', bull_id=bull.bull_id)
     else:
-        return render(request, 'add_bull.html', {
-            'form': AddBullForm()
-        })
+        form = AddBullForm()
+
+    return render(request, 'add_bull.html', {'form': form})
 
 @login_required
 def view_bull(request, bull_id):

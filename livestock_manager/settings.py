@@ -15,6 +15,17 @@ import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
+cloudinary.config(cloudinary_url=CLOUDINARY_URL)
+
+# Configure Cloudinary for Django
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_URL = 'https://res.cloudinary.com/dbebkt6ul/'  # 
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,6 +60,8 @@ INSTALLED_APPS = [
     'allauth.account', 
     'allauth.socialaccount',
     'herdhub',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 SITE_ID = 1
