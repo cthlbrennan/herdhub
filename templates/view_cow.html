@@ -4,6 +4,11 @@
 
 <h1>Cow Details: {{ cow.registration_number }}</h1>
 
+{% if cow.image_id %}
+    <p><strong>Image:</strong></p>
+    <img class="view_animal_image card-img-top" src="{{ cow.image_id.url }}" alt="User uploaded image of {{ cow.registration_number }}">
+{% endif %}
+
 <p><strong>Breed:</strong> {{ cow.breed }}</p>
 <p><strong>Date of Birth:</strong> {{ cow.dob }}</p>
 <p><strong>Health Status:</strong> {{ cow.health_status }}</p>

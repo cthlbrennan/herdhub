@@ -3,6 +3,12 @@
 {% block body %}
 
 <h1>Calf Details: {{ calf.registration_number }}</h1>
+
+{% if calf.image_id %}
+    <p><strong>Image:</strong></p>
+    <img class="view_animal_image card-img-top" src="{{ calf.image_id.url }}" alt="User uploaded image of {{ calf.registration_number }}">
+{% endif %}
+
 <p><strong>Sire: </strong><a href="{% url 'view_bull' sire.bull_id %}">{{ sire.registration_number }}</a></p>
 <p><strong>Dam: </strong><a href="{% url 'view_cow' dam.cow_id %}">{{ dam.registration_number }}</a></p>
 <p><strong>Date of Birth:</strong> {{ calf.dob }}</p>

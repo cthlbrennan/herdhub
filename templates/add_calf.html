@@ -3,10 +3,10 @@
 {% block body %}
 {% if user.is_authenticated %}
 <h2>Add details of your calf below:</h2>
-<form method="POST" action="">
-{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="Submit">
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
 </form>
 {% else %}
 <p>You must be signed in to access this feature.</p>

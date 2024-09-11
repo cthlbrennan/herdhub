@@ -77,6 +77,7 @@ class Bull(models.Model):
 class Cow(models.Model):
     cow_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image_id = CloudinaryField('image', blank=True, default='')  # Add this line
     registration_number = models.CharField(max_length=10)
     dob = models.DateField()
     breed = models.CharField(
@@ -119,6 +120,7 @@ class Breeding(models.Model):
 class Calf(models.Model):
     calf_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image_id = CloudinaryField('image', blank=True, default='')  
     registration_number = models.CharField(max_length=10)
     breeding = models.ForeignKey(Breeding, on_delete=models.CASCADE)
     sex = models.CharField(

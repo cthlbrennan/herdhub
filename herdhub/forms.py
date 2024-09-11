@@ -3,15 +3,21 @@ from .models import BreedChoices, HealthChoices, PregnancyStatus, Cow, Bull, Cal
 from cloudinary.forms import CloudinaryFileField
 
 class AddCowForm(forms.ModelForm):
+    image = CloudinaryFileField(
+        options = {
+            'folder': 'cows',
+            'allowed_formats': ['jpg', 'png'],
+            'public_id': None,
+        },
+        required=False
+    )
     class Meta:
         model = Cow
         fields = ['registration_number', 'dob', 'breed', 'health_status', 
                   'pregnancy_status', 'number_of_calvings', 'last_calving_date', 
-                  'milk_production', 'comments']
+                  'milk_production', 'comments', 'image']
         widgets = {
             'dob': forms.DateInput(attrs={'type': 'date'}),
-        }
-        widgets = {
             'last_calving_date': forms.DateInput(attrs={'type': 'date'}),
         }
     
@@ -50,20 +56,28 @@ class AddBreedingForm(forms.ModelForm):
             self.fields['bull'].queryset = Bull.objects.filter(user=user)
             self.fields['cow'].queryset = Cow.objects.filter(user=user)
 
+
 class AddCalfForm(forms.ModelForm):
+    image = CloudinaryFileField(
+        options = {
+            'folder': 'calves',  # Changed from 'calfs' to 'calves' for consistency
+            'allowed_formats': ['jpg', 'png'],
+            'public_id': None,
+        },
+        required=False
+    )
+    
     class Meta:
         model = Calf
-        fields = ['registration_number', 'dob', 'breeding', 'sex', 'calving_method', 'comments']
+        fields = ['registration_number', 'dob', 'breeding', 'sex', 'calving_method', 'comments', 'image']
         widgets = {
             'dob': forms.DateInput(attrs={'type': 'date'}),
         }
+
     def __init__(self, *args, **kwargs):
-        # Expecting the user to be passed as a keyword argument
         user = kwargs.pop('user', None)
         super(AddCalfForm, self).__init__(*args, **kwargs)
-
         if user:
-            # Limit bull queryset to the bulls and cows owned by the current user
             self.fields['breeding'].queryset = Breeding.objects.filter(user=user)
 
 class SendMessageForm(forms.ModelForm):

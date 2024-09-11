@@ -31,31 +31,17 @@ def index(request):
 @login_required
 def add_cow(request):
     if request.method == "POST":
-        form = AddCowForm(request.POST)
+        form = AddCowForm(request.POST, request.FILES)
         if form.is_valid():
-            new_cow = Cow(
-                user=request.user,  
-                registration_number=form.cleaned_data['registration_number'],
-                dob=form.cleaned_data['dob'],
-                breed=form.cleaned_data['breed'],
-                health_status=form.cleaned_data['health_status'],
-                pregnancy_status=form.cleaned_data['pregnancy_status'],
-                number_of_calvings=form.cleaned_data['number_of_calvings'],
-                last_calving_date=form.cleaned_data['last_calving_date'],
-                milk_production=form.cleaned_data['milk_production'],
-                comments=form.cleaned_data['comments']
-            )
+            new_cow = form.save(commit=False)
+            new_cow.user = request.user
+            if 'image' in request.FILES:
+                new_cow.image_id = request.FILES['image']
             new_cow.save()
-            
-            return redirect('index')  
-        else:
-            return render(request, 'add_cow.html', {
-                'form': form,
-            })
+            return redirect('index')
     else:
-        return render(request, 'add_cow.html', {
-            'form': AddCowForm()
-        })
+        form = AddCowForm()
+    return render(request, 'add_cow.html', {'form': form})
 
 @login_required
 def view_cow(request, cow_id):
@@ -69,10 +55,10 @@ def edit_cow(request, cow_id):
     cow = get_object_or_404(Cow, cow_id=cow_id, user=request.user)
     
     if request.method == 'POST':
-        form = AddCowForm(request.POST, instance=cow)
+        form = AddCowForm(request.POST, request.FILES, instance=cow)
         if form.is_valid():
             form.save()
-            return redirect('index') 
+            return redirect('view_cow', cow_id=cow.cow_id)
     else:
         form = AddCowForm(instance=cow)
     
@@ -205,28 +191,19 @@ def delete_bull(request, bull_id):
 @login_required
 def add_calf(request):
     if request.method == "POST":
-        form = AddCalfForm(request.POST, user=request.user)
+        form = AddCalfForm(request.POST, request.FILES, user=request.user)
         if form.is_valid():
-            new_calf = Calf(
-                user = request.user,
-                registration_number=form.cleaned_data['registration_number'],
-                dob=form.cleaned_data['dob'],
-                breeding=form.cleaned_data['breeding'],
-                sex=form.cleaned_data['sex'], 
-                calving_method=form.cleaned_data['calving_method'], 
-                comments=form.cleaned_data['comments']
-            )
+            new_calf = form.save(commit=False)
+            new_calf.user = request.user
+            if 'image' in request.FILES:
+                new_calf.image_id = request.FILES['image']
             new_calf.save()
-            
-            return redirect('index')  
+            return redirect('index')
         else:
-            return render(request, 'add_calf.html', {
-                'form': form,
-            })
+            print(form.errors)  # Add this line for debugging
     else:
-        return render(request, 'add_calf.html', {
-            'form': AddCalfForm(user=request.user)
-        })
+        form = AddCalfForm(user=request.user)
+    return render(request, 'add_calf.html', {'form': form})
 
 @login_required
 def view_calf(request, calf_id):
@@ -246,17 +223,16 @@ def view_calf(request, calf_id):
 @login_required
 def edit_calf(request, calf_id):
     calf = get_object_or_404(Calf, calf_id=calf_id, user=request.user)
+    
     if request.method == 'POST':
-        form = AddCalfForm(request.POST, instance=calf)
+        form = AddCalfForm(request.POST, request.FILES, instance=calf, user=request.user)
         if form.is_valid():
             form.save()
-            return redirect('index') 
+            return redirect('view_calf', calf_id=calf.calf_id)
     else:
-        form = AddCalfForm(instance=calf)
+        form = AddCalfForm(instance=calf, user=request.user)
     
-    return render(request, 'edit_calf.html', {'form': form,
-        'calf' : calf,
-    })
+    return render(request, 'edit_calf.html', {'form': form, 'calf': calf})
 
 @login_required
 @require_POST

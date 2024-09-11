@@ -3,10 +3,17 @@
 {% block body %}
 
 <h2>Edit details of your calf below:</h2>
-<form method="POST" action="">
-{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="Save Changes">
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if calf.image_id %}
+    <p>Current Image:</p>
+    <img src="{{ calf.image_id.url }}" alt="Current calf image" style="max-width: 300px;">
+    <br>
+    <button type="submit" name="remove_image" value="true">Remove Image</button>
+    {% endif %}
+    <br>
+    <input type="submit" value="Save">
 </form>
 
 <a href="{% url 'index' %}">Back to List</a></h2>
