@@ -8,6 +8,8 @@
     {{ form.as_p }}
     <input type="submit" value="Save">
 </form>
+<a href="{% url 'index' %}">Back to List</a></h2>
+
 {% else %}
 <p>You must be signed in to access this feature.</p>
 {% endif %}
