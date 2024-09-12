@@ -1,3 +1,10 @@
+/* make all elements border-box, including psuedo classes */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 h2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -5,4 +12,36 @@ h2 {
 .view_animal_image {
     max-width: 350px;
     height: auto;
+}
+
+body {
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    /* Ensure container width does not exceed viewport */
+}
+
+.d-flex {
+    overflow-x: auto;
+    /* Allows scrolling within the flex container if necessary */
+}
+
+.card {
+    max-width: 100%;
+}
+
+.testimonial {
+    max-width: 480px;
+}
+
+.justify-text-right {
+    text-align: right;
+}
+
+.custom-button-colour {
+    color: teal;
+    background-color: white;
 }
