@@ -93,11 +93,11 @@
     </ul>
 </div>
 {% else %}
-<header class="text-center mb-5">
+<header class="text-center mb-5 mt-5">
     <h1 class="display-4">Welcome to Herdhub</h1>
     <p class="lead">Dairy farm management, without the BS.</p>
 </header>
-<section class="mb-5">
+<section class="mb-5 col-sm-10 offset-sm-1 col-md-8 offset-md-2 text-center">
     <h2 class="h3 mb-4 text-center">Key Features:</h2>
     <ul class="list-group p-2">
         <li class="list-group-item text-center">Easy animal registration and record-keeping</li>
@@ -110,7 +110,7 @@
 </section>
 
 <section class="mb-5">
-    <h2 class="h3 mb-4">Why Choose Herdhub?</h2>
+    <h2 class="h3 mb-4 text-center">Why Choose Herdhub?</h2>
     <div class="row">
         <div class="col-md-6 mb-3">
             <div class="card h-100">
@@ -152,7 +152,7 @@
 </section>
 
 <section class="mb-5">
-    <h2 class="h3 mb-4">How It Works</h2>
+    <h2 class="h3 mb-4 text-center">How It Works</h2>
     <div class="row">
         <div class="col-md-4 mb-3">
             <div class="card text-center h-100">
@@ -180,16 +180,56 @@
         </div>
 </section>
 
-<section class="mb-5">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Testimonial</h5>
-            <p class="card-text">"Until recently, I had to record my herd data with ink and a quill by candlelight.
-                Herdhub has changed all of that, and made me the man I am today."</p>
-            <footer class="blockquote-footer">Dermot Costigan, Dairy Farmer</footer>
+<section id="testimonial-carousel" class="mb-5 testimonial container carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Testimonial</h5>
+                    <p class="card-text text-left">"Before Herdhub, I struggled with manual records and disorganized
+                        paperwork. Now, everything is streamlined and easy to manage, making my farm operations smoother
+                        and more efficient."</p>
+                    <footer class="blockquote-footer text-end">Dermot Costigan, Dairy Farmer, Timoleague, Co. Cork
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Testimonial</h5>
+                    <p class="card-text text-left">"Until recently, I had to record my herd data with ink and a quill by
+                        candlelight. Herdhub has changed all of that, and made me the man I am today."</p>
+                    <footer class="blockquote-footer text-end">Jerry Costello, Dairy Farmer, Athea, Co. Limerick
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Testimonial</h5>
+                    <p class="card-text text-left">"I used to spend hours on paperwork and data entry. Herdhub has
+                        transformed how I manage my herd, giving me more time to focus on what truly matters—running my
+                        farm effectively."
+                    </p>
+                    <footer class="blockquote-footer text-end">Henry Fitzpatrick, Gort, Co. Galway</footer>
+                </div>
+            </div>
         </div>
     </div>
+    <button class="custom-button-colour carousel-control-prev" type="button" data-bs-target="#testimonial-carousel"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="custom-button-colour carousel-control-next" type="button" data-bs-target="#testimonial-carousel"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </section>
+
 
 <section class="text-center mb-5">
     <div class="d-flex justify-content-center gap-3">
