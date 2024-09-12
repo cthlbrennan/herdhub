@@ -1,16 +1,36 @@
 {% extends 'base.html' %}
 
 {% block body %}
-{% if user.is_authenticated %}
-<h2>Add details of your cow below:</h2>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
-</form>
-<a href="{% url 'index' %}">Back to List</a></h2>
-
-{% else %}
-<p>You must be signed in to access this feature.</p>
-{% endif %}
+<div class="container mt-5">
+    {% if user.is_authenticated %}
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="text-center mb-0">Add Details of Your Cow</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="d-flex justify-content-center mt-3">
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="{% url 'index' %}" class="btn btn-outline-primary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="text-center mb-5">
+            <h1 class="display-4">Access Restricted</h1>
+            <p class="lead">You must be signed in to access this feature.</p>
+            <a href="{% url 'account_login' %}" class="btn btn-primary">Login</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-outline-primary">Register</a>
+        </div>
+    {% endif %}
+</div>
 {% endblock body %}
