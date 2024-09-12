@@ -37,4 +37,8 @@
             <h1 class="display-4">Access Restricted</h1>
             <p class="lead">You must be signed in to access this feature.</p>
             <a href="{% url 'account_login' %}" class="btn btn-primary">Login</a>
-            <a href="{% url 'account_signup' 
+            <a href="{% url 'account_signup' %}" class="btn btn-outline-primary">Register</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,29 +1,42 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
-<h1>Cow Details: {{ cow.registration_number }}</h1>
-
-{% if cow.image_id %}
-    <p><strong>Image:</strong></p>
-    <img class="view_animal_image card-img-top" src="{{ cow.image_id.url }}" alt="User uploaded image of {{ cow.registration_number }}">
-{% endif %}
-
-<p><strong>Breed:</strong> {{ cow.breed }}</p>
-<p><strong>Date of Birth:</strong> {{ cow.dob }}</p>
-<p><strong>Health Status:</strong> {{ cow.health_status }}</p>
-<p><strong>Pregnancy Status:</strong> {{ cow.pregnancy_status }}</p>
-<p><strong>Number of Calvings:</strong> {{ cow.number_of_calvings }}</p>
-<p><strong>Last Calving Date:</strong> {{ cow.last_calving_date }}</p>
-<p><strong>Milk Production:</strong> {{ cow.milk_production }}</p>
-<p><strong>Comments:</strong> {{ cow.comments }}</p>
-
-<a href="{% url 'index' %}">Back to List</a></h2>
-<a href="{% url 'edit_cow' cow.cow_id %}">Edit Details</a></h2>
-<form method="post" action="{% url 'delete_cow' cow.cow_id %}">
-    {% csrf_token %}
-    <button type="submit" onclick="return confirm('Are you sure you want to delete this record?');">
-        Delete Cow
-    </button>
-</form>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="text-center mb-0">Cow Details: {{ cow.registration_number }}</h3>
+                </div>
+                <div class="card-body">
+                    {% if cow.image_id %}
+                    <div class="text-center mb-3">
+                        <p><strong>Image:</strong></p>
+                        <img class="img-fluid" src="{{ cow.image_id.url }}" alt="User uploaded image of {{ cow.registration_number }}" style="max-width: 100%;">
+                    </div>
+                    {% endif %}
+                    <p><strong>Breed:</strong> {{ cow.breed }}</p>
+                    <p><strong>Date of Birth:</strong> {{ cow.dob }}</p>
+                    <p><strong>Health Status:</strong> {{ cow.health_status }}</p>
+                    <p><strong>Pregnancy Status:</strong> {{ cow.pregnancy_status }}</p>
+                    <p><strong>Number of Calvings:</strong> {{ cow.number_of_calvings }}</p>
+                    <p><strong>Last Calving Date:</strong> {{ cow.last_calving_date }}</p>
+                    <p><strong>Milk Production:</strong> {{ cow.milk_production }}</p>
+                    <p><strong>Comments:</strong> {{ cow.comments }}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a href="{% url 'index' %}" class="btn btn-outline-primary">Back to List</a>
+                    <a href="{% url 'edit_cow' cow.cow_id %}" class="btn btn-warning">Edit Details</a>
+                    <form method="post" action="{% url 'delete_cow' cow.cow_id %}" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('Are you sure you want to delete this record?');">
+                            Delete Cow
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
