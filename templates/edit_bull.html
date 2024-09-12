@@ -1,19 +1,40 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h2>Edit details of your bull below:</h2>
-<form method="POST" action="" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {% if bull.image_id %}
-        <p>Current Image:</p>
-        <img src="{{ bull.image_id.url }}" alt="Current bull image" style="max-width: 300px;">
-        <br>
-        <button type="submit" name="remove_image" value="true">Remove Image</button>
-    {% endif %}
-    <br>
-    <input type="submit" value="Save Changes">
-</form>
-
-<a href="{% url 'index' %}">Back to List</a>
-{% endblock %}
+<div class="container mt-5">
+    {% if user.is_authenticated %}
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="text-center mb-0">Edit Details of Your Bull</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            {% if bull.image_id %}
+                                <div class="mb-3 text-center">
+                                    <p>Current Image:</p>
+                                    <img src="{{ bull.image_id.url }}" alt="Current bull image" class="img-fluid" style="max-width: 300px;">
+                                    <br>
+                                    <button type="submit" name="remove_image" value="true" class="btn btn-danger mt-2">Remove Image</button>
+                                </div>
+                            {% endif %}
+                            <div class="d-flex justify-content-center mt-3">
+                                <button type="submit" class="btn btn-success">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="{% url 'index' %}" class="btn btn-outline-primary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="text-center mb-5">
+            <h1 class="display-4">Access Restricted</h1>
+            <p class="lead">You must be signed in to access this feature.</p>
+            <a href="{% url 'account_login' %}" class="btn btn-primary">Login</a>
+            <a href="{% url 'account_signup' 
