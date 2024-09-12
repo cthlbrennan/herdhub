@@ -28,6 +28,11 @@ def index(request):
         'calfs' : calfs,
         })
 
+# Create your views here.
+def about(request):
+
+    return render(request, 'about.html')
+
 @login_required
 def add_cow(request):
     if request.method == "POST":
