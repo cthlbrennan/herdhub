@@ -14,6 +14,11 @@ h2 {
     height: auto;
 }
 
+.navbar-logo {
+    width: auto;
+    height: 20px;
+}
+
 body {
     overflow-x: hidden;
     padding: 20px;
@@ -44,4 +49,63 @@ body {
 .custom-button-colour {
     color: teal;
     background-color: white;
+}
+
+:root {
+    --main-bg-color: #E7EFE8;
+    --main-text-color: #2D4F3A;
+    --dark-accent-color: #1A3326;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+.navbar {
+    background-color: var(--main-bg-color) !important;
+    border-bottom: 1px solid var(--main-text-color);
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark-accent-color);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: var(--main-text-color);
+}
+
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--main-text-color);
+    font-weight: bold;
+}
+
+main {
+    background-color: var(--main-bg-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-accent-color);
+}
+
+a {
+    color: var(--main-text-color);
+}
+
+a:hover {
+    color: var(--dark-accent-color);
+}
+
+.btn-primary {
+    background-color: var(--main-text-color);
+    border-color: var(--main-text-color);
+    color: var(--main-bg-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-accent-color);
+    border-color: var(--dark-accent-color);
 }
