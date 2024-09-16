@@ -103,25 +103,37 @@ Home
     </ul>
 </div>
 {% else %}
-<section id="hero-image" data-image-url="{% static 'images/hero_image_resized.jpg' %}">
+<section id="hero-image" data-image-url="{% static 'images/hero_image_resized.jpg' %}" class="mb-2">
     <div id="hero-text" class="text-center mb-5 mt-5">
         <h1 class="display-4">Welcome to Herdhub</h1>
         <p class="lead">Dairy farm management, without the BS.</p>
     </div>
 </section>
+
+<section id="elevator-pitch" class="mb-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-8">
+                <p class="text-center">Herdhub is an online livestock management app for dairy farmers.</p>
+                <p class="text-center">Designed with ease-of-use as a priority, Herdhub helps you to track the health,
+                    status and production data of your herd. This enables you to make informed decisions, improve herd
+                    productivity, and streamline your farm
+                    operations. Sign up today to take control of your dairy farm data.</p>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="mb-5 col-10 offset-1 col-md-8 offset-md-2 text-center">
-    <h2 class="h3 mb-4 text-center">Key Features:</h2>
+    <h2 class="h3 mb-1 text-center">Key Features:</h2>
     <ul class="list-group p-2">
         <li class="list-group-item text-center">Easy animal registration and record-keeping</li>
-        <li class="list-group-item text-center">Breeding event tracking</li>
+        <li class="list-group-item text-center">Track breeding</li>
         <li class="list-group-item text-center">Calf management</li>
         <li class="list-group-item text-center">Herd overview</li>
     </ul>
-    <p class="mt-3">Herdhub helps you make informed decisions, improve herd productivity, and streamline your farm
-        operations. Sign up today to take control of your dairy farm data.</p>
 </section>
 
-<section class="mb-5">
+<section class="mb-3">
     <h2 class="h3 mb-4 text-center">Why Choose Herdhub?</h2>
     <div class="row">
         <div class="col-10 offset-1 col-md-6 offset-md-3 mb-3">
@@ -147,15 +159,6 @@ Home
         <div class="col-10 offset-1 col-md-6 offset-md-3 mb-3">
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Secure Data Storage</h5>
-                    <p class="card-text">Rest easy knowing your farm's data is protected with state-of-the-art
-                        encryption and regular backups.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-10 offset-1 col-md-6 offset-md-3 mb-3">
-            <div class="card h-100">
-                <div class="card-body">
                     <h5 class="card-title">Comprehensive Farm Management</h5>
                     <p class="card-text">Enjoy the benefits of a fully integrated system that streamlines all aspects of
                         your dairy farm operations, from herd management to production tracking.</p>
@@ -176,7 +179,7 @@ Home
                 </div>
             </div>
         </div>
-        <div class="col-10 offset-1 col-lg-2 mb-3">
+        <div class="col-10 offset-1 col-lg-2  mb-3">
             <div class="card text-center h-100">
                 <div class="card-body">
                     <h5 class="card-title">2. Add Animals</h5>
@@ -195,66 +198,67 @@ Home
 </section>
 
 <section id="testimonial-carousel" class="mb-5 testimonial container carousel slide" data-bs-ride="carousel">
+    <h5 class="card-title text-center mb-2">Testimonials</h5>
     <div class="carousel-inner">
         <div class="carousel-item active">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Testimonial</h5>
-                    <p class="card-text text-left">"Before Herdhub, I struggled with manual records and disorganized
-                        paperwork. Now, everything is streamlined and easy to manage, making my farm operations smoother
-                        and more efficient."</p>
-                    <footer class="blockquote-footer text-end">Dermot Costigan, Dairy Farmer, Timoleague, Co. Cork
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Testimonial</h5>
-                    <p class="card-text text-left">"Until recently, I had to record my herd data with ink and a quill by
-                        candlelight. Herdhub has changed all of that, and made me the man I am today."</p>
-                    <footer class="blockquote-footer text-end">Jerry Costello, Dairy Farmer, Athea, Co. Limerick
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Testimonial</h5>
-                    <p class="card-text text-left">"I used to spend hours on paperwork and data entry. Herdhub has
-                        transformed how I manage my herd, giving me more time to focus on what truly matters—running my
-                        farm effectively."
+                    <p class="card-text text-left"><em>"Before Herdhub, I struggled with manual records and disorganized
+                            paperwork. Now, everything is streamlined and easy to manage, making my farm operations
+                            smoother
+                            and more efficient."</em></p>
+                    <p class="blockquote-footer text-end">Dermot Costigan, Dairy Farmer, Timoleague, Co. Cork
                     </p>
-                    <footer class="blockquote-footer text-end">Henry Fitzpatrick, Gort, Co. Galway</footer>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text text-left"><em>"Until recently, I had to record my herd data with ink and a
+                            quill by
+                            candlelight. Herdhub has changed all of that, and made me the man I am today. Thank you,
+                            Herdhub."</em></p>
+                    <p class="blockquote-footer text-end">Jerry Costello, Dairy Farmer, Athea, Co. Limerick
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text text-left"><em>"I used to spend hours on paperwork and data entry. Herdhub has
+                            transformed how I manage my herd, giving me more time to focus on what truly matters—running
+                            my farm effectively."</em>
+                    </p>
+                    <p class="blockquote-footer text-end">Henry Fitzpatrick, Dairy Farmer, Gort, Co. Galway</p>
                 </div>
             </div>
         </div>
     </div>
-    <button class="custom-button-colour carousel-control-prev" type="button" data-bs-target="#testimonial-carousel"
-        data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="custom-button-colour carousel-control-next" type="button" data-bs-target="#testimonial-carousel"
-        data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
 </section>
 
-
 <section class="text-center mb-5">
     <div class="d-flex justify-content-center gap-3">
         <a href="{% url 'account_signup' %}" class="btn btn-success">Register Now</a>
-        <a href="{% url 'about' %}" class="btn btn-outline-success">Learn More</a>
+        <a href="{% url 'about' %}" class="btn btn-success">Learn More</a>
     </div>
 </section>
 
-<section class="text-center mb-5">
+<section class="text-center">
     <div class="d-flex justify-content-center gap-3">
-        <a href="{% url 'account_login' %}" class="btn btn-success">Already signed up? Log in to your account</a>
+        <a href="{% url 'account_login' %}" class="btn btn-success">
+            <p class="mb-0">Already signed up?</p>
+            <p class="mb-0">Log in to your account</p>
+        </a>
     </div>
 </section>
 

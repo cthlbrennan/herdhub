@@ -1,12 +1,112 @@
-/* make all elements border-box, including psuedo classes */
-*,
-*::before,
-*::after {
+:root {
+    --main-bg-color: #E7EFE8;
+    --main-text-color: #2D4F3A;
+    --dark-accent-color: #1A3326;
+    --light-text-color: #FFFFFF;
+    --brown-accent-color: #8B4513;
+    --light-yellow-color: #fff8e7; 
+}
+
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-h2 {
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    overflow-x: hidden;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main { 
+    background-color: #E7EFE8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-accent-color);
+}
+
+a {
+    color: var(--main-text-color);
+}
+
+a:hover {
+    color: var(--dark-accent-color);
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: var(--main-bg-color) !important;
+    border-bottom: 1px solid var(--main-text-color);
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark-accent-color);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--main-text-color);
+    font-weight: bold;
+}
+
+.btn-primary,
+.btn-success {
+    background-color: var(--main-text-color);
+    border-color: var(--main-text-color);
+    color: var(--light-text-color);
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-outline-success:hover {
+    background-color: var(--dark-accent-color);
+    border-color: var(--dark-accent-color);
+    color: var(--light-text-color);
+}
+
+.btn-outline-success {
+    color: var(--main-text-color);
+    border-color: var(--main-text-color);
+}
+
+.custom-button-colour {
+    color: var(--dark-accent-color) !important;
+    background-color: var(--light-text-color);
+}
+
+#hero-image {
+    width: auto;
+    height: 75vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#hero-text {
+    text-align: center;
+    position: absolute;
+    padding: 10px;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--light-text-color);
+    background-color: rgba(26, 51, 38, 0.5);
+    border-radius: 5%;
+}
+
+#elevator-pitch {
+    padding: 20px;
+}
+
+#elevator-pitch p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .view_animal_image {
@@ -19,19 +119,12 @@ h2 {
     height: 40px;
 }
 
-body {
-    overflow-x: hidden;
-    /* padding: 20px; */
-}
-
 .container {
     width: 100%;
-    /* Ensure container width does not exceed viewport */
 }
 
 .d-flex {
     overflow-x: auto;
-    /* Allows scrolling within the flex container if necessary */
 }
 
 .card {
@@ -46,90 +139,50 @@ body {
     text-align: right;
 }
 
-
-
-:root {
-    --main-bg-color: #E7EFE8;
-    --main-text-color: #2D4F3A;
-    --dark-accent-color: #1A3326;
-}
-
-.custom-button-colour {
-    color: var(--dark-accent-color) !important;
-    background-color: white;
-}
-
-body {
+footer {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
 }
 
-.navbar {
-    background-color: var(--main-bg-color) !important;
-    border-bottom: 1px solid var(--main-text-color);
+footer a {
+    color: var(--main-text-color);
 }
 
-.navbar-light .navbar-brand,
-.navbar-light .navbar-nav .nav-link {
+footer a:hover {
     color: var(--dark-accent-color);
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link:focus {
-    color: var(--main-text-color);
-}
-
-.navbar-light .navbar-nav .active > .nav-link,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--main-text-color);
+.footer h5 {
+    color: var(--dark-accent-color);
     font-weight: bold;
 }
 
-main {
-    background-color: var(--main-bg-color);
+.footer-link {
+    color: var(--main-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.footer-link:hover {
+    color: var(--dark-accent-color);
+    text-decoration: underline;
+}
+
+.footer-icon {
+    color: var(--main-text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
     color: var(--dark-accent-color);
 }
 
-a {
-    color: var(--main-text-color);
+.footer-divider {
+    border-top: 1px solid var(--main-text-color);
+    opacity: 0.5;
 }
 
-a:hover {
+.text-dark-accent {
     color: var(--dark-accent-color);
-}
-
-.btn-primary {
-    background-color: var(--main-text-color);
-    border-color: var(--main-text-color);
-    color: var(--main-bg-color);
-}
-
-.btn-primary:hover {
-    background-color: var(--dark-accent-color);
-    border-color: var(--dark-accent-color);
-}
-
-footer {
-    background-color: var(--main-bg-color);
-}
-
-#hero-image {
-    width: 100%;
-    height: 75vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-#hero-text {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--main-text-color);
 }
