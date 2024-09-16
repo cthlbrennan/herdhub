@@ -244,3 +244,33 @@ footer a:hover {
 .link:hover {
     color: var(--dark-accent-color);
 }
+
+.dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 15px;
+}
+
+.section {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+    .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .list-group-item>div {
+        margin-top: 10px;
+    }
+}
