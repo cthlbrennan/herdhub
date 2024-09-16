@@ -21,7 +21,7 @@ Home
         <ul class="list-group">
             {% for cow in cows %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="{% url 'view_cow' cow.cow_id %}">{{cow}}</a>
+                <a class="link" href="{% url 'view_cow' cow.cow_id %}">{{cow}}</a>
                 <div>
                     <a href="{% url 'edit_cow' cow.cow_id %}" class="btn btn-warning btn-sm me-2">Edit</a>
                     <form method="post" action="{% url 'delete_cow' cow.cow_id %}" class="d-inline">
@@ -41,11 +41,11 @@ Home
 
     <div class="section mb-5">
         <h2 class="text-center mb-3">Bulls</h2>
-        <p class="text-center">Click <a href="add_bull" class="btn btn-primary btn-sm">here</a> to add a bull</p>
+        <p class="text-center">Click <a href="add_bull" class="btn btn-success btn-sm">here</a> to add a bull</p>
         <ul class="list-group">
             {% for bull in bulls %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="{% url 'view_bull' bull.bull_id %}">{{bull}}</a>
+                <a class="link" href="{% url 'view_bull' bull.bull_id %}">{{bull}}</a>
                 <div>
                     <a href="{% url 'edit_bull' bull.bull_id %}" class="btn btn-warning btn-sm me-2">Edit</a>
                     <form method="post" action="{% url 'delete_bull' bull.bull_id %}" class="d-inline">
@@ -65,12 +65,12 @@ Home
 
     <div class="section mb-5">
         <h2 class="text-center mb-3">Breedings</h2>
-        <p class="text-center">Click <a href="add_breeding_event" class="btn btn-primary btn-sm">here</a> to record a
+        <p class="text-center">Click <a href="add_breeding_event" class="btn btn-success btn-sm">here</a> to record a
             breeding event</p>
         <ul class="list-group">
             {% for breeding in breedings %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="{% url 'view_breeding' breeding.breeding_id %}">{{breeding}}</a>
+                <a class="link" href="{% url 'view_breeding' breeding.breeding_id %}">{{breeding}}</a>
                 <div>
                     <a href="{% url 'edit_breeding' breeding.breeding_id %}"
                         class="btn btn-warning btn-sm me-2">Edit</a>
@@ -91,11 +91,11 @@ Home
 
     <div class="section mb-5">
         <h2 class="text-center mb-3">Calves</h2>
-        <p class="text-center">Click <a href="add_calf" class="btn btn-primary btn-sm">here</a> to add a calf:</p>
+        <p class="text-center">Click <a href="add_calf" class="btn btn-success btn-sm">here</a> to add a calf:</p>
         <ul class="list-group">
             {% for calf in calfs %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="{% url 'view_calf' calf.calf_id %}">{{calf}}</a>
+                <a class="link" href="{% url 'view_calf' calf.calf_id %}">{{calf}}</a>
                 <div>
                     <a href="{% url 'edit_calf' calf.calf_id %}" class="btn btn-warning btn-sm me-2">Edit</a>
                     <form method="post" action="{% url 'delete_calf' calf.calf_id %}" class="d-inline">

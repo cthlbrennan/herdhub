@@ -10,3 +10,4 @@ document.addEventListener('DOMContentLoaded', function() {
         var imageUrl = heroImage.getAttribute('data-image-url');
         heroImage.style.backgroundImage = 'url("' + imageUrl + '")';
     });
+
