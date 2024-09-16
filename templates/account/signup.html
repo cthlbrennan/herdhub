@@ -10,7 +10,7 @@
     <h1 class="mb-3 mt-5">{% trans "Sign Up" %}</h1>
 
     <p class="lead">
-        Already have an account? Please <a href="{% url 'account_login' %}">sign in</a>.
+        Already have an account? Please <a class="link" href="{% url 'account_login' %}">sign in</a>.
     </p>
 
     {% if not SOCIALACCOUNT_ONLY %}
@@ -33,7 +33,7 @@
                 {{ form.password2.errors }}
             </div>
             <input type="hidden" name="next" value="{{ redirect_field }}">
-            <button type="submit" class="btn btn-primary">{% trans "Sign Up" %}</button>
+            <button type="submit" class="btn btn-success">{% trans "Sign Up" %}</button>
         </form>
     {% endif %}
 

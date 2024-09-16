@@ -7,13 +7,13 @@
 
 {% block body %}
 <div class="container mt-4">
-    <h1 class="mb-4">{% trans "Sign Out" %}</h1>
-    <p class="lead">{% trans "Are you sure you want to sign out?" %}</p>
+    <h1 class="mb-4 text-center">{% trans "Sign Out" %}</h1>
+    <p class="lead text-center mb-3">{% trans "Are you sure you want to sign out?" %}</p>
 
-    <form method="post" action="{% url 'account_logout' %}">
+    <form class="text-center" method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}
         {{ redirect_field }}
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-success">
             {% trans "Sign Out" %}
         </button>
     </form>

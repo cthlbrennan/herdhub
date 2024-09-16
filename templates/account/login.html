@@ -3,10 +3,10 @@
 {% load allauth account %}
 {% block body %}
 <div class="container mt-4">
-    <h2 class="mb-4">Sign In</h2>
-    <p>If you have not created an account yet, please <a href="{% url 'account_signup' %}">sign up</a> first.</p>
+    <h2 class="mb-4 text-center">Sign In</h2>
+    <p class="text-center">If you have not created an account yet, please <a class='link' href="{% url 'account_signup' %}">sign up</a> first.</p>
 
-    <form action="{% url 'account_login' %}" method="POST" class="needs-validation" novalidate>
+    <form action="{% url 'account_login' %}" method="POST" class="needs-validation col-10 offset-1 col-md-6 offset-md-3 text-center" novalidate>
         {% csrf_token %}
         
         <!-- Display non-field errors -->
@@ -42,7 +42,7 @@
             {% endif %}
         </div>
 
-        <button type="submit" class="btn btn-primary">Sign In</button>
+        <button type="submit" class="btn btn-success">Sign In</button>
     </form>
 </div>
 {% endblock %}
