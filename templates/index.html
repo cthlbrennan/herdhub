@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block title %}
+{% if user.is_authenticated %}
+Dashboard
+{% else %}
+Home
+{% endif %}
+{% endblock %}
+
 {% block body %}
 {% if user.is_authenticated %}
 <div>
@@ -93,10 +103,12 @@
     </ul>
 </div>
 {% else %}
-<header class="text-center mb-5 mt-5">
-<h1 class="display-4">Welcome to Herdhub</h1>
-<p class="lead">Dairy farm management, without the BS.</p>
-</header>
+<section id="hero-image" data-image-url="{% static 'images/hero_image_resized.jpg' %}">
+    <div id="hero-text" class="text-center mb-5 mt-5">
+        <h1 class="display-4">Welcome to Herdhub</h1>
+        <p class="lead">Dairy farm management, without the BS.</p>
+    </div>
+</section>
 <section class="mb-5 col-10 offset-1 col-md-8 offset-md-2 text-center">
     <h2 class="h3 mb-4 text-center">Key Features:</h2>
     <ul class="list-group p-2">
