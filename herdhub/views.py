@@ -14,18 +14,32 @@ def index(request):
         bulls = Bull.objects.filter(user=request.user)
         breedings = Breeding.objects.filter(user=request.user)
         calfs = Calf.objects.filter(user=request.user)
-
+        cow_count = cows.count()
+        bull_count = bulls.count()
+        breeding_count = breedings.count()
+        calf_count = calfs.count()
+        herd_total = calf_count + breeding_count + bull_count + cow_count
     else:
         cows = None  
         bulls = None
         breedings = None
         calfs = None
+        cow_count = 0
+        bull_count = 0
+        breeding_count = 0
+        calf_count = 0
+        herd_total = 0
 
     return render(request, 'index.html', {
         'cows': cows, 
         'bulls': bulls,
         'breedings': breedings,
         'calfs' : calfs,
+        'cow_count' : cow_count,
+        'bull_count' : bull_count, 
+        'breeding_count' : breeding_count,
+        'calf_count' : calf_count,
+        'herd_total' : herd_total
         })
 
 # Create your views here.

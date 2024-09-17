@@ -282,3 +282,17 @@ footer a:hover {
     padding: 20px;
     margin-bottom: 30px;
 }
+
+#dashboard-overview {
+    max-width: 400px;
+    background-color: var(--light-text-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+#dashboard-overview>h5 {
+    border: 2px solid #1A3326;
+    padding: 10px;    
+}
+
