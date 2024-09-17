@@ -274,3 +274,11 @@ footer a:hover {
         margin-top: 10px;
     }
 }
+
+.dashboard-links {
+    max-width: 700px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}

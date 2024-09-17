@@ -14,9 +14,15 @@ Home
 {% if user.is_authenticated %}
 <div id="Dashboard" class="dashboard container">
     <h1 class="text-center mb-4">Dashboard</h1>
+    <div class="container-fluid d-flex justify-content-between align-items-center dashboard-links">
+        <span class=""><a class="link" href="#Cows">Cows</a></span>
+        <span><a class="link" href="#Bulls">Bulls</a></span>
+        <span><a class="link" href="#Breedings">Breedings</a></span>
+        <span><a class="link" href="#Calves">Calves</a></span>
+    </div>
 
     <div class="section mb-5">
-        <h2 class="text-center mb-3">Cows</h2>
+        <h2 id="Cows" class="text-center mb-3">Cows</h2>
         <p class="text-center">Click <a href="add_cow" class="btn btn-success btn-sm">here</a> to add a cow</p>
         <ul class="list-group">
             {% for cow in cows %}
@@ -37,10 +43,13 @@ Home
             <li class="list-group-item text-center">No cows added yet.</li>
             {% endfor %}
         </ul>
+        <div class="mt-2">
+            <a class="link d-flex justify-content-center" href="#Dashboard">Back to Top</a>
+        </div>
     </div>
 
     <div class="section mb-5">
-        <h2 class="text-center mb-3">Bulls</h2>
+        <h2 id="Bulls" class="text-center mb-3">Bulls</h2>
         <p class="text-center">Click <a href="add_bull" class="btn btn-success btn-sm">here</a> to add a bull</p>
         <ul class="list-group">
             {% for bull in bulls %}
@@ -61,10 +70,14 @@ Home
             <li class="list-group-item text-center">No bulls added yet.</li>
             {% endfor %}
         </ul>
+        <div class="mt-2">
+            <a class="link d-flex justify-content-center" href="#Dashboard">Back to Top</a>
+        </div>
     </div>
 
+
     <div class="section mb-5">
-        <h2 class="text-center mb-3">Breedings</h2>
+        <h2 id="Breedings" class="text-center mb-3">Breedings</h2>
         <p class="text-center">Click <a href="add_breeding_event" class="btn btn-success btn-sm">here</a> to record a
             breeding event</p>
         <ul class="list-group">
@@ -87,10 +100,14 @@ Home
             <li class="list-group-item text-center">No breeding events recorded yet.</li>
             {% endfor %}
         </ul>
+        <div class="mt-2">
+            <a class="link d-flex justify-content-center" href="#Dashboard">Back to Top</a>
+        </div>
     </div>
 
+
     <div class="section mb-5">
-        <h2 class="text-center mb-3">Calves</h2>
+        <h2 id="Calves" class="text-center mb-3">Calves</h2>
         <p class="text-center">Click <a href="add_calf" class="btn btn-success btn-sm">here</a> to add a calf:</p>
         <ul class="list-group">
             {% for calf in calfs %}
@@ -111,8 +128,12 @@ Home
             <li class="list-group-item text-center">No calfs added yet.</li>
             {% endfor %}
         </ul>
+        <div class="mt-2">
+            <a class="link d-flex justify-content-center" href="#Dashboard">Back to Top</a>
+        </div>
     </div>
 </div>
+
 {% else %}
 <section id="hero-image" data-image-url="{% static 'images/hero_image_resized.jpg' %}" class="mb-2">
     <div id="hero-text" class="text-center mb-5 mt-5">
