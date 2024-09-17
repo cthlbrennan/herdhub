@@ -8,7 +8,7 @@
                 <div class="card-header bg-success text-white">
                     <h3 class="text-center mb-0">Cow Details: {{ cow.registration_number }}</h3>
                 </div>
-                <div class="card-body">
+                <div class="card-body text-center">
                     {% if cow.image_id %}
                     <div class="text-center mb-3">
                         <p><strong>Image:</strong></p>
@@ -25,7 +25,7 @@
                     <p><strong>Comments:</strong> {{ cow.comments }}</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
-                    <a href="{% url 'index' %}" class="btn btn-success">Back to List</a>
+                    <a href="{% url 'index' %}" class="btn btn-success">Back to Dashboard</a>
                     <a href="{% url 'edit_cow' cow.cow_id %}" class="btn btn-warning">Edit Details</a>
                     <form method="post" action="{% url 'delete_cow' cow.cow_id %}" class="d-inline">
                         {% csrf_token %}
