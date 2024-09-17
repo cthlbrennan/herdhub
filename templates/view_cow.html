@@ -22,7 +22,7 @@
                     <p><strong>Number of Calvings:</strong> {{ cow.number_of_calvings }}</p>
                     <p><strong>Last Calving Date:</strong> {{ cow.last_calving_date }}</p>
                     <p><strong>Milk Production:</strong> {{ cow.milk_production }}</p>
-                    <p><strong>Comments:</strong> {{ cow.comments }}</p>
+                    <p><strong>Comments:</strong> {{ cow.comments|linebreaksbr }}</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
                     <a href="{% url 'index' %}" class="btn btn-success">Back to Dashboard</a>

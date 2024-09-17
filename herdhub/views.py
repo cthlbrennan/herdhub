@@ -18,7 +18,7 @@ def index(request):
         bull_count = bulls.count()
         breeding_count = breedings.count()
         calf_count = calfs.count()
-        herd_total = calf_count + breeding_count + bull_count + cow_count
+        herd_total = calf_count + bull_count + cow_count
     else:
         cows = None  
         bulls = None
