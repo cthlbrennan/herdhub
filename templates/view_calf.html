@@ -20,7 +20,7 @@
                     <p><strong>Date of Birth:</strong> {{ calf.dob }}</p>
                     <p><strong>Sex:</strong> {{ calf.sex }}</p>
                     <p><strong>Calving Method:</strong> {{ calf.calving_method }}</p>
-                    <p><strong>Comments:</strong> {{ calf.comments }}</p>
+                    <p><strong>Comments:</strong> {{ calf.comments|linebreaksbr }}</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
                     <a href="{% url 'index' %}" class="btn btn-success">Back to Dashboard</a>

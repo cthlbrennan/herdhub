@@ -16,6 +16,20 @@ class AddCowForm(forms.ModelForm):
         fields = ['registration_number', 'dob', 'breed', 'health_status', 
                   'pregnancy_status', 'number_of_calvings', 'last_calving_date', 
                   'milk_production', 'comments', 'image']
+
+        labels = {
+            'registration_number': 'Registration Number',
+            'dob': 'Date of Birth',
+            'breed': 'Breed',
+            'health_status': 'Health Status',
+            'pregnancy_status': 'Pregnancy Status',
+            'number_of_calvings': 'Number of Previous Calvings',
+            'last_calving_date': 'Last Calving Date',
+            'milk_production': 'Milk Production (litres per annum)',
+            'comments': 'Comments',
+            'image': 'Upload Image'
+        }
+        
         widgets = {
             'dob': forms.DateInput(attrs={'type': 'date'}),
             'last_calving_date': forms.DateInput(attrs={'type': 'date'}),

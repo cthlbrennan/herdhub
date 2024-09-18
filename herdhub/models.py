@@ -5,55 +5,53 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class BreedChoices(models.TextChoices):
-    HOLSTEIN = 'HOL', 'Holstein'
-    JERSEY = 'JER', 'Jersey'
-    ANGUS = 'ANG', 'Angus'
-    OTHER = 'OTH', 'Other'
-    HEREFORD = 'HER', 'Hereford'
-    SIMMENTAL = 'SIM', 'Simmental'
-    LIMOUSIN = 'LIM', 'Limousin'
-    CHAROLAIS = 'CHA', 'Charolais'
+    HOLSTEIN = 'Holstein', 'Holstein'
+    JERSEY = 'Jersey', 'Jersey'
+    ANGUS = 'Angus', 'Angus'
+    OTHER = 'Other', 'Other'
+    HEREFORD = 'Hereford', 'Hereford'
+    SIMMENTAL = 'Simmental', 'Simmental'
+    LIMOUSIN = 'Limousin', 'Limousin'
+    CHAROLAIS = 'Charolais', 'Charolais'
 
 class HealthChoices(models.TextChoices):
-    POOR = "P", 'Poor'
-    GOOD = "G", 'Good'
-    EXCELLENT = "E", 'Excellent'
+    POOR = "Poor", 'Poor'
+    GOOD = "Good", 'Good'
+    EXCELLENT = "Excellent", 'Excellent'
 
 class PregnancyStatus(models.TextChoices):
-    NOT_PREGNANT = "NP", "Not Pregnant"
-    PREGNANT = "PR", "Pregnant"
-    IN_HEAT = "IH", "In Heat"
-    DRY = "DR", "Dry"
-    LACTATING = "LC", "Lactating"
-    FRESH = 'FR', "Fresh"
-    CALVING = "CV", "Calving"
+    NOT_PREGNANT = "Not Pregnant", "Not Pregnant"
+    PREGNANT = "Pregnant", "Pregnant"
+    IN_HEAT = "In Heat", "In Heat"
+    DRY = "Dry", "Dry"
+    LACTATING = "Lactating", "Lactating"
+    FRESH = 'Fresh', "Fresh"
+    CALVING = "Calving", "Calving"
 
 class CalfSex(models.TextChoices):
-    MALE = "M", "Male"
-    FEMALE = "F", "Female"
+    MALE = "Male", "Male"
+    FEMALE = "Female", "Female"
 
 class BreedingMethod(models.TextChoices):
-    NATURAL_SERVICE = "NS", "Natural Service"  
-    ARTIFICIAL_INSEMINATION = "AI", "Artificial Insemination"  
+    NATURAL_SERVICE = "Natural Service", "Natural Service"  
+    ARTIFICIAL_INSEMINATION = "Artificial Insemination", "Artificial Insemination"  
 
 class CalvingMethod(models.TextChoices):
-    NATURAL_UNASSISTED = 'NU', 'Natural Unassisted'
-    ASSISTED = 'AS', 'Assisted'  
-    C_SECTION = 'CS', 'C-Section'  
-    INDUCTION = 'IN', 'Induction'  
-    EMERGENCY_ASSISTANCE = 'EA', 'Emergency Assistance'  
+    NATURAL_UNASSISTED = 'Natural Unassisted', 'Natural Unassisted'
+    ASSISTED = 'Assisted', 'Assisted'  
+    C_SECTION = 'C-Section', 'C-Section'  
+    INDUCTION = 'Induction', 'Induction'  
+    EMERGENCY_ASSISTANCE = 'Emergency Assistance', 'Emergency Assistance'  
 
 class Message(models.Model):
     message_id = models.AutoField(primary_key=True)
     user_profile = models.ForeignKey(User, on_delete=models.CASCADE)
     sent_on = models.CharField()
-    message = models.TextField()
+    message = models.TextField(max_length=3000)
     read = models.BooleanField(default=False)
-
 
     def __str__(self):
         return f"Message from {self.user_profile}"
-
 
 class Bull(models.Model):
     bull_id = models.AutoField(primary_key=True)
@@ -69,7 +67,7 @@ class Bull(models.Model):
         choices=HealthChoices.choices,
         default=HealthChoices.GOOD,
     )   
-    comments = models.TextField()
+    comments = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"Bull {self.registration_number}: Breed {self.breed}"
@@ -92,10 +90,10 @@ class Cow(models.Model):
         choices=PregnancyStatus.choices,
         default=PregnancyStatus.NOT_PREGNANT
     )
-    number_of_calvings = models.IntegerField()
+    number_of_calvings = models.IntegerField(null=False, blank=False, default='0')
     last_calving_date = models.DateField()
-    milk_production = models.IntegerField()
-    comments = models.TextField()
+    milk_production = models.IntegerField(null=False, blank=False, default='2000')
+    comments = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"Cow {self.registration_number}: Breed {self.breed}"
@@ -111,7 +109,7 @@ class Breeding(models.Model):
         default=BreedingMethod.NATURAL_SERVICE,
     )
     resulting_pregnancy = models.BooleanField()
-    comments = models.TextField()
+    comments = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"Breeding: Bull {self.bull.registration_number} x Cow {self.cow.registration_number} on {self.breeding_date}"
@@ -132,7 +130,7 @@ class Calf(models.Model):
         choices=CalvingMethod.choices,
         default=CalvingMethod.NATURAL_UNASSISTED,
     )
-    comments = models.TextField()
+    comments = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"Calf: {self.registration_number}"

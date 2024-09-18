@@ -18,7 +18,7 @@
                     <p><strong>Breed:</strong> {{ bull.breed }}</p>
                     <p><strong>Date of Birth:</strong> {{ bull.dob }}</p>
                     <p><strong>Health Status:</strong> {{ bull.health_status }}</p>
-                    <p><strong>Comments:</strong> {{ bull.comments }}</p>
+                    <p><strong>Comments:</strong> {{ bull.comments|linebreaksbr }}</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
                     <a href="{% url 'index' %}" class="btn btn-success">Back to Dashboard</a>
