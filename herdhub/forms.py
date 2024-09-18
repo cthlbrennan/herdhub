@@ -34,6 +34,18 @@ class AddCowForm(forms.ModelForm):
             'dob': forms.DateInput(attrs={'type': 'date'}),
             'last_calving_date': forms.DateInput(attrs={'type': 'date'}),
         }
+        
+    def clean_number_of_calvings(self):
+        number_of_calvings = self.cleaned_data.get('number_of_calvings')
+        if number_of_calvings is not None and number_of_calvings < 0:
+            raise forms.ValidationError('Number of previous calvings cannot be less than zero.')
+        return number_of_calvings
+
+    def clean_milk_production(self):
+        milk_production = self.cleaned_data.get('milk_production')
+        if milk_production is not None and milk_production < 0:
+            raise forms.ValidationError('Milk production cannot be less than zero.')
+        return milk_production
     
 class AddBullForm(forms.ModelForm):
     image = CloudinaryFileField(

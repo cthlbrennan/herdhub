@@ -30,22 +30,15 @@ MEDIA_URL = 'https://res.cloudinary.com/dbebkt6ul/'  #
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = os.environ.get('DEBUG', False)
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)q(nsefc$i9v)&$drl-p6jn_65r#(=uv3=morz93=_5)o2(vfp'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ALLOWED_HOSTS = [
     '8000-cthlbrennan-herdhub-8v8u076wejz.ws.codeinstitute-ide.net',
     '.herokuapp.com'
 ]
-
 
 # Application definition
 

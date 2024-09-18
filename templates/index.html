@@ -16,19 +16,19 @@ Home
     <h1 class="text-center mb-4">Dashboard</h1>
     <div id="dashboard-overview" class="container-fluid d-flex flex-column justify-content-between align-items-center">
         <h5><em>Herd Overview</em></h5>
-        {% if herd_total >= 1 %}
+        {% if herd_total > 0 %}
         <p>Total Herd Number: {{herd_total}}</p>
-        {% if cow_count >= 1 %}
+        {% if cow_count > 0 %}
         <p>Number of Cows: {{cow_count}}</p>
         {% else %}
         <p>No cows added.</p>
         {% endif %}
-        {% if bull_count >= 1 %}
+        {% if bull_count > 0 %}
         <p>Number of Bulls: {{bull_count}}</p>
         {% else %}
         <p>No bulls added.</p>
         {% endif %}
-        {% if breeding_count >= 1 %}
+        {% if breeding_count > 0 %}
         <p>Number of Recorded Breedings: {{breeding_count}}</p>
         {% else %}
         <p>No events recorded.</p>
@@ -103,7 +103,7 @@ Home
         </div>
     </div>
 
-
+    {% if cow_count and bull_count != 0 %}
     <div class="section mb-5">
         <h2 id="Breedings" class="text-center mb-3">Breedings</h2>
         <p class="text-center">Click <a href="add_breeding_event" class="btn btn-success btn-sm">here</a> to record a
@@ -132,6 +132,15 @@ Home
             <a class="link d-flex justify-content-center" href="#Dashboard">Back to Top</a>
         </div>
     </div>
+    {% else %}
+
+    <div class="section mb-5">
+        <h2 id="Breedings" class="text-center mb-3">Breedings</h2>
+        <p class="text-center">You need at least one bull and one cow registered in your database before you can add
+            details of a breeding event.</p>
+    </div>
+
+    {% endif %}
 
 
     <div class="section mb-5">

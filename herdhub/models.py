@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.core.validators import MinValueValidator, RegexValidator
 
 # Create your models here.
 
@@ -57,7 +58,15 @@ class Bull(models.Model):
     bull_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image_id = CloudinaryField('image', blank=True, default='')  # CloudinaryField for images
-    registration_number = models.CharField(max_length=10)
+    registration_number = models.CharField(
+        max_length=10,
+        validators=[
+            RegexValidator(
+            regex='^[A-Za-z0-9]+$',
+            message='Registration number must contain only letters and numbers, 10 characters max.'
+            )
+        ]
+    )    
     dob = models.DateField()
     breed = models.CharField(
         choices=BreedChoices.choices,
@@ -76,7 +85,15 @@ class Cow(models.Model):
     cow_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image_id = CloudinaryField('image', blank=True, default='')  # Add this line
-    registration_number = models.CharField(max_length=10)
+    registration_number = models.CharField(
+        max_length=10,
+        validators=[
+            RegexValidator(
+            regex='^[A-Za-z0-9]+$',
+            message='Registration number must contain only letters and numbers, 10 characters max.'
+            )
+        ]
+    )
     dob = models.DateField()
     breed = models.CharField(
         choices=BreedChoices.choices,
@@ -90,9 +107,9 @@ class Cow(models.Model):
         choices=PregnancyStatus.choices,
         default=PregnancyStatus.NOT_PREGNANT
     )
-    number_of_calvings = models.IntegerField(null=False, blank=False, default='0')
+    number_of_calvings = models.IntegerField(null=False, blank=False, default='0', validators=[MinValueValidator(0)])
     last_calving_date = models.DateField()
-    milk_production = models.IntegerField(null=False, blank=False, default='2000')
+    milk_production = models.IntegerField(null=False, blank=False, default='2000', validators=[MinValueValidator(0)])
     comments = models.TextField(null=True, blank=True)
 
     def __str__(self):
@@ -119,7 +136,15 @@ class Calf(models.Model):
     calf_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image_id = CloudinaryField('image', blank=True, default='')  
-    registration_number = models.CharField(max_length=10)
+    registration_number = models.CharField(
+        max_length=10,
+        validators=[
+            RegexValidator(
+            regex='^[A-Za-z0-9]+$',
+            message='Registration number must contain only letters and numbers, 10 characters max.'
+            )
+        ]
+    )    
     breeding = models.ForeignKey(Breeding, on_delete=models.CASCADE)
     sex = models.CharField(
         choices=CalfSex.choices,
