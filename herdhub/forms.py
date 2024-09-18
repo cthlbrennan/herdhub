@@ -1,6 +1,6 @@
 from django import forms
-from .models import BreedChoices, HealthChoices, PregnancyStatus, Cow, Bull, Calf, Breeding, Message
 from cloudinary.forms import CloudinaryFileField
+from .models import BreedChoices, HealthChoices, PregnancyStatus, Cow, Bull, Calf, Breeding, Message
 
 class AddCowForm(forms.ModelForm):
     image = CloudinaryFileField(
@@ -34,7 +34,7 @@ class AddCowForm(forms.ModelForm):
             'dob': forms.DateInput(attrs={'type': 'date'}),
             'last_calving_date': forms.DateInput(attrs={'type': 'date'}),
         }
-        
+
     def clean_number_of_calvings(self):
         number_of_calvings = self.cleaned_data.get('number_of_calvings')
         if number_of_calvings is not None and number_of_calvings < 0:

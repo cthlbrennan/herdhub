@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .forms import AddCowForm, AddBullForm, AddBreedingForm, AddCalfForm, SendMessageForm
-from .models import Cow, Breeding, Calf, Bull, User, Message
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.utils import timezone
-
+from .forms import AddCowForm, AddBullForm, AddBreedingForm, AddCalfForm, SendMessageForm
+from .models import Cow, Breeding, Calf, Bull, User, Message
 
 # Create your views here.
 def index(request):
