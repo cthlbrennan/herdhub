@@ -27,3 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
         input.setAttribute("max", today);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var deleteModal = document.getElementById('deleteConfirmModal');
+    var confirmDeleteBtn = document.getElementById('confirmDelete');
+    var formToSubmit;
+
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        formToSubmit = button.closest('form');
+    });
+
+    confirmDeleteBtn.addEventListener('click', function() {
+        formToSubmit.submit();
+    });
+});

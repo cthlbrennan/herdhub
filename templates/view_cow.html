@@ -33,8 +33,8 @@ View Cow
                     <a href="{% url 'edit_cow' cow.cow_id %}" class="btn btn-warning">Edit Details</a>
                     <form method="post" action="{% url 'delete_cow' cow.cow_id %}" class="d-inline">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-danger"
-                                onclick="return confirm('Are you sure you want to delete this record?');">
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#deleteConfirmModal">
                             Delete Cow
                         </button>
                     </form>
