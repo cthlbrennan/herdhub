@@ -142,6 +142,7 @@ Home
 
     {% endif %}
 
+    {% if breeding_count != 0 %}
 
     <div class="section mb-5">
         <h2 id="Calves" class="text-center mb-3">Calves</h2>
@@ -170,7 +171,14 @@ Home
         </div>
     </div>
 </div>
+{% else %}
 
+<div class="section mb-5">
+    <h2 id="Breedings" class="text-center mb-3">Calves</h2>
+    <p class="text-center">You need at least one breeding event recorded before you can add a calf to your database.</p>
+</div>
+
+{% endif %}
 {% else %}
 <section id="hero-image" data-image-url="{% static 'images/hero_image_resized.jpg' %}" class="mb-2">
     <div id="hero-text" class="text-center mb-5 mt-5">

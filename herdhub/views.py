@@ -73,15 +73,21 @@ def edit_cow(request, cow_id):
     cow = get_object_or_404(Cow, cow_id=cow_id, user=request.user)
     
     if request.method == 'POST':
+        if 'remove_image' in request.POST:
+            cow.image_id = None
+            cow.save()
+            return redirect('edit_cow', cow_id=cow.cow_id)
+        
         form = AddCowForm(request.POST, request.FILES, instance=cow)
         if form.is_valid():
+            if 'image' in request.FILES:
+                cow.image_id = request.FILES['image']
             form.save()
             return redirect('view_cow', cow_id=cow.cow_id)
     else:
         form = AddCowForm(instance=cow)
     
     return render(request, 'edit_cow.html', {'form': form, 'cow': cow})
-
 @login_required
 @require_POST
 def delete_cow(request, cow_id):
@@ -243,14 +249,24 @@ def edit_calf(request, calf_id):
     calf = get_object_or_404(Calf, calf_id=calf_id, user=request.user)
     
     if request.method == 'POST':
+        if 'remove_image' in request.POST:
+            calf.image_id = None  # This will remove the image
+            calf.save()
+            return redirect('edit_calf', calf_id=calf.calf_id)
+        
         form = AddCalfForm(request.POST, request.FILES, instance=calf, user=request.user)
         if form.is_valid():
+            if 'image' in request.FILES:
+                calf.image_id = request.FILES['image']
             form.save()
             return redirect('view_calf', calf_id=calf.calf_id)
     else:
         form = AddCalfForm(instance=calf, user=request.user)
     
-    return render(request, 'edit_calf.html', {'form': form, 'calf': calf})
+    return render(request, 'edit_calf.html', {
+        'form': form,
+        'calf': calf,
+    })
 
 @login_required
 @require_POST
