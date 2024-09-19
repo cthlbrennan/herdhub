@@ -310,3 +310,9 @@ def send_message(request):
         form = SendMessageForm()
     
     return render(request, 'send_message.html', {'form': form})
+
+def show404page(request, exception):
+    return render(request, '404.html', status=404)
+    
+def show500page(request, exception):
+    return render(request, '500.html', status=500)

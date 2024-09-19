@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+404
+{% endblock %}
+
+{% block body %}
+<div class="container text-center mt-5">
+    <h1 class="display-4">404 - Page Not Found</h1>
+    <p class="lead">Oops! It looks like this page has moo-ved away.</p>
+    <p class="lead">Don't have a cow! Let's get you back on track.</p>
+    <a href="{% url 'index' %}" class="btn btn-success">Go to Homepage</a>
+</div>
+{% endblock %}
