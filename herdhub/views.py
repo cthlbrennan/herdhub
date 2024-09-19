@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.utils import timezone
+from django.contrib import messages
 from .forms import AddCowForm, AddBullForm, AddBreedingForm, AddCalfForm, SendMessageForm
 from .models import Cow, Breeding, Calf, Bull, User, Message
 
@@ -33,17 +33,15 @@ def index(request):
         'cows': cows, 
         'bulls': bulls,
         'breedings': breedings,
-        'calfs' : calfs,
-        'cow_count' : cow_count,
-        'bull_count' : bull_count, 
-        'breeding_count' : breeding_count,
-        'calf_count' : calf_count,
-        'herd_total' : herd_total
-        })
+        'calfs': calfs,
+        'cow_count': cow_count,
+        'bull_count': bull_count, 
+        'breeding_count': breeding_count,
+        'calf_count': calf_count,
+        'herd_total': herd_total
+    })
 
-# Create your views here.
 def about(request):
-
     return render(request, 'about.html')
 
 @login_required
@@ -56,7 +54,8 @@ def add_cow(request):
             if 'image' in request.FILES:
                 new_cow.image_id = request.FILES['image']
             new_cow.save()
-            return redirect('index')
+            messages.success(request, 'Cow added successfully!')
+            return redirect('index')          
     else:
         form = AddCowForm()
     return render(request, 'add_cow.html', {'form': form})
@@ -76,23 +75,29 @@ def edit_cow(request, cow_id):
         if 'remove_image' in request.POST:
             cow.image_id = None
             cow.save()
+            messages.success(request, 'Image of Cow removed')
             return redirect('edit_cow', cow_id=cow.cow_id)
         
         form = AddCowForm(request.POST, request.FILES, instance=cow)
         if form.is_valid():
             if 'image' in request.FILES:
                 cow.image_id = request.FILES['image']
+                messages.success(request, 'Image of Cow added')
+            else:
+                messages.success(request, f'Cow {cow.registration_number} details updated')
             form.save()
             return redirect('view_cow', cow_id=cow.cow_id)
     else:
         form = AddCowForm(instance=cow)
     
     return render(request, 'edit_cow.html', {'form': form, 'cow': cow})
+
 @login_required
 @require_POST
 def delete_cow(request, cow_id):
     cow = get_object_or_404(Cow, cow_id=cow_id, user=request.user)
     cow.delete()
+    messages.success(request, f'Cow {cow.registration_number} deleted successfully')
     return redirect('index') 
 
 @login_required
@@ -110,19 +115,20 @@ def add_breeding_event(request):
                 comments=form.cleaned_data['comments']
             )
             new_breeding.save()
+            messages.success(request, 'Breeding event added successfully!')
             return redirect('index')
         else:
-            return render(request, 'add_breeding_event.html', {
-                'form' : form,
-            })
+            messages.error(request, 'There was an error adding the breeding event')
     else:
         cows = Cow.objects.filter(user=request.user)
         bulls = Bull.objects.filter(user=request.user)
         not_enough_animals = cows.count() == 0 or bulls.count() == 0
-        return render(request, 'add_breeding_event.html', {
-        'form': AddBreedingForm(user=request.user), 
-        'number_of_animals' : not_enough_animals,
-        })
+        form = AddBreedingForm(user=request.user)
+    
+    return render(request, 'add_breeding_event.html', {
+        'form': form, 
+        'number_of_animals': not_enough_animals,
+    })
 
 @login_required
 def view_breeding(request, breeding_id):
@@ -139,6 +145,7 @@ def edit_breeding(request, breeding_id):
         form = AddBreedingForm(request.POST, instance=breeding)
         if form.is_valid():
             form.save()
+            messages.success(request, f'{breeding.bull} x {breeding.cow} event updated successfully!') 
             return redirect('index') 
     else:
         form = AddBreedingForm(instance=breeding)
@@ -150,9 +157,8 @@ def edit_breeding(request, breeding_id):
 def delete_breeding(request, breeding_id):
     breeding = get_object_or_404(Breeding, breeding_id=breeding_id, user=request.user)
     breeding.delete()
+    messages.success(request, f'{breeding} deleted successfully')
     return redirect('index') 
-
-
 
 @login_required
 def add_bull(request):
@@ -164,6 +170,7 @@ def add_bull(request):
             if 'image' in request.FILES:
                 bull.image_id = request.FILES['image']
             bull.save()
+            messages.success(request, 'Bull added successfully!')
             return redirect('view_bull', bull_id=bull.bull_id)
     else:
         form = AddBullForm()
@@ -183,14 +190,18 @@ def edit_bull(request, bull_id):
     
     if request.method == 'POST':
         if 'remove_image' in request.POST:
-            bull.image_id = None  # This will remove the image
+            bull.image_id = None
             bull.save()
+            messages.success(request, 'Image of Bull removed')
             return redirect('edit_bull', bull_id=bull.bull_id)
         
         form = AddBullForm(request.POST, request.FILES, instance=bull)
         if form.is_valid():
             if 'image' in request.FILES:
                 bull.image_id = request.FILES['image']
+                messages.success(request, 'Image of Bull added')
+            else:
+                messages.success(request, 'Bull details updated')
             form.save()
             return redirect('view_bull', bull_id=bull.bull_id)
     else:
@@ -206,11 +217,8 @@ def edit_bull(request, bull_id):
 def delete_bull(request, bull_id):
     bull = get_object_or_404(Bull, bull_id=bull_id, user=request.user)
     bull.delete()
+    messages.success(request, 'Bull deleted successfully')
     return redirect('index') 
-
-
-
-
 
 @login_required
 def add_calf(request):
@@ -222,9 +230,10 @@ def add_calf(request):
             if 'image' in request.FILES:
                 new_calf.image_id = request.FILES['image']
             new_calf.save()
+            messages.success(request, 'Calf added successfully!')
             return redirect('index')
         else:
-            print(form.errors)  # Add this line for debugging
+            messages.error(request, 'There was an error adding the calf.')
     else:
         form = AddCalfForm(user=request.user)
     return render(request, 'add_calf.html', {'form': form})
@@ -238,8 +247,8 @@ def view_calf(request, calf_id):
 
     return render(request, 'view_calf.html', {
         'calf': calf, 
-        'dam' : dam,
-        'sire' : sire, 
+        'dam': dam,
+        'sire': sire, 
         'bull_id': sire.bull_id if sire else None,
         'cow_id': dam.cow_id if dam else None,
     })
@@ -250,14 +259,18 @@ def edit_calf(request, calf_id):
     
     if request.method == 'POST':
         if 'remove_image' in request.POST:
-            calf.image_id = None  # This will remove the image
+            calf.image_id = None
             calf.save()
+            messages.success(request, 'Image of Calf removed')
             return redirect('edit_calf', calf_id=calf.calf_id)
         
         form = AddCalfForm(request.POST, request.FILES, instance=calf, user=request.user)
         if form.is_valid():
             if 'image' in request.FILES:
                 calf.image_id = request.FILES['image']
+                messages.success(request, 'Image of Calf added')
+            else:
+                messages.success(request, 'Calf details updated')
             form.save()
             return redirect('view_calf', calf_id=calf.calf_id)
     else:
@@ -273,6 +286,7 @@ def edit_calf(request, calf_id):
 def delete_calf(request, calf_id):
     calf = get_object_or_404(Calf, calf_id=calf_id, user=request.user)
     calf.delete()
+    messages.success(request, 'Calf deleted successfully')
     return redirect('index') 
 
 @login_required
@@ -288,13 +302,11 @@ def send_message(request):
                 message=form.cleaned_data['message']
             )
             new_message.save()
-            
+            messages.success(request, 'Message sent successfully!')
             return redirect('index')  
         else:
-            return render(request, 'send_message.html', {
-                'form': form,
-            })
+            messages.error(request, 'There was an error sending the message')
     else:
-        return render(request, 'send_message.html', {
-            'form': SendMessageForm()
-        })
+        form = SendMessageForm()
+    
+    return render(request, 'send_message.html', {'form': form})
