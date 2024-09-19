@@ -6,80 +6,80 @@ About
 {% endblock %}
 
 {% block body %}
-<section id="about-hero">
-    <div id='about-image' data-image-url="{% static 'images/about_image.jpg' %}" class="mb-2"></div>
+<section id='about-image' data-image-url="{% static 'images/about_image.jpg' %}" class="mb-2">
     <div id="about-text" class="text-center mb-5 mt-5">
         <h1 class="display-4">About Herdhub</h1>
         <p class="lead">Livestock Management for Dairy Farmers</p>
     </div>
 </section>
 
-    <section class="mt-3">
-        <h2 class="h3 mb-2 col-10 offset-1 col-md-6 offset-md-3 text-center">Our Mission</h2>
-        <p class="mb-4 col-10 offset-1 col-md-6 offset-md-3">At Herdhub, we aim to empower dairy farmers with user-friendly technology that simplifies
-            record-keeping, enhances breeding programs, and improves overall herd management. Our intuitive user
-            interface is designed to help you manage your herd efficiently and maximize productivity.</p>
-    </section>
+<section class="mt-3">
+    <h2 class="h3 mb-2 col-10 offset-1 col-md-6 offset-md-3 text-center">Our Mission</h2>
+    <p class="mb-4 col-10 offset-1 col-md-6 offset-md-3">At Herdhub, we aim to empower dairy farmers with user-friendly
+        technology that simplifies
+        record-keeping, enhances breeding programs, and improves overall herd management. Our intuitive user
+        interface is designed to help you manage your herd efficiently and maximize productivity.</p>
+</section>
 
-    <section class="mb-2">
-        <h2 class="h3 mb-4 col-10 offset-1 col-md-6 offset-md-3 text-center">Key Benefits</h2>
-        <div class="row">
-            <div class="col-10 offset-1 col-md-6 offset-md-3 text-center mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Efficient Record-Keeping</h5>
-                        <p class="card-text">Easily add and update individual animal profiles, including cows, bulls,
-                            and calves.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-10 offset-1 col-md-6 offset-md-3 text-center mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Breeding Management</h5>
-                        <p class="card-text">Record and track breeding events, ensuring optimal reproduction cycles.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-10 offset-1 col-md-6 offset-md-3 text-center mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Calf Tracking</h5>
-                        <p class="card-text">Monitor calf growth and development from birth.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-10 offset-1 col-md-6 offset-md-3 text-center mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Time-Saving</h5>
-                        <p class="card-text">Reduce paperwork and streamline your daily farm management tasks.</p>
-                    </div>
+<section class="mb-2">
+    <h2 class="h3 mb-4 col-10 offset-1 col-md-6 offset-md-3 text-center">Key Benefits</h2>
+    <div class="row">
+        <div class="col-10 offset-1 col-md-6 offset-md-3 text-center mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Efficient Record-Keeping</h5>
+                    <p class="card-text">Easily add and update individual animal profiles, including cows, bulls,
+                        and calves.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="mb-3 col-10 offset-1 col-md-6 offset-md-3 text-center">
-        <h2 class="h3 mb-2 text-center">Our Commitment</h2>
-        <p>Herdhub is committed to supporting the dairy industry by providing easy-to-use technology that
-            grows with your farm. We understand the unique challenges faced by dairy farmers and have designed our
-            system to address these specific needs.</p>
-    </section>
-
-    <section class="mb-5 col-10 offset-1 col-md-6 offset-md-3 text-center">
-        <h2 class="h3 mb-2 text-center">Join the Herdhub Community</h2>
-        <p>Join us in revolutionizing dairy farm management. With Herdhub, you're not just getting a management system;
-            you're becoming part of a community of forward-thinking farmers who are embracing technology to improve
-            their operations.</p>
-    </section>
-
-    <section class="text-center">
-        <p class="mb-4"><strong>Ready to Transform Your Farm Management?</strong></p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="{% url 'account_signup' %}" class="btn btn-success">Register Now</a>
-            <a href="{% url 'account_login' %}" class="btn btn-success">Log in</a>
+        <div class="col-10 offset-1 col-md-6 offset-md-3 text-center mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Breeding Management</h5>
+                    <p class="card-text">Record and track breeding events, ensuring optimal reproduction cycles.</p>
+                </div>
+            </div>
         </div>
-    </section>
+        <div class="col-10 offset-1 col-md-6 offset-md-3 text-center mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Calf Tracking</h5>
+                    <p class="card-text">Monitor calf growth and development from birth.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 offset-1 col-md-6 offset-md-3 text-center mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Time-Saving</h5>
+                    <p class="card-text">Reduce paperwork and streamline your daily farm management tasks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-3 col-10 offset-1 col-md-6 offset-md-3 text-center">
+    <h2 class="h3 mb-2 text-center">Our Commitment</h2>
+    <p>Herdhub is committed to supporting the dairy industry by providing easy-to-use technology that
+        grows with your farm. We understand the unique challenges faced by dairy farmers and have designed our
+        system to address these specific needs.</p>
+</section>
+
+<section class="mb-5 col-10 offset-1 col-md-6 offset-md-3 text-center">
+    <h2 class="h3 mb-2 text-center">Join the Herdhub Community</h2>
+    <p>Join us in revolutionizing dairy farm management. With Herdhub, you're not just getting a management system;
+        you're becoming part of a community of forward-thinking farmers who are embracing technology to improve
+        their operations.</p>
+</section>
+
+<section class="text-center">
+    <p class="mb-4"><strong>Ready to Transform Your Farm Management?</strong></p>
+    <div class="d-flex justify-content-center gap-3">
+        <a href="{% url 'account_signup' %}" class="btn btn-success">Register Now</a>
+        <a href="{% url 'account_login' %}" class="btn btn-success">Log in</a>
+    </div>
+</section>
 </div>
 {% endblock %}

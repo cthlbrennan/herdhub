@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const heroImageAbout = document.getElementById('about-image');
     if (heroImageAbout) {
-        const imageUrlAbout = heroImage.getAttribute('data-image-url');
+        const imageUrlAbout = heroImageAbout.getAttribute('data-image-url');
         heroImageAbout.style.backgroundImage = `url("${imageUrlAbout}")`;
     }
 
