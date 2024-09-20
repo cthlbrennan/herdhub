@@ -261,18 +261,6 @@ footer a:hover {
     justify-content: space-between;
     align-items: center;
 }
-
-@media (max-width: 576px) {
-    .list-group-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .list-group-item>div {
-        margin-top: 10px;
-    }
-}
-
 .dashboard-links {
     max-width: 700px;
     background-color: #f8f9fa;
@@ -293,4 +281,20 @@ footer a:hover {
     border: 2px solid #1A3326;
     padding: 10px;    
 }
+
+#key-features-list>li {
+    list-style-type: none;
+}
+
+@media (max-width: 576px) {
+    .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .list-group-item>div {
+        margin-top: 10px;
+    }
+}
+
 

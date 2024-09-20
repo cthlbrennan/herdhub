@@ -8,6 +8,7 @@ admin.site.register(Breeding)
 admin.site.register(Calf)
 
 class MessageAdmin(admin.ModelAdmin):
+    """Adds extra functionality for reading messages on the admin page."""
     list_display = ('message_id', 'user_profile', 'sent_on', 'short_message', 'read')
     list_filter = ('read', 'sent_on')
     search_fields = ('user_profile__username', 'message')

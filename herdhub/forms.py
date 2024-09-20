@@ -3,6 +3,7 @@ from cloudinary.forms import CloudinaryFileField
 from .models import BreedChoices, HealthChoices, PregnancyStatus, Cow, Bull, Calf, Breeding, Message
 
 class AddCowForm(forms.ModelForm):
+    """Form for adding or editing a cow in the herd."""
     image = CloudinaryFileField(
         options = {
             'folder': 'cows',
@@ -48,6 +49,7 @@ class AddCowForm(forms.ModelForm):
         return milk_production
     
 class AddBullForm(forms.ModelForm):
+    """Form for adding or editing a bull in the herd."""
     image = CloudinaryFileField(
         options = {
             'folder': 'bulls',
@@ -65,6 +67,7 @@ class AddBullForm(forms.ModelForm):
         }
 
 class AddBreedingForm(forms.ModelForm):
+    """Form for adding or editing a breeding event."""
     class Meta:
         model = Breeding
         fields = ['bull', 'cow', 'breeding_date', 'breeding_method', 'resulting_pregnancy', 'comments']
@@ -84,6 +87,7 @@ class AddBreedingForm(forms.ModelForm):
 
 
 class AddCalfForm(forms.ModelForm):
+    """Form for adding or editing a calf in the herd."""
     image = CloudinaryFileField(
         options = {
             'folder': 'calves',  # Changed from 'calfs' to 'calves' for consistency
@@ -107,6 +111,7 @@ class AddCalfForm(forms.ModelForm):
             self.fields['breeding'].queryset = Breeding.objects.filter(user=user)
 
 class SendMessageForm(forms.ModelForm):
+    """Form for sending a message to the admin."""
     class Meta:
         model = Message
         fields = ['message']

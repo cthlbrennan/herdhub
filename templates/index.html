@@ -180,7 +180,8 @@ Home
 
 {% endif %}
 {% else %}
-<section id="hero-image" data-image-url="{% static 'images/hero_image_resized.jpg' %}" class="mb-2">
+<section id="hero-image" data-image-url="{% static 'images/hero_image_resized.jpg' %}" class="mb-2"
+    aria-label="Image of cows in a field">
     <div id="hero-text" class="text-center mb-5 mt-5">
         <h1 class="display-4">Welcome to Herdhub</h1>
         <p class="lead">Dairy farm management, without the BS.</p>
@@ -191,7 +192,7 @@ Home
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-10 col-md-8">
-                <p class="text-center">Herdhub is an online livestock management app for dairy farmers.</p>
+                <h3 class="text-center">Herdhub is an online livestock management app for dairy farmers.</h3>
                 <p class="text-center">Designed with ease-of-use as a priority, Herdhub helps you to track the health,
                     status and production data of your herd. This enables you to make informed decisions, improve herd
                     productivity, and streamline your farm
@@ -200,13 +201,37 @@ Home
         </div>
     </div>
 </section>
-<section class="mb-5 col-10 offset-1 col-md-8 offset-md-2 text-center">
-    <h2 class="h3 mb-1 text-center">Key Features:</h2>
-    <ul class="list-group p-2">
-        <li class="list-group-item text-center">Easy animal registration and record-keeping</li>
-        <li class="list-group-item text-center">Track breeding</li>
-        <li class="list-group-item text-center">Calf management</li>
-        <li class="list-group-item text-center">Herd overview</li>
+<section class="mb-5 col-10 offset-1 col-md-6 offset-md-3 text-center">
+    <h2 class="h3 mb-1 text-center">Key Features</h2>
+    <ul id='key-features-list' class="list-group p-2 text-center">
+        <li>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Easy record-keeping</h5>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Track Breeding</h5>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Calf Management</h5>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Herd Overview</h5>
+                </div>
+            </div>
+        </li>
     </ul>
 </section>
 
@@ -272,6 +297,7 @@ Home
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 <section id="testimonial-carousel" class="mb-5 testimonial container carousel slide" data-bs-ride="carousel">
@@ -323,22 +349,20 @@ Home
     </button>
 </section>
 
-<section class="text-center mb-5">
+<div class="text-center mb-5">
     <div class="d-flex justify-content-center gap-3">
         <a href="{% url 'account_signup' %}" class="btn btn-success">Register Now</a>
         <a href="{% url 'about' %}" class="btn btn-success">Learn More</a>
     </div>
-</section>
+</div>
 
-<section class="text-center">
+<div class="text-center">
     <div class="d-flex justify-content-center gap-3">
         <a href="{% url 'account_login' %}" class="btn btn-success">
             <p class="mb-0">Already signed up?</p>
             <p class="mb-0">Log in to your account</p>
         </a>
     </div>
-</section>
-
 </div>
 {% endif %}
 {% endblock %}

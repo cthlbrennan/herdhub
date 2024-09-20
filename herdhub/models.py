@@ -6,6 +6,9 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class BreedChoices(models.TextChoices):
+    """
+    Choices for cattle breeds.
+    """
     HOLSTEIN = 'Holstein', 'Holstein'
     JERSEY = 'Jersey', 'Jersey'
     ANGUS = 'Angus', 'Angus'
@@ -16,11 +19,17 @@ class BreedChoices(models.TextChoices):
     CHAROLAIS = 'Charolais', 'Charolais'
 
 class HealthChoices(models.TextChoices):
+    """
+    Choices for animal health status.
+    """
     POOR = "Poor", 'Poor'
     GOOD = "Good", 'Good'
     EXCELLENT = "Excellent", 'Excellent'
 
 class PregnancyStatus(models.TextChoices):
+    """
+    Choices for cow pregnancy status.
+    """
     NOT_PREGNANT = "Not Pregnant", "Not Pregnant"
     PREGNANT = "Pregnant", "Pregnant"
     IN_HEAT = "In Heat", "In Heat"
@@ -30,14 +39,23 @@ class PregnancyStatus(models.TextChoices):
     CALVING = "Calving", "Calving"
 
 class CalfSex(models.TextChoices):
+    """
+    Choices for calf sex.
+    """
     MALE = "Male", "Male"
     FEMALE = "Female", "Female"
 
 class BreedingMethod(models.TextChoices):
+    """
+    Choices for breeding methods.
+    """
     NATURAL_SERVICE = "Natural Service", "Natural Service"  
     ARTIFICIAL_INSEMINATION = "Artificial Insemination", "Artificial Insemination"  
 
 class CalvingMethod(models.TextChoices):
+    """
+    Choices for calving methods.
+    """
     NATURAL_UNASSISTED = 'Natural Unassisted', 'Natural Unassisted'
     ASSISTED = 'Assisted', 'Assisted'  
     C_SECTION = 'C-Section', 'C-Section'  
@@ -45,6 +63,9 @@ class CalvingMethod(models.TextChoices):
     EMERGENCY_ASSISTANCE = 'Emergency Assistance', 'Emergency Assistance'  
 
 class Message(models.Model):
+    """
+    Model representing messages which can be submitted by users directly to the admin.
+    """
     message_id = models.AutoField(primary_key=True)
     user_profile = models.ForeignKey(User, on_delete=models.CASCADE)
     sent_on = models.CharField()
@@ -55,6 +76,9 @@ class Message(models.Model):
         return f"Message from {self.user_profile}"
 
 class Bull(models.Model):
+    """
+    Model representing a bull in the herd.
+    """
     bull_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image_id = CloudinaryField('image', blank=True, default='')  # CloudinaryField for images
@@ -82,6 +106,9 @@ class Bull(models.Model):
         return f"Bull {self.registration_number}: Breed {self.breed}"
 
 class Cow(models.Model):
+    """
+    Model representing a cow in the herd.
+    """
     cow_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image_id = CloudinaryField('image', blank=True, default='')  # Add this line
@@ -116,6 +143,9 @@ class Cow(models.Model):
         return f"Cow {self.registration_number}: Breed {self.breed}"
 
 class Breeding(models.Model):
+    """
+    Model representing a breeding event.
+    """
     breeding_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     bull = models.ForeignKey(Bull, on_delete=models.CASCADE)
@@ -133,6 +163,9 @@ class Breeding(models.Model):
 
 
 class Calf(models.Model):
+    """
+    Model representing a calf in the herd.
+    """
     calf_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image_id = CloudinaryField('image', blank=True, default='')  
