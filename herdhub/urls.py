@@ -21,6 +21,8 @@ urlpatterns = [
     path('edit_calf/<int:calf_id>/', views.edit_calf, name='edit_calf'),  
     path('delete_calf/<int:calf_id>/', views.delete_calf, name='delete_calf'),
     path('send_message/', views.send_message, name='send_message'),
+    path('404/', views.show404page, name='show_404'),
+    path('500/', views.show500page, name='show_500'),
     ]
 
 handler404 = 'herdhub.views.show404page' 

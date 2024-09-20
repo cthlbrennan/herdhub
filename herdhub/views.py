@@ -494,7 +494,7 @@ def send_message(request):
     
     return render(request, 'send_message.html', {'form': form})
 
-def show404page(request, exception):
+def show404page(request):
     """
     Handles 404 errors.
 
@@ -507,7 +507,7 @@ def show404page(request, exception):
     """
     return render(request, '404.html', status=404)
     
-def show500page(request, exception):
+def show500page(request):
     """
     Handles 500 errors.
 
