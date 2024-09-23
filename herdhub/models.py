@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
+
 class BreedChoices(models.TextChoices):
     """
     Choices for cattle breeds.
@@ -18,6 +19,7 @@ class BreedChoices(models.TextChoices):
     LIMOUSIN = 'Limousin', 'Limousin'
     CHAROLAIS = 'Charolais', 'Charolais'
 
+
 class HealthChoices(models.TextChoices):
     """
     Choices for animal health status.
@@ -25,6 +27,7 @@ class HealthChoices(models.TextChoices):
     POOR = "Poor", 'Poor'
     GOOD = "Good", 'Good'
     EXCELLENT = "Excellent", 'Excellent'
+
 
 class PregnancyStatus(models.TextChoices):
     """
@@ -38,6 +41,7 @@ class PregnancyStatus(models.TextChoices):
     FRESH = 'Fresh', "Fresh"
     CALVING = "Calving", "Calving"
 
+
 class CalfSex(models.TextChoices):
     """
     Choices for calf sex.
@@ -45,26 +49,31 @@ class CalfSex(models.TextChoices):
     MALE = "Male", "Male"
     FEMALE = "Female", "Female"
 
+
 class BreedingMethod(models.TextChoices):
     """
     Choices for breeding methods.
     """
-    NATURAL_SERVICE = "Natural Service", "Natural Service"  
-    ARTIFICIAL_INSEMINATION = "Artificial Insemination", "Artificial Insemination"  
+    NATURAL_SERVICE = "Natural Service", "Natural Service"
+    ARTIFICIAL_INSEMINATION = "Artificial Insemination",
+    "Artificial Insemination"
+
 
 class CalvingMethod(models.TextChoices):
     """
     Choices for calving methods.
     """
     NATURAL_UNASSISTED = 'Natural Unassisted', 'Natural Unassisted'
-    ASSISTED = 'Assisted', 'Assisted'  
-    C_SECTION = 'C-Section', 'C-Section'  
-    INDUCTION = 'Induction', 'Induction'  
-    EMERGENCY_ASSISTANCE = 'Emergency Assistance', 'Emergency Assistance'  
+    ASSISTED = 'Assisted', 'Assisted'
+    C_SECTION = 'C-Section', 'C-Section'
+    INDUCTION = 'Induction', 'Induction'
+    EMERGENCY_ASSISTANCE = 'Emergency Assistance', 'Emergency Assistance'
+
 
 class Message(models.Model):
     """
-    Model representing messages which can be submitted by users directly to the admin.
+    Model representing messages which can be
+    submitted by users directly to the admin.
     """
     message_id = models.AutoField(primary_key=True)
     user_profile = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -75,35 +84,40 @@ class Message(models.Model):
     def __str__(self):
         return f"Message from {self.user_profile}"
 
+
 class Bull(models.Model):
     """
     Model representing a bull in the herd.
     """
     bull_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    image_id = CloudinaryField('image', blank=True, default='')  # CloudinaryField for images
+    image_id = CloudinaryField('image', blank=True, default='')
     registration_number = models.CharField(
         max_length=10,
         validators=[
             RegexValidator(
-            regex='^[A-Za-z0-9]+$',
-            message='Registration number must contain only letters and numbers, 10 characters max.'
+                regex='^[A-Za-z0-9]+$',
+                message=(
+                    'Registration number must be alphanumeric only, '
+                    '10 characters max.'
+                ),
             )
         ]
-    )    
+    )
     dob = models.DateField()
     breed = models.CharField(
         choices=BreedChoices.choices,
         default=BreedChoices.HOLSTEIN,
-    )    
+    )
     health_status = models.CharField(
         choices=HealthChoices.choices,
         default=HealthChoices.GOOD,
-    )   
+    )
     comments = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"Bull {self.registration_number}: Breed {self.breed}"
+
 
 class Cow(models.Model):
     """
@@ -111,13 +125,16 @@ class Cow(models.Model):
     """
     cow_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    image_id = CloudinaryField('image', blank=True, default='')  # Add this line
+    image_id = CloudinaryField('image', blank=True, default='')
     registration_number = models.CharField(
         max_length=10,
         validators=[
             RegexValidator(
-            regex='^[A-Za-z0-9]+$',
-            message='Registration number must contain only letters and numbers, 10 characters max.'
+                regex='^[A-Za-z0-9]+$',
+                message=(
+                    'Registration number must be alphanumeric only, '
+                    '10 characters max.'
+                ),
             )
         ]
     )
@@ -125,22 +142,33 @@ class Cow(models.Model):
     breed = models.CharField(
         choices=BreedChoices.choices,
         default=BreedChoices.HOLSTEIN,
-    )    
+    )
     health_status = models.CharField(
         choices=HealthChoices.choices,
         default=HealthChoices.GOOD,
-    )     
+    )
     pregnancy_status = models.CharField(
         choices=PregnancyStatus.choices,
         default=PregnancyStatus.NOT_PREGNANT
     )
-    number_of_calvings = models.IntegerField(null=False, blank=False, default='0', validators=[MinValueValidator(0)])
+    number_of_calvings = models.IntegerField(
+        null=False,
+        blank=False,
+        default='0',
+        validators=[MinValueValidator(0)]
+        )
     last_calving_date = models.DateField()
-    milk_production = models.IntegerField(null=False, blank=False, default='2000', validators=[MinValueValidator(0)])
+    milk_production = models.IntegerField(
+        null=False,
+        blank=False,
+        default='2000',
+        validators=[MinValueValidator(0)]
+        )
     comments = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"Cow {self.registration_number}: Breed {self.breed}"
+
 
 class Breeding(models.Model):
     """
@@ -159,7 +187,10 @@ class Breeding(models.Model):
     comments = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return f"Breeding: Bull {self.bull.registration_number} x Cow {self.cow.registration_number} on {self.breeding_date}"
+        return (
+            f"Breeding: Bull {self.bull.registration_number} x "
+            f"Cow {self.cow.registration_number} on {self.breeding_date}"
+        )
 
 
 class Calf(models.Model):
@@ -168,16 +199,19 @@ class Calf(models.Model):
     """
     calf_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    image_id = CloudinaryField('image', blank=True, default='')  
+    image_id = CloudinaryField('image', blank=True, default='')
     registration_number = models.CharField(
         max_length=10,
         validators=[
             RegexValidator(
-            regex='^[A-Za-z0-9]+$',
-            message='Registration number must contain only letters and numbers, 10 characters max.'
+                regex='^[A-Za-z0-9]+$',
+                message=(
+                    'Registration number must be alphanumeric only, '
+                    '10 characters max.'
+                ),
             )
         ]
-    )    
+    )
     breeding = models.ForeignKey(Breeding, on_delete=models.CASCADE)
     sex = models.CharField(
         choices=CalfSex.choices,
