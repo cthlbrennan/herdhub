@@ -157,7 +157,10 @@ class Cow(models.Model):
         default='0',
         validators=[MinValueValidator(0)]
         )
-    last_calving_date = models.DateField()
+    last_calving_date = models.DateField(
+        null=True, 
+        blank=True
+    )
     milk_production = models.IntegerField(
         null=False,
         blank=False,
