@@ -53,3 +53,26 @@ document.addEventListener('DOMContentLoaded', function() {
         formToSubmit.submit();
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    /**
+     *  adjusts size of textfield area for smaller devices
+     */
+    const textarea = document.getElementById('id_comments');
+    
+    if (textarea) {
+        function adjustTextareaWidth() {
+            if (window.innerWidth < 500) {
+                textarea.cols = 20;
+            } else {
+                textarea.cols = 40;
+            }
+        }
+
+        // Initial check and adjustment
+        adjustTextareaWidth();
+
+        // Add resize event listener
+        window.addEventListener('resize', adjustTextareaWidth);
+    }
+});
