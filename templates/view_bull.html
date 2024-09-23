@@ -6,7 +6,7 @@ View Bull
 
 {% block body %}
 <div class="container mt-5">
-    <div class="row justify-content-center">
+    <div class="row justify-content-between">
         <div class="col-md-8">
             <div class="card shadow-sm mb-4">
                 <div class="card-header bg-success text-white">
@@ -16,7 +16,8 @@ View Bull
                     {% if bull.image_id %}
                     <div class="text-center mb-3">
                         <p><strong>Image:</strong></p>
-                        <img class="img-fluid" src="{{ bull.image_id.url }}" alt="User uploaded image of {{ bull.registration_number }}" style="max-width: 100%;">
+                        <img class="img-fluid" src="{{ bull.image_id.url }}"
+                            alt="User uploaded image of {{ bull.registration_number }}" style="max-width: 100%;">
                     </div>
                     {% endif %}
                     <p><strong>Breed:</strong> {{ bull.breed }}</p>
@@ -29,10 +30,10 @@ View Bull
                     <a href="{% url 'edit_bull' bull.bull_id %}" class="btn btn-warning">Edit Details</a>
                     <form method="post" action="{% url 'delete_bull' bull.bull_id %}" class="d-inline">
                         {% csrf_token %}
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                        <a type="button" class="btn btn-danger" data-bs-toggle="modal"
                             data-bs-target="#deleteConfirmModal">
                             Delete Bull
-                        </button>
+                        </a>
                     </form>
                 </div>
             </div>

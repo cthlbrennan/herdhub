@@ -16,11 +16,14 @@ View Calf
                     {% if calf.image_id %}
                     <div class="text-center mb-3">
                         <p><strong>Image:</strong></p>
-                        <img class="img-fluid" src="{{ calf.image_id.url }}" alt="User uploaded image of {{ calf.registration_number }}" style="max-width: 100%;">
+                        <img class="img-fluid" src="{{ calf.image_id.url }}"
+                            alt="User uploaded image of {{ calf.registration_number }}" style="max-width: 100%;">
                     </div>
                     {% endif %}
-                    <p><strong>Sire:</strong> <a href="{% url 'view_bull' sire.bull_id %}">{{ sire.registration_number }}</a></p>
-                    <p><strong>Dam:</strong> <a href="{% url 'view_cow' dam.cow_id %}">{{ dam.registration_number }}</a></p>
+                    <p><strong>Sire:</strong> <a
+                            href="{% url 'view_bull' sire.bull_id %}">{{ sire.registration_number }}</a></p>
+                    <p><strong>Dam:</strong> <a href="{% url 'view_cow' dam.cow_id %}">{{ dam.registration_number }}</a>
+                    </p>
                     <p><strong>Date of Birth:</strong> {{ calf.dob }}</p>
                     <p><strong>Sex:</strong> {{ calf.sex }}</p>
                     <p><strong>Calving Method:</strong> {{ calf.calving_method }}</p>
@@ -31,10 +34,10 @@ View Calf
                     <a href="{% url 'edit_calf' calf.calf_id %}" class="btn btn-warning">Edit Details</a>
                     <form method="post" action="{% url 'delete_calf' calf.calf_id %}" class="d-inline">
                         {% csrf_token %}
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                        <a type="button" class="btn btn-danger" data-bs-toggle="modal"
                             data-bs-target="#deleteConfirmModal">
                             Delete Calf
-                        </button>
+                        </a>
                     </form>
                 </div>
             </div>

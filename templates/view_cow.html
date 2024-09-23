@@ -16,7 +16,8 @@ View Cow
                     {% if cow.image_id %}
                     <div class="text-center mb-3">
                         <p><strong>Image:</strong></p>
-                        <img class="img-fluid" src="{{ cow.image_id.url }}" alt="User uploaded image of {{ cow.registration_number }}" style="max-width: 100%;">
+                        <img class="img-fluid" src="{{ cow.image_id.url }}"
+                            alt="User uploaded image of {{ cow.registration_number }}" style="max-width: 100%;">
                     </div>
                     {% endif %}
                     <p><strong>Breed:</strong> {{ cow.breed }}</p>
@@ -33,10 +34,10 @@ View Cow
                     <a href="{% url 'edit_cow' cow.cow_id %}" class="btn btn-warning">Edit Details</a>
                     <form method="post" action="{% url 'delete_cow' cow.cow_id %}" class="d-inline">
                         {% csrf_token %}
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                        <a type="button" class="btn btn-danger" data-bs-toggle="modal"
                             data-bs-target="#deleteConfirmModal">
                             Delete Cow
-                        </button>
+                        </a>
                     </form>
                 </div>
             </div>
