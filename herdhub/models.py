@@ -191,8 +191,8 @@ class Breeding(models.Model):
 
     def __str__(self):
         return (
-            f"Breeding: Bull {self.bull.registration_number} x "
-            f"Cow {self.cow.registration_number} on {self.breeding_date}"
+            f"Bull {self.bull.registration_number} x "
+            f"Cow {self.cow.registration_number}"
         )
 
 
