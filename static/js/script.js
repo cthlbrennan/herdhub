@@ -61,17 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const textarea = document.getElementById('id_comments');
     
     if (textarea) {
-        function adjustTextareaWidth() {
+        const adjustTextareaWidth = function() {
             if (window.innerWidth < 500) {
                 textarea.cols = 20;
             } else {
                 textarea.cols = 40;
             }
-        }
-
+        };
+      
         // Initial check and adjustment
         adjustTextareaWidth();
-
         // Add resize event listener
         window.addEventListener('resize', adjustTextareaWidth);
     }
