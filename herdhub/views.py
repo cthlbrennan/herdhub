@@ -228,13 +228,13 @@ def view_breeding(request, breeding_id):
         breeding_id (int): The ID of the breeding event to view.
 
     Returns:
-        HttpResponse: Rendered view_breeding_event page with event details.
+        HttpResponse: Rendered view_breeding page with event details.
     """
     breeding_event = get_object_or_404(
         Breeding, breeding_id=breeding_id, user=request.user
     )
     return render(
-        request, 'view_breeding_event.html', {'breeding': breeding_event}
+        request, 'view_breeding.html', {'breeding': breeding_event}
     )
 
 
