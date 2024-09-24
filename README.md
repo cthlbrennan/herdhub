@@ -1,302 +1,89 @@
-# [HERDHUB](https://herdhub-ef517bdcab8e.herokuapp.com)
+![Logo](documentation/readme_images/logo.png)
+[Click here for live site](https://herdhub-ef517bdcab8e.herokuapp.com)
 
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/cthlbrennan/herdhub)](https://github.com/cthlbrennan/herdhub/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/cthlbrennan/herdhub)](https://github.com/cthlbrennan/herdhub/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/cthlbrennan/herdhub)](https://github.com/cthlbrennan/herdhub)
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
 
-!! IMPORTANT !! RE: Table of Contents
-
-DO NOT add a Table of Contents to your README or TESTING!!
-These are outdated since 2021 when GitHub added them built-in to Markdown files automatically.
-
-Assessors see this as bad practice since it's outdated for a few years now,
-as if you've taken it from someone else's project that did the same thing.
-
----
-
-In this section, you will include a few paragraphs providing an overview of your project.
-Essentially, this part is your "sales pitch".
-
-At this stage, you should have a name for your project so use it!
-Don't introduce the project as a "portfolio project" for the diploma.
-
-In this section, describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience.
-
-Consider adding a mockup image using the "Am I Responsive" website.
-Here's your deployed site as an example:
-https://ui.dev/amiresponsive?url=https://herdhub-ef517bdcab8e.herokuapp.com
-
-⚠️ NOTE: Issues generating site mockups (Django projects)
-This is likely due to security policies with your deployed site.
-If you open up your dev tools, there may be an error referencing `X-Frame-Options`.
-For Chrome users, head over to http://bit.ly/3iRPn4u and install the extension within your browser.
-Once installed, navigate back to the site above.
-You should find your site rendering in the various devices.
-Alternatively, open your project in Gitpod and run the server.
-Once the site is running, click the `Ports` tab at the bottom of your Gitpod workspace (Ports: 2205, 05432, 8000... ).
-Click the padlock on port `8000`.
-This will make your local page public temporarily.
-Now copy the URL of your live-preview page into the responsive tool above.
-You should find your site rendering in the various devices.
-
-Screenshots for the README and testing should not be inside of `assets/` or `static/` image folders.
-(reminder: `assets/` and `static/` are for files used on the live site, not documentation)
-Consider adding a new folder called `documentation`, and add the amiresponsive screenshot inside of that folder.
-To add the image into your README, use this format:
-(assuming you have a new folder called `documentation` with an image called "mockup.png")
-
-![screenshot](documentation/mockup.png)
-
-Note: Markdown files (.md) should not contain HTML elements like `img`, `br`, `div`, `a`, etc, only Markdown formatting.
-Find out more about using Markdown elements here:
-https://pandao.github.io/editor.md/en.html
-
----
-
-GitHub now supports CALLOUTS in Markdown files.
-There are some callouts already embedded in this application for you.
-However, if you feel that you want to add more, there are certain ones you can use.
-
-NOTE: the preview for callouts isn't yet supported in Gitpod/Codeanywhere/VSCode/etc.
-You'll have to commit/push the changes to GitHub to see it in action.
-
-> [!NOTE]  
-> BLUE: Highlights information that users should take into account, even when skimming.
-
-> [!TIP]  
-> GREEN: Optional information to help a user be more successful.
-
-> [!IMPORTANT]  
-> PURPLE: Crucial information necessary for users to succeed.
-
-> [!WARNING]  
-> YELLOW: Critical content demanding immediate user attention due to potential risks.
-
-> [!CAUTION]  
-> RED: Negative potential consequences of an action.
-
-Source: https://github.com/orgs/community/discussions/16925
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-![screenshot](documentation/mockup.png)
-
+![](documentation/readme_images/amiresponsive.gif)
 source: [amiresponsive](https://ui.dev/amiresponsive?url=https://herdhub-ef517bdcab8e.herokuapp.com)
+
+ Herdhub is a livestock management web application for dairy farmers. Designed with ease-of-use as a priority, the website allows dairy farmers to catalogue the key details of every animal in their herd. Users can also record breeding logs between animals to newborn calves, enabling them to easily and efficiently manage their livestock. Users can easily register their account and safely store the data of their herd within an intuitive dashboard-style user interface. 
 
 ## UX
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
-
-In this section, you will briefly explain your design processes.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+The primary goal was to provide an easy-to-use interface that would allow users to update the details of their herd with minimal fuss. Providing users with an up-to-date herd overview immediately upon signing in, the app is simple, intuitive and responsive to user interaction through pop-up messages confirming their actions.  
 
 ### Colour Scheme
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+To reflect the application's utility for the agricultural industry, the palette is primarily typified by contrasting shades of green in addition to black and white. 
 
-Explain your colours and the colour scheme.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- `#000000` used for primary text.
-- `#E84610` used for primary highlights.
-- `#4A4A4F` used for secondary text.
-- `#009FE3` used for secondary highlights.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
-
-Consider adding a link and screenshot for your colour scheme using "coolors".
-https://coolors.co/generate
-
-When you add a colour to the palette, the URL is dynamically updated, making it easier for you to return back to your colour palette later if needed.
-
-Example:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-I used [coolors.co](https://coolors.co/e84610-009fe3-4a4a4f-445261-d63649-e6ecf0-000000) to generate my colour palette.
-
-![screenshot](documentation/coolors.png)
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
-
-⚠️ ONLY IF YOU ACTUALLY ADDED `:root` variables in CSS! ⚠️
-If you've used CSS `:root` variables, consider also including a code snippet here!
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-I've used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
-
-```css
-:root {
-    /* P = Primary | S = Secondary */
-    --p-text: #000000;
-    --p-highlight: #E84610;
-    --s-text: #4A4A4F;
-    --s-highlight: #009FE3;
-    --white: #FFFFFF;
-    --black: #000000;
-}
-```
+![Palette](documentation/readme_images/palette.png)
+Source: [coolors.co](https://www.coolors.co)
 
 ### Typography
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+The typeface used is Lucida Sans, a sans-serif font that allows for easy readability and aligns with the practical design ethos of the application. 
 
-Explain any fonts and icon libraries used, like Google Fonts and/or Font Awesome.
-
-Consider adding a link to each font used, and the Font Awesome site if used (or similar icon library).
-
-Example:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
-
-- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+Social media brand icons from [Font Awesome](https://fontawesome.com) are used in the footer.
 
 ## User Stories
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, list all of your user stories for the project.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-### New Site Users
-
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-
-### Returning Site Users
-
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
+- As a new user, I want to have a clear idea of the purpose of the web application so that I can understand the value that it would provide me.
+- As the product owner, if a user submits a message then I want them to receive a confirmation email telling them that their message has been submitted to improve the user experience.
+- As a user, I want to be able to log in through my gmail or social media account.
+- As a user, I want to be able to reset my password so that I can regain access to my database in case I forget the original
+- As the product owner, I want to make sure that there are custom 404 and 500 pages so that the website looks professional and provides users with a positive experience.
+- As a user, I want to add photos to animal profiles so that I can include photos within my database
+- As the administrator, I want users to be able to submit messages to me so that I can troubleshoot any problems they might have
+- As a user, I want to be able to log out easily so that I can be sure that my data remains secure after I have finished using the website
+- As a user, I want to be able to change the details of a specific animal so that my database remains up-to-date
+- As the product owner, I want to make sure that the models are full functional so that users don't experience bugs
+- As the product owner, I want users to get messages after they've logged in, logged out, successfully added an animal, etc so that they get immediate feedback on their interactions
+- As a user, I want to create profiles for each of my animals so that I can easily track their individual history and characteristics
+- As a user, I want to view a list of all animals in my herd with key details shown, so that I can read an overview of my herd
+- As a user, I want to be able to select a specific animal or breeding event and access comprehensive detailed overview of it
+- As a user, I want to log breeding events so that I can monitor reproductive outcomes and optimise my breeding program
+- As a user, I want to be able to delete animals from my database in case an animal is sold, dies, etc, so that I can maintain an accurate database
+- As the product owner, I want there to be an admin account so that the website can be monitored and maintained
+- As the product owner, I want to make sure that all code is validated so that the code is clean, readable and maintainable
+- As a user, I want to be able to register an account so that I can manage my livestock
+- As a user, I want to be able to log in with a username and password so that I can securely access my data
+- As the product owner, I want to ensure that my deployed website is linked to a cloud-based database
+- As the product owner, I want to have the website deployed so that people can find and use my product
+- As the product owner, I want the website to have a robust database schema that would serve the needs of users
+- As a logged in user, I want to navigate my records easily so that I can easily access my data
+- As the product owner, I want the authentication pages to match the appearance of the rest of the site so that the site will have a coherent, consistent and professional appearance
 
 ### Site Admin
-
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
+- As the administrator, I want to be able to securely access the admin page so that I can maintain and update the website easily
+- As the administrator, I want to have CRUD functionality over all users' databases so that I can monitor and maintain the website
+- As the administrator, I want users to be able to submit messages to me so that I can troubleshoot any problems they might have
 
 ## Wireframes
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, display your wireframe screenshots using a Markdown `table`.
-Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
-
-Alternatively, dropdowns are a way to condense several wireframes into a collapsible menu to save space.
-Dropdowns in Markdown are considered some of the only acceptable HTML components that are allowed for assessment purposes.
-
-⚠️ **IMPORTANT**! ⚠️ **IMPORTANT**! ⚠️ **IMPORTANT**! ⚠️
-The example below uses the `details` and `summary` code elements.
-However, for these scripts to work, I've had to add spaces within the `< >` elements.
-
-You MUST remove these spaces for it to work properly on your own README/TESTING files.
-Remove the spaces within the `< >` brackets for the `details` and `summary` code elements,
-for the Mobile, Tablet, and Desktop wireframes.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
-### Mobile Wireframes
-
-< details >
-< summary > Click here to see the Mobile Wireframes < / summary >
-
 Home
-  - ![screenshot](documentation/wireframes/mobile-home.png)
+  ![wireframe](documentation/wireframes/home-page-wireframe.png)
 
-About
-  - ![screenshot](documentation/wireframes/mobile-about.png)
+Dashboard
+  ![wireframe](documentation/wireframes/dashboard-wireframe.png)
 
-Contact
-  - ![screenshot](documentation/wireframes/mobile-contact.png)
+Add Cow Page
+  ![wireframe](documentation/wireframes/add-cow-wireframe.png)
 
-Gallery
-  - ![screenshot](documentation/wireframes/mobile-gallery.png)
+Edit Cow Page
+  ![wireframe](documentation/wireframes/edit-cow.png)
 
-etc.
-  - repeat for any remaining mobile wireframes
-
-< / details >
-
-### Tablet Wireframes
-
-< details >
-< summary > Click here to see the Tablet Wireframes < / summary >
-
-Home
-  - ![screenshot](documentation/wireframes/tablet-home.png)
-
-About
-  - ![screenshot](documentation/wireframes/tablet-about.png)
-
-Contact
-  - ![screenshot](documentation/wireframes/tablet-contact.png)
-
-Gallery
-  - ![screenshot](documentation/wireframes/tablet-gallery.png)
-
-etc.
-  - repeat for any remaining tablet wireframes
-
-< / details >
-
-### Desktop Wireframes
-
-< details >
-< summary > Click here to see the Desktop Wireframes < / summary >
-
-Home
-  - ![screenshot](documentation/wireframes/desktop-home.png)
-
-About
-  - ![screenshot](documentation/wireframes/desktop-about.png)
-
-Contact
-  - ![screenshot](documentation/wireframes/desktop-contact.png)
-
-Gallery
-  - ![screenshot](documentation/wireframes/desktop-gallery.png)
-
-etc.
-  - repeat for any remaining desktop wireframes
-
-< / details >
+Delete Cow Modal
+  ![wireframe](documentation/wireframes/delete-cow.png)
 
 ## Features
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
 
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
-
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-IMPORTANT: Remember to always include a screenshot of each individual feature!
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ### Existing Features
 
@@ -306,36 +93,7 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 ![screenshot](documentation/features/feature01.png)
 
-- **YOUR-TITLE-FOR-FEATURE-#2**
-
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
-
-![screenshot](documentation/features/feature02.png)
-
-- **YOUR-TITLE-FOR-FEATURE-#3**
-
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
-
-![screenshot](documentation/features/feature03.png)
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-Repeat as necessary for as many features as your site contains.
-
-Hint: the more, the merrier!
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 ### Future Features
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-Do you have additional ideas that you'd like to include on your project in the future?
-Fantastic! List them here!
-It's always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 - YOUR-TITLE-FOR-FUTURE-FEATURE-#1
     - Any additional notes about this feature.
@@ -345,15 +103,6 @@ Consider adding any helpful links or notes to help remind you in the future, if 
     - Any additional notes about this feature.
 
 ## Tools & Technologies Used
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, you should explain the various tools and technologies used to develop the project.
-Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project might've used others.
-Feel free to delete any unused items below as necessary.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 - ⚠️⚠️ REQUIRED <-- delete me ⚠️⚠️
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
@@ -404,11 +153,7 @@ Feel free to delete any unused items below as necessary.
 Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
 Understanding the relationships between different tables can save time later in the project.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
 
-Using your defined models (one example below), create an ERD with the relationships identified.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ```python
 class Product(models.Model):
@@ -428,42 +173,7 @@ class Product(models.Model):
         return self.name
 ```
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-A couple recommendations for building free ERDs:
-- [Draw.io](https://draw.io)
-- [Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
-
-A more comprehensive ERD can be auto-generated once you're
-at the end of your development stages, just before you submit.
-Follow the steps below to obtain a thorough ERD that you can include.
-Feel free to leave the steps in the README for future use to yourself.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-I have used `pygraphviz` and `django-extensions` to auto-generate an ERD.
-
-The steps taken were as follows:
-- In the terminal: `sudo apt update`
-- then: `sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
-- then type `Y` to proceed
-- then: `pip3 install django-extensions pygraphviz`
-- in my `settings.py` file, I added the following to my `INSTALLED_APPS`:
-```python
-INSTALLED_APPS = [
-    ...
-    'django_extensions',
-    ...
-]
-```
-- back in the terminal: `python3 manage.py graph_models -a -o erd.png`
-- dragged the new `erd.png` file into my `documentation/` folder
-- removed `'django_extensions',` from my `INSTALLED_APPS`
-- finally, in the terminal: `pip3 uninstall django-extensions pygraphviz -y`
-
 ![erd](documentation/erd.png)
-source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)
-
 
 ## Agile Development Process
 
@@ -473,12 +183,6 @@ source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to
 It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
 
 Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-Consider adding a basic screenshot of your Projects Board.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ![screenshot](documentation/gh-projects.png)
 
@@ -519,16 +223,6 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 > For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 ## Deployment
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-**IMPORTANT:**
-
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 The live deployed application can be found deployed on [Heroku](https://herdhub-ef517bdcab8e.herokuapp.com).
 
@@ -686,34 +380,13 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
 
-Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ## Credits
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
 
-In this section you need to reference where you got your content, media, and extra help from.
-It is common practice to use code from other repositories and tutorials,
-however, it is important to be very specific about these sources to avoid plagiarism.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ### Content
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas.
-
-Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
-
-⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 | Source | Location | Notes |
 | --- | --- | --- |
@@ -732,22 +405,6 @@ Ideally, you should provide an actual link to every resource used, not just a ge
 
 ### Media
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
-A few examples have been provided below to give you some ideas.
-
-If you're the owner (or a close acquaintance) of all media files, then make sure to specify this.
-Let the assessors know that you have explicit rights to use the media files within your project.
-
-Ideally, you should provide an actual link to every media file used, not just a generic link to the main site!
-The list below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links
-by sending yourself the following command: `!freemedia`.
-
-⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
 | [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
@@ -761,15 +418,6 @@ by sending yourself the following command: `!freemedia`.
 | [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
 
 ### Acknowledgements
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
-A few examples have been provided below to give you some ideas.
-
-⚠️⚠️ EXAMPLES ONLY - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
