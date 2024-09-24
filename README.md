@@ -11,6 +11,8 @@ source: [amiresponsive](https://ui.dev/amiresponsive?url=https://herdhub-ef517bd
 
  Herdhub is a livestock management web application for dairy farmers. Designed with ease-of-use as a priority, the website allows dairy farmers to catalogue the key details of every animal in their herd. Users can also record breeding logs between animals to newborn calves, enabling them to easily and efficiently manage their livestock. Users can easily register their account and safely store the data of their herd within an intuitive dashboard-style user interface. 
 
+ The name Herdhub is derived from Github, as the website acts as a repository for the herd data of its individual registered users in a manner similar to how Github is used for programmers. In a similar vein, the Herdhub logo also takes inspiration from Github's cat logo. 
+
 ## UX
 
 The primary goal was to provide an easy-to-use interface that would allow users to update the details of their herd with minimal fuss. Providing users with an up-to-date herd overview immediately upon signing in, the app is simple, intuitive and responsive to user interaction through pop-up messages confirming their actions.  
@@ -30,40 +32,44 @@ Social media brand icons from [Font Awesome](https://fontawesome.com) are used i
 
 ## User Stories
 
+User stories formed a key part of the Agile methodology which guided the development of this application. They can be found within the Product Backlog on Github 
+[here](https://github.com/users/cthlbrennan/projects/3).
+
 - As a new user, I want to have a clear idea of the purpose of the web application so that I can understand the value that it would provide me.
 - As the product owner, if a user submits a message then I want them to receive a confirmation email telling them that their message has been submitted to improve the user experience.
 - As a user, I want to be able to log in through my gmail or social media account.
-- As a user, I want to be able to reset my password so that I can regain access to my database in case I forget the original
+- As a user, I want to be able to reset my password so that I can regain access to my database in case I forget the original.
 - As the product owner, I want to make sure that there are custom 404 and 500 pages so that the website looks professional and provides users with a positive experience.
-- As a user, I want to add photos to animal profiles so that I can include photos within my database
-- As the administrator, I want users to be able to submit messages to me so that I can troubleshoot any problems they might have
-- As a user, I want to be able to log out easily so that I can be sure that my data remains secure after I have finished using the website
-- As a user, I want to be able to change the details of a specific animal so that my database remains up-to-date
-- As the product owner, I want to make sure that the models are full functional so that users don't experience bugs
-- As the product owner, I want users to get messages after they've logged in, logged out, successfully added an animal, etc so that they get immediate feedback on their interactions
-- As a user, I want to create profiles for each of my animals so that I can easily track their individual history and characteristics
-- As a user, I want to view a list of all animals in my herd with key details shown, so that I can read an overview of my herd
-- As a user, I want to be able to select a specific animal or breeding event and access comprehensive detailed overview of it
-- As a user, I want to log breeding events so that I can monitor reproductive outcomes and optimise my breeding program
-- As a user, I want to be able to delete animals from my database in case an animal is sold, dies, etc, so that I can maintain an accurate database
-- As the product owner, I want there to be an admin account so that the website can be monitored and maintained
-- As the product owner, I want to make sure that all code is validated so that the code is clean, readable and maintainable
-- As a user, I want to be able to register an account so that I can manage my livestock
-- As a user, I want to be able to log in with a username and password so that I can securely access my data
-- As the product owner, I want to ensure that my deployed website is linked to a cloud-based database
-- As the product owner, I want to have the website deployed so that people can find and use my product
-- As the product owner, I want the website to have a robust database schema that would serve the needs of users
-- As a logged in user, I want to navigate my records easily so that I can easily access my data
-- As the product owner, I want the authentication pages to match the appearance of the rest of the site so that the site will have a coherent, consistent and professional appearance
+- As a user, I want to add photos to animal profiles so that I can include photos within my database.
+- As the administrator, I want users to be able to submit messages to me so that I can troubleshoot any problems they might have.
+- As a user, I want to be able to log out easily so that I can be sure that my data remains secure after I have finished using the website.
+- As a user, I want to be able to change the details of a specific animal so that my database remains up-to-date.
+- As the product owner, I want to make sure that the models are full functional so that users don't experience bugs.
+- As the product owner, I want users to get messages after they've logged in, logged out, successfully added an animal, etc so that they get immediate feedback on their interactions.
+- As a user, I want to create profiles for each of my animals so that I can easily track their individual history and characteristics.
+- As a user, I want to view a list of all animals in my herd with key details shown, so that I can read an overview of my herd.
+- As a user, I want to be able to select a specific animal or breeding event and access comprehensive detailed overview of it.
+- As a user, I want to log breeding events so that I can monitor reproductive outcomes and optimise my breeding program.
+- As a user, I want to be able to delete animals from my database in case an animal is sold, dies, etc, so that I can maintain an accurate database.
+- As the product owner, I want there to be an admin account so that the website can be monitored and maintained.
+- As the product owner, I want to make sure that all code is validated so that the code is clean, readable and maintainable.
+- As a user, I want to be able to register an account so that I can manage my livestock.
+- As a user, I want to be able to log in with a username and password so that I can securely access my data.
+- As the product owner, I want to ensure that my deployed website is linked to a cloud-based database.
+- As the product owner, I want to have the website deployed so that people can find and use my product.
+- As the product owner, I want the website to have a robust database schema that would serve the needs of users.
+- As a logged in user, I want to navigate my records easily so that I can easily access my data.
+- As the product owner, I want the authentication pages to match the appearance of the rest of the site so that the site will have a coherent, consistent and professional appearance.
 
 ### Site Admin
-- As the administrator, I want to be able to securely access the admin page so that I can maintain and update the website easily
-- As the administrator, I want to have CRUD functionality over all users' databases so that I can monitor and maintain the website
-- As the administrator, I want users to be able to submit messages to me so that I can troubleshoot any problems they might have
+- As the administrator, I want to be able to securely access the admin page so that I can maintain and update the website easily.
+- As the administrator, I want to have CRUD functionality over all users' databases so that I can monitor and maintain the website.
+- As the administrator, I want users to be able to submit messages to me so that I can troubleshoot any problems they might have.
 
 ## Wireframes
 
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 Home
@@ -83,24 +89,202 @@ Delete Cow Modal
 
 ## Features
 
-
-
 ### Existing Features
 
-- **YOUR-TITLE-FOR-FEATURE-#1**
+#### Logo
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+![Logo](documentation/features/navbar-brand.png)
 
-![screenshot](documentation/features/feature01.png)
+Upon entering the page, the logo is apparent in the top left corner. This tells the user what website they are on. It is also clickable, allowing users to navigate easily and directly back to the home page from any other page.
+
+#### Navigation Bar
+
+![Navigation Bar](documentation/features/active-page-navbar.png)
+
+Upon entering the page, it is immediately apparent to the user that there is a menu that provides them links to the pages of the website. This makes the page easily navigable for the user. 
+
+The page that the user is actively on will be a darker shade in the navbar. This helps the user to orient themselves within the website, following best principles of good UX design. 
+
+The options available on the navbar also change depending on whether the user is logged in or not. When logged out, the navbar appears as shown below.
+
+![Navigation Bar](documentation/features/logged-out-navbar.png)
+
+#### Dropdown Menu
+
+![Dropdown Menu](documentation/features/dropdown-navbar.png)
+
+At mobile and tablet screen width, the menu options are accessed through a dropdown menu via a hamburger icon.
+
+#### Hero Image on Index Page
+
+![Hero Image, index.html](documentation/features/hero-image-index.png)
+
+For users who are not signed in, the home page is characterised by the large hero image featuring a herd of cows. The overlaid text welcomes the user to the website and provides a quick and catchy slogan that summarises the website's utility. 
+
+#### About Section
+
+![About Section](documentation/features/about-hero-image-and-content.png)
+
+The About page provides more information to users on the utility of the website, as well as as another hero image. The website respects the user's time by cutting right to the core of the business. 
+
+#### Call-to-Action Buttons
+
+![Call-to-Action Buttons](documentation/features/about-call-to-action-buttons.png)
+
+Below the About section, there are two large buttons which invite the user to register now, or log in if they have an account, underneath emboldened large text. These call-to-action buttons encourage interaction from the user. 
+
+#### Testimonials
+
+![Testimonials](documentation/features/testimonial-carousel.png)
+
+Located at the bottom of the home page and visible when not logged in, this section gives three reviews of Herdhub within a Bootstrap carousel component. This is visually engaging and adds extra sheen to the user experience. 
+
+#### Testimonials
+
+![Testimonials](documentation/features/testimonials.png)
+
+Three testimonials are set out here. At the moment, these images are placeholder AI-generated images taken from the website https://thispersondoesnotexist.com/. Furthermore, the names and comments are fictional and also act as placeholders. 
+
+#### Favicon
+
+![Favicon](documentation/features/favicon-and-title.png)
+
+The pages of the website have a favicon of the logo. Furthermore, the title on the tab changes depending on the page that the user is on. 
+
+#### Footer
+
+![Footer](documentation/features/footer-with-links.png)
+
+The footer is present on every page. It contains social media links, as well as links to other pages on the website; these links change depending on whether the user is logged in or not, just like the navbar. This is shown below. 
+
+![Footer](documentation/features/footer-with-links-changes-when-logged-out.png)
+
+The copyright line at the bottom of the footer utilises Django Template Language functionality that allows for the year to be updated automatically without any maintenance from the product owner or site administrator. 
+
+#### Social Media Links
+
+![Social Media Links](documentation/features/social-media-links.png)
+
+The footer contains icons from https://www.fontawesome.com which provide links to their respective social media websites. 
+
+#### Messages to User
+
+![User Message](documentation/features/messages-on-user-action.png)
+
+If the user does anything substantive, like sign in, register, sign out, add an animal to the database, edit details, delete an animal, etc, a small message appears at the top of the screen informing the user that their action has been registered. This interaction with the user provides them with confidence in their use of the website, improving their user experience. 
+
+#### Dashboard
+
+![Dashboard](documentation/features/dashboard.png)
+
+When signed in, the user is brought to the Dashboard. From here, they can get an overview of their herd, add animals and breeding events to the account, and edit/delete existing records. 
+
+#### Herd Overview
+
+![Herd Overview](documentation/features/herd-overview.png)
+
+An overview of the user's herd is located at the top of the Dashboard. 
+
+#### Dashboard Subsection
+
+![Dashboard Subsection](documentation/features/dashboard-subsection.png)
+
+Underneath the Herd Overview, there are four subsections where users can add details of an animal, edit existing records, or delete records.  
+
+#### Internal Links
+
+![Internal Links](documentation/features/internal-links-on-dashboard.png)
+
+At the top of the Dashboard there are internal links which allow for users to get to the four subsections easily. 
+
+At the bottom of each subsection, there is similarly an internal link to get back to the top of the Dashboard. 
+
+![Internal Links](documentation/features/internal-link-back-to-top-of-dashboard.png)
+
+#### Dynamic Dashboard 
+
+![Dynamic Dashboard](documentation/features/dashboard-changes-dynamically.png)
+
+The user needs to have at least one cow and bull registered on their account before they can log a breeding event. Once a breeding event is logged, they can then update the Calves subsection, and relate that calf to a recorded breeding event. This is seen below.
+
+![Dynamic Dashboard](documentation/features/dashboard-changes-dynamically-two.png)
+
+#### 404.html
+
+![404](documentation/features/fourohfour.png)
+
+The website has a custom 404.html page which appears if the user tries to access a URL which doesn't exist. 
+
+#### 500.html
+
+![500](documentation/features/fivehundred.png)
+
+There is also a custom 500.html page which appears if a user encounters a server-side error. 
+
+#### Delete Modal
+
+![Delete Modal](documentation/features/delete-modal.png)
+
+If a user tries to delete a record on any page, a modal appears which looks for additional confirmation that the user wants to permanently delete the record in question. This extra stage of interaction prevents the user from making a mistake either through absent-mindedness or clicking on a delete button by accident. 
+
+#### Sign Up
+
+![Sign Up](documentation/features/sign-up.png)
+
+The sign up page requires the new user to provide a username and password. 
+
+#### Sign In
+
+![Sign In](documentation/features/sign-in.png)
+
+The sign in page requires existing users to provide their credentials in order to access their database. 
+
+#### Sign Out
+
+![Sign Out](documentation/features/sign-out.png)
+
+The sign out page allows users to securely sign out of their accounts. 
+
+#### Contact Form
+
+![Contact Form](documentation/features/contact-page.png)
+
+Accessible for signed in users, this page allows users to send messages to the site administrator in case of technical difficulty, feedback, etc. 
+
+#### Add Cow, Bull, Breeding and Calf Forms
+
+![Add Cow Form](documentation/features/add-cow-form.png)
+
+These pages all follow a similar layout. They allow users to add records to their database, with details such as their registration number, image, date of birth, milk production per annum, breed, etc. 
+
+#### View Cow, Bull, Breeding and Calf Pages
+
+![View Cow Page](documentation/features/view_cow.png)
+
+These pages all are also similar, allowing users to view the full details of an animal or breeding event selected from the Dashboard. 
+
+#### Edit Cow, Bull, Breeding and Calf Pages
+
+![Edit Cow Page](documentation/features/edit_cow.png)
+
+These pages similarly allow users to amend the details of an existing animal or breeding event.  
+
+#### 404 Page
+
+![404 Page](documentation/features/error-page.png)
+
+If there is a 404 error, the user will be sent to the 404 page. This page features a variation of the illustration, with Baby Jay having an angry expression. 
 
 ### Future Features
 
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#1
-    - Any additional notes about this feature.
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#2
-    - Any additional notes about this feature.
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#3
-    - Any additional notes about this feature.
+- SQL Database
+    - This will be needed in order to store messages sent through the contact form.
+- Testimonials
+    - Testimonials and images from real people that Siobhan works with will be used within the testimonial section, replacing the current fictional placeholders. Incorporating a carousel feature for this section would also lend additional interactivity and dynamism to the website that would raise the level of professionalism.  
+- Social Media Links
+    - The links will lead to Siobhan's relevant socials, not placeholders. 
+- Photos
+    - Higher-quality resolution photographs would be needed in the future, especially for the hero images.
 
 ## Tools & Technologies Used
 
