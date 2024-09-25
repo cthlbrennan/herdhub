@@ -297,7 +297,7 @@ Setting up simple mail transfer protocol to allow users to reset their passwords
 - [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
-- [Draw.io](https://www.draw.io) and [mermaid.live](https://www.mermaid.live) were used to create entity relationship diagrams. 
+- [Draw.io](https://www.draw.io) and [mermaid.live](https://www.mermaid.live) were used to create entity relationship diagrams.
 
 ## Database Design
 
@@ -374,10 +374,10 @@ erDiagram
       text comments
     }
 
-    USER ||--o{ MESSAGE: "has many"
+    USER ||--o{ MESSAGE: "can send many"
     USER ||--o{ BULL: "owns many"
     USER ||--o{ COW: "owns many"
-    USER ||--o{ BREEDING: "participates in"
+    USER ||--o{ BREEDING: "manages many"
     USER ||--o{ CALF: "owns many"
     
     BULL ||--o{ BREEDING: "involved in"
@@ -389,42 +389,47 @@ Source: [Mermaid](https://mermaid.live/edit#pako:eNrNVVtv2jAU_iuWn2kVbqPkrV1pNY1
 
 ## Agile Development Process
 
-### GitHub Projects
+Throughout the project, I prioritised the development and implementation of Agile methodologies as a means to efficiently prioritise and manage my workload. 
 
-[GitHub Projects](https://github.com/cthlbrennan/herdhub/projects) served as an Agile tool for this project.
-It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
+Initially, I commited to a central Theme for the website. From that, I derived Epics, each handling a particular area. I further broke down each Epic into several User Stories. 
 
-Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
+![Theme, Epics and User Stories](documentation/agile/agile-methodology.drawio.png)
 
-![screenshot](documentation/gh-projects.png)
+With the broad overview of the project broken down, I then used [GitHub Issues](https://github.com/cthlbrennan/herdhub/issues) as an Agile methodology tool. There, I used my own **User Story Template** to manage User Stories, giving each of them Acceptance Criteria and User Tasks, as per best practice. 
 
-### GitHub Issues
+[GitHub Projects](https://github.com/cthlbrennan/herdhub/projects) also served as an Agile tool; While it isn't a specialized tool, I was able to easily adapt it to be used as the basis for weekly iteration boards, as well as a tool for documenting the Product Backlog. Through Github Projects, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis.
 
-[GitHub Issues](https://github.com/cthlbrennan/herdhub/issues) served as an another Agile tool.
-There, I used my own **User Story Template** to manage user stories.
+![Iteration Board One](documentation/agile/iteration-one.png)
+[Iteration Board One](https://github.com/users/cthlbrennan/projects/4/views/1)
 
-It also helped with milestone iterations on a weekly basis.
+![Iteration Board Two](documentation/agile/iteration-two.png)
+[Iteration Board Two](https://github.com/users/cthlbrennan/projects/5/views/1)
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+![Iteration Board Three](documentation/agile/iteration-three.png)
+[Iteration Board Three](https://github.com/users/cthlbrennan/projects/10/views/1)
 
-Consider adding a screenshot of your Open and Closed Issues.
+![Iteration Board Four](documentation/agile/iteration-four.png)
+[Iteration Board Four](https://github.com/users/cthlbrennan/projects/7/views/1)
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+![Product Backlog](documentation/agile/product-backlog-end-of-project.png)
+[Product Backlog](https://github.com/users/cthlbrennan/projects/3/views/1)
 
-- [Open Issues](https://github.com/cthlbrennan/herdhub/issues) [![GitHub issues](https://img.shields.io/github/issues/cthlbrennan/herdhub)](https://github.com/cthlbrennan/herdhub/issues)
+At the conclusion of the project, each User Story has been closed. 
 
-    ![screenshot](documentation/gh-issues-open.png)
+[Open Issues](https://github.com/cthlbrennan/herdhub/issues) [![GitHub issues](https://img.shields.io/github/issues/cthlbrennan/herdhub)](https://github.com/cthlbrennan/herdhub/issues)
 
-- [Closed Issues](https://github.com/cthlbrennan/herdhub/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed issues](https://img.shields.io/github/issues-closed/cthlbrennan/herdhub)](https://github.com/cthlbrennan/herdhub/issues?q=is%3Aissue+is%3Aclosed)
+![screenshot](documentation/agile/open-issues.png)
 
-    ![screenshot](documentation/gh-issues-closed.png)
+[Closed Issues](https://github.com/cthlbrennan/herdhub/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed issues](https://img.shields.io/github/issues-closed/cthlbrennan/herdhub)](https://github.com/cthlbrennan/herdhub/issues?q=is%3Aissue+is%3Aclosed)
+
+![screenshot](documentation/agile/closed-issues.png)
 
 ### MoSCoW Prioritization
 
 I've decomposed my Epics into stories prior to prioritizing and implementing them.
 Using this approach, I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab.
 
-- **Must Have**: guaranteed to be delivered (*max 60% of stories*)
+- **Must Have**: guaranteed to be delivered (*max 60% of stories for every iteration*)
 - **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
 - **Could Have**: has small impact if left out (*20% of stories*)
 - **Won't Have**: not a priority for this iteration
@@ -595,31 +600,19 @@ To my knowledge, there are no differences between the local and deployed version
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
 | [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
 | [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
 | [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
 | [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
 | [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
 
 ### Media
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
-| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
-| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
-| [Videvo](https://www.videvo.net/) | home page | video | background video on the hero section |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+| Herdhub logo | entire site | image | favicon on all pages, logo. Original image. |
+| Image by Annie Spratt, taken from [Unsplash](https://unsplash.com) | Home Page | image | Used as Hero Image |
+| Image by Annie Spratt, taken from [Unsplash](https://unsplash.com) | About page | image | Used as Hero Image on About page |
 
 ### Acknowledgements
 
