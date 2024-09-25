@@ -1,4 +1,5 @@
 ![Logo](documentation/readme_images/logo.png)
+
 [Click here for live site](https://herdhub-ef517bdcab8e.herokuapp.com)
 
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/cthlbrennan/herdhub)](https://github.com/cthlbrennan/herdhub/commits/main)
@@ -7,7 +8,8 @@
 
 
 ![](documentation/readme_images/amiresponsive.gif)
-source: [amiresponsive](https://ui.dev/amiresponsive?url=https://herdhub-ef517bdcab8e.herokuapp.com)
+
+Source: [amiresponsive](https://ui.dev/amiresponsive?url=https://herdhub-ef517bdcab8e.herokuapp.com)
 
  Herdhub is a livestock management web application for dairy farmers. Designed with ease-of-use as a priority, the website allows dairy farmers to catalogue the key details of every animal in their herd. Users can also record breeding logs between animals to newborn calves, enabling them to easily and efficiently manage their livestock. Users can easily register their account and safely store the data of their herd within an intuitive dashboard-style user interface. 
 
@@ -35,36 +37,42 @@ Social media brand icons from [Font Awesome](https://fontawesome.com) are used i
 User stories formed a key part of the Agile methodology which guided the development of this application. They can be found within the Product Backlog on Github 
 [here](https://github.com/users/cthlbrennan/projects/3).
 
+### Users
+
 - As a new user, I want to have a clear idea of the purpose of the web application so that I can understand the value that it would provide me.
-- As the product owner, if a user submits a message then I want them to receive a confirmation email telling them that their message has been submitted to improve the user experience.
 - As a user, I want to be able to log in through my gmail or social media account.
 - As a user, I want to be able to reset my password so that I can regain access to my database in case I forget the original.
-- As the product owner, I want to make sure that there are custom 404 and 500 pages so that the website looks professional and provides users with a positive experience.
 - As a user, I want to add photos to animal profiles so that I can include photos within my database.
-- As the administrator, I want users to be able to submit messages to me so that I can troubleshoot any problems they might have.
+- As the product owner, if a user submits a message then I want them to receive a confirmation email telling them that their message has been submitted to improve the user experience.
 - As a user, I want to be able to log out easily so that I can be sure that my data remains secure after I have finished using the website.
 - As a user, I want to be able to change the details of a specific animal so that my database remains up-to-date.
-- As the product owner, I want to make sure that the models are full functional so that users don't experience bugs.
-- As the product owner, I want users to get messages after they've logged in, logged out, successfully added an animal, etc so that they get immediate feedback on their interactions.
 - As a user, I want to create profiles for each of my animals so that I can easily track their individual history and characteristics.
 - As a user, I want to view a list of all animals in my herd with key details shown, so that I can read an overview of my herd.
 - As a user, I want to be able to select a specific animal or breeding event and access comprehensive detailed overview of it.
 - As a user, I want to log breeding events so that I can monitor reproductive outcomes and optimise my breeding program.
 - As a user, I want to be able to delete animals from my database in case an animal is sold, dies, etc, so that I can maintain an accurate database.
-- As the product owner, I want there to be an admin account so that the website can be monitored and maintained.
-- As the product owner, I want to make sure that all code is validated so that the code is clean, readable and maintainable.
 - As a user, I want to be able to register an account so that I can manage my livestock.
 - As a user, I want to be able to log in with a username and password so that I can securely access my data.
+- As a logged in user, I want to navigate my records easily so that I can easily access my data.
+
+### Product Owner
+
+- As the product owner, if a user submits a message then I want them to receive a confirmation email telling them that their message has been submitted to improve the user experience.
+- As the product owner, I want to make sure that the models are full functional so that users don't experience bugs.
+- As the product owner, I want users to get messages after they've logged in, logged out, successfully added an animal, etc so that they get immediate feedback on their interactions.
+- As the product owner, I want there to be an admin account so that the website can be monitored and maintained.
+- As the product owner, I want to make sure that all code is validated so that the code is clean, readable and maintainable.
 - As the product owner, I want to ensure that my deployed website is linked to a cloud-based database.
 - As the product owner, I want to have the website deployed so that people can find and use my product.
 - As the product owner, I want the website to have a robust database schema that would serve the needs of users.
-- As a logged in user, I want to navigate my records easily so that I can easily access my data.
 - As the product owner, I want the authentication pages to match the appearance of the rest of the site so that the site will have a coherent, consistent and professional appearance.
 
-### Site Admin
+### Site Administrator
+
 - As the administrator, I want to be able to securely access the admin page so that I can maintain and update the website easily.
 - As the administrator, I want to have CRUD functionality over all users' databases so that I can monitor and maintain the website.
 - As the administrator, I want users to be able to submit messages to me so that I can troubleshoot any problems they might have.
+
 
 ## Wireframes
 
@@ -131,19 +139,13 @@ The About page provides more information to users on the utility of the website,
 
 ![Call-to-Action Buttons](documentation/features/about-call-to-action-buttons.png)
 
-Below the About section, there are two large buttons which invite the user to register now, or log in if they have an account, underneath emboldened large text. These call-to-action buttons encourage interaction from the user. 
+At the bottom of the About page, there are two large buttons which invite the user to register now, or log in if they have an account, underneath emboldened large text. These call-to-action buttons encourage interaction from the user. 
 
 #### Testimonials
 
 ![Testimonials](documentation/features/testimonial-carousel.png)
 
 Located at the bottom of the home page and visible when not logged in, this section gives three reviews of Herdhub within a Bootstrap carousel component. This is visually engaging and adds extra sheen to the user experience. 
-
-#### Testimonials
-
-![Testimonials](documentation/features/testimonials.png)
-
-Three testimonials are set out here. At the moment, these images are placeholder AI-generated images taken from the website https://thispersondoesnotexist.com/. Furthermore, the names and comments are fictional and also act as placeholders. 
 
 #### Favicon
 
@@ -165,7 +167,7 @@ The copyright line at the bottom of the footer utilises Django Template Language
 
 ![Social Media Links](documentation/features/social-media-links.png)
 
-The footer contains icons from https://www.fontawesome.com which provide links to their respective social media websites. 
+The footer contains icons from [Font Awesome](https://www.fontawesome.com) which provide links to their respective social media websites. 
 
 #### Messages to User
 
@@ -183,7 +185,7 @@ When signed in, the user is brought to the Dashboard. From here, they can get an
 
 ![Herd Overview](documentation/features/herd-overview.png)
 
-An overview of the user's herd is located at the top of the Dashboard. 
+An overview of the user's herd is located at the top of the Dashboard. This changes dynamically based on the user's database.
 
 #### Dashboard Subsection
 
@@ -195,7 +197,7 @@ Underneath the Herd Overview, there are four subsections where users can add det
 
 ![Internal Links](documentation/features/internal-links-on-dashboard.png)
 
-At the top of the Dashboard there are internal links which allow for users to get to the four subsections easily. 
+Underneath the Herd Overview, there are internal links which allow users to get to the four subsections easily. 
 
 At the bottom of each subsection, there is similarly an internal link to get back to the top of the Dashboard. 
 
@@ -265,99 +267,125 @@ These pages all are also similar, allowing users to view the full details of an 
 
 #### Edit Cow, Bull, Breeding and Calf Pages
 
-![Edit Cow Page](documentation/features/edit_cow.png)
+![Edit Cow Page](documentation/features/edit-cow.png)
 
 These pages similarly allow users to amend the details of an existing animal or breeding event.  
 
-#### 404 Page
-
-![404 Page](documentation/features/error-page.png)
-
-If there is a 404 error, the user will be sent to the 404 page. This page features a variation of the illustration, with Baby Jay having an angry expression. 
-
 ### Future Features
 
-- SQL Database
-    - This will be needed in order to store messages sent through the contact form.
-- Testimonials
-    - Testimonials and images from real people that Siobhan works with will be used within the testimonial section, replacing the current fictional placeholders. Incorporating a carousel feature for this section would also lend additional interactivity and dynamism to the website that would raise the level of professionalism.  
-- Social Media Links
-    - The links will lead to Siobhan's relevant socials, not placeholders. 
-- Photos
-    - Higher-quality resolution photographs would be needed in the future, especially for the hero images.
+There is no reason why Herdhub should be solely focused on the dairy farming industry. Future functionality could be developed to provide similar services for sheep farmers, pig farmers, etc. 
+
+Setting up simple mail transfer protocol to allow users to reset their passwords would be good. This was one feature that was outlined in my user stories, but I did not implement  it during the course of this project due to time constraints. 
 
 ## Tools & Technologies Used
 
-- ⚠️⚠️ REQUIRED <-- delete me ⚠️⚠️
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
 - [![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [![GitHub](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) used for secure online code storage.
-- ⚠️⚠️ IDE: CHOOSE ONLY ONE <-- delete me ⚠️⚠️
 - [![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io) used as a cloud-based IDE for development.
-- [![Codeanywhere](https://img.shields.io/badge/Codeanywhere-grey?logo=ebox&logoColor=7F3F98)](https://codeanywhere.com) used as a cloud-based IDE for development.
-- [![VSCode](https://img.shields.io/badge/VSCode-grey?logo=visualstudiocode&logoColor=007ACC)](https://code.visualstudio.com) used as my local IDE for development.
-- ⚠️⚠️ LANGUAGES: CHOOSE ALL APPLICABLE <-- delete me ⚠️⚠️
 - [![HTML](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
 - [![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com) used for user interaction on the site.
-- [![jQuery](https://img.shields.io/badge/jQuery-grey?logo=jquery&logoColor=0769AD)](https://jquery.com) used for user interaction on the site.
 - [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) used as the back-end programming language.
-- ⚠️⚠️ DEPLOYMENT: CHOOSE ONLY ONE <-- delete me ⚠️⚠️
-- [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-grey?logo=githubpages&logoColor=222222)](https://pages.github.com) used for hosting the deployed front-end site.
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
-- ⚠️⚠️ CSS FRAMEWORKS: CHOOSE ONLY ONE (if applicable) <-- delete me ⚠️⚠️
 - [![Bootstrap](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=7952B3)](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [![Materialize](https://img.shields.io/badge/Materialize-grey?logo=materialdesign&logoColor=F5A5A8)](https://materializecss.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- ⚠️⚠️ MISCELLANEOUS: CHOOSE ALL APPLICABLE <-- delete me ⚠️⚠️
-- [![Google Sheets](https://img.shields.io/badge/Google_Sheets-grey?logo=googlesheets&logoColor=34A853)](https://docs.google.com/spreadsheets) used for storing data from my Python app.
 - [![Jest](https://img.shields.io/badge/Jest-grey?logo=jest&logoColor=c21325)](https://jestjs.io) used for automated JavaScript testing.
-- [![Flask](https://img.shields.io/badge/Flask-grey?logo=flask&logoColor=000000)](https://flask.palletsprojects.com) used as the Python framework for the site.
-- [![MongoDB](https://img.shields.io/badge/MongoDB-grey?logo=mongodb&logoColor=47A248)](https://www.mongodb.com) used as the non-relational database management with Flask.
-- [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-grey?logo=sqlalchemy&logoColor=D71F00)](https://www.sqlalchemy.org) used as the relational database management with Flask.
 - [![Django](https://img.shields.io/badge/Django-grey?logo=django&logoColor=092E20)](https://www.djangoproject.com) used as the Python framework for the site.
-- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-grey?logo=postgresql&logoColor=4169E1)](https://www.postgresql.org) used as the relational database management.
-- [![PostgreSQL by Code Institute](https://img.shields.io/badge/PostgreSQL_by_Code_Institute-grey?logo=okta&logoColor=F05223)](https://dbs.ci-dbs.net) used as the Postgres database from Code Institute.
-- [![ElephantSQL](https://img.shields.io/badge/ElephantSQL-grey?logo=postgresql&logoColor=36A6E2)](https://www.elephantsql.com) used as the Postgres database.
+- [![PostgreSQL by Code Institute](https://img.shields.io/badge/PostgreSQL_by_Code_Institute-grey?logo=okta&logoColor=F05223)](https://dbs.ci-dbs.net) was used as the PostgreSQL database management system.
 - [![Cloudinary](https://img.shields.io/badge/Cloudinary-grey?logo=cloudinary&logoColor=3448C5)](https://cloudinary.com) used for online static file storage.
 - [![WhiteNoise](https://img.shields.io/badge/WhiteNoise-grey?logo=python&logoColor=FFFFFF)](https://whitenoise.readthedocs.io) used for serving static files with Heroku.
-- [![Stripe](https://img.shields.io/badge/Stripe-grey?logo=stripe&logoColor=008CDD)](https://stripe.com) used for online secure payments of ecommerce products/services.
-- [![Gmail API](https://img.shields.io/badge/Gmail_API-grey?logo=gmail&logoColor=EA4335)](https://mail.google.com) used for sending emails in my application.
-- [![MailChimp](https://img.shields.io/badge/MailChimp-grey?logo=mailchimp&logoColor=FFE01B)](https://mailchimp.com) used for sending newsletter subscriptions.
-- [![AWS S3](https://img.shields.io/badge/AWS_S3-grey?logo=amazons3&logoColor=569A31)](https://aws.amazon.com/s3) used for online static file storage.
 - [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
-- [![Figma](https://img.shields.io/badge/Figma-grey?logo=figma&logoColor=F24E1E)](https://www.figma.com) used for creating wireframes.
-- [![Canva](https://img.shields.io/badge/Canva-grey?logo=canva&logoColor=00C4CC)](https://www.canva.com/p/canvawireframes) used for creating wireframes.
-- [![Google Maps API](https://img.shields.io/badge/Google_Maps_API-grey?logo=googlemaps&logoColor=4285F4)](https://developers.google.com/maps) used as an interactive map on my site.
-- [![Leaflet](https://img.shields.io/badge/Leaflet-grey?logo=leaflet&logoColor=199900)](https://leafletjs.com) used as a free open-source interactive map on my site.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
+- [Draw.io](https://www.draw.io) and [mermaid.live](https://www.mermaid.live) were used to create entity relationship diagrams. 
 
 ## Database Design
 
-Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
-Understanding the relationships between different tables can save time later in the project.
+At the outset of the project, I made an Entity Relationship Diagram (ERD) to help visualize the database architecture before creating my models.
 
+While I did ultimately simplify certain aspects of the models, this ERD provided a good foundation before coding the actual models in my project.
 
+![draw.io erd](documentation/erd/erd.drawio.png)
 
-```python
-class Product(models.Model):
-    category = models.ForeignKey(
-        "Category", null=True, blank=True, on_delete=models.SET_NULL)
-    sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=254)
-    description = models.TextField()
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+The ERD as included below reflects the finalised database architecture of the website. 
 
-    def __str__(self):
-        return self.name
+```mermaid
+erDiagram
+    USER {
+      int id PK
+      string username
+      string email
+    }
+
+    MESSAGE {
+      int message_id PK
+      int user_profile FK
+      string sent_on
+      text message
+      bool read
+    }
+
+    BULL {
+      int bull_id PK
+      int user_id FK
+      string image_id
+      string registration_number
+      date dob
+      string breed
+      string health_status
+      text comments
+    }
+
+    COW {
+      int cow_id PK
+      int user_id FK
+      string image_id
+      string registration_number
+      date dob
+      string breed
+      string health_status
+      string pregnancy_status
+      int number_of_calvings
+      date last_calving_date
+      int milk_production
+      text comments
+    }
+
+    BREEDING {
+      int breeding_id PK
+      int user_id FK
+      int bull_id FK
+      int cow_id FK
+      date breeding_date
+      string breeding_method
+      bool resulting_pregnancy
+      text comments
+    }
+
+    CALF {
+      int calf_id PK
+      int user_id FK
+      string image_id
+      string registration_number
+      int breeding_id FK
+      string sex
+      date dob
+      string calving_method
+      text comments
+    }
+
+    USER ||--o{ MESSAGE: "has many"
+    USER ||--o{ BULL: "owns many"
+    USER ||--o{ COW: "owns many"
+    USER ||--o{ BREEDING: "participates in"
+    USER ||--o{ CALF: "owns many"
+    
+    BULL ||--o{ BREEDING: "involved in"
+    COW ||--o{ BREEDING: "involved in"
+    BREEDING ||--o{ CALF: "results in"
 ```
 
-![erd](documentation/erd.png)
+Source: [Mermaid](https://mermaid.live/edit#pako:eNrNVVtv2jAU_iuWn2kVbqPkrV1pNY1dVFRNmpCiQ3IgVn2JbIfCKP99NiGMuHTlZdIQD9Z3vnzn4i8nG5qqDGlMUd8yWGgQU0nc73EyeiCb6kwIk5awjHz_XAPGaiYXpDSoJQgMYBTAeIVtp7I6fBlNJtf3o6amQGNggUlD2we8cFJoNWccyV2Y1qC0iZI1anF1kKqxmVKcaIQsKOPmcTxu1jArOX-jAIe-ys1EVXAAa1wwdwTLlExkKWaoa0YGFkmmZsETM40YquQI3OaJsWBL02gvVUK4rk3QzsdvP5rdpOr5v25mHytcCgkyXQdhX22VMFHzJAW-dGzTSM7B2DqSeKRhKMafvG-yMvXFnzPCm4fR6PbT1_vAFb4hn-GMYR67qInub-MPuOvgoH1c_fEgfUygzVUW2NmU3PrgYXxneeR6fBeYBPj8n7oknOCJN3j1jqPqG27O4W997lbWy8vFhdrU2yYmU5qDIQLkekpf0_w28Bz1LN8muXfsXU5tIk8sQFuWssL1ZdwkTkq6KzmpebSkTigzuVR8idmRql8A5zEPPg9qqFxVV0pbVKB2-ztz34SdaabU5uhWPPXkDPSTp20dD0qrJmuZ0tjqElu0LPxV7r8iNJ4DNw4tQNJ4Q1c07nSiy140-BBF3XbH_ftXLbqmcbd32e_1u8NoGLV7V-1Bp7dt0V9KOYno0qPDtnuoP-hHLrrT-7kLVkm1Khf5Ptn2N4QpHpk)
 
 ## Agile Development Process
 
@@ -457,11 +485,10 @@ Deployment steps are as follows, after account setup:
 | `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
 | `SECRET_KEY` | user's own value |
 
-Heroku needs three additional files in order to deploy properly.
+Heroku needs two additional files in order to deploy properly.
 
 - requirements.txt
 - Procfile
-- runtime.txt
 
 You can install this project's **requirements** (where applicable) using:
 
@@ -475,11 +502,6 @@ The **Procfile** can be created with the following command:
 
 - `echo web: gunicorn app_name.wsgi > Procfile`
 - *replace **app_name** with the name of your primary Django app name; the folder where settings.py is located*
-
-The **runtime.txt** file needs to know which Python version you're using:
-1. type: `python3 --version` in the terminal.
-2. in the **runtime.txt** file, add your Python version:
-	- `python-3.9.19`
 
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
 
@@ -564,11 +586,9 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-
+To my knowledge, there are no differences between the local and deployed versions of the website. 
 
 ## Credits
-
-
 
 ### Content
 
@@ -603,8 +623,5 @@ You can fork this repository by using the following steps:
 
 ### Acknowledgements
 
-- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
-- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
-- I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
+Thanks to Tim Nelson and Marko Tot for their help and guidance. 
+
