@@ -152,12 +152,27 @@ I've tested my deployed project with viewports of multiple width through DevTool
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse/mobile/index-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/index-lighthouse-desktop.png) | Minor warnings for performance on mobile and desktop |
-| Services | ![screenshot](documentation/lighthouse/mobile/services-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/services-lighthouse-desktop.png) | A minor warning for performance on mobile, good performance on desktop |
-| Contact Us | ![screenshot](documentation/lighthouse/mobile/contact-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/contact-lightouse-desktop.png) | Good performance on mobile and desktop |
-| Submission | ![screenshot](documentation/lighthouse/mobile/submission-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/submission-lighthouse-desktop.png) | Good performance on mobile and desktop |
-| Easter Egg | ![screenshot](documentation/lighthouse/mobile/easteregg-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/easteregg-lighthouse-desktop.png) | A minor warning for performance on mobile, good performance on desktop |
-| 404 | ![screenshot](documentation/lighthouse/mobile/error-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/error-lighthouse-desktop.png) | A minor warning for performance on mobile, good performance on desktop|
+| Home when logged out | ![screenshot](documentation/lighthouse/index-logged-out-mobile.png) | ![screenshot](documentation/lighthouse/index-logged-out-desktop.png) | Minor warnings for performance on mobile and desktop |
+| Home when logged in | ![screenshot](documentation/lighthouse/index-logged-in-mobile.png) | ![screenshot](documentation/lighthouse/index-logged-in-desktop.png) | Good performance on mobile and desktop |
+| About | ![screenshot](documentation/lighthouse/about-page-mobile.png) | ![screenshot](documentation/lighthouse/about-page-desktop.png) | Minor warnings for performance on mobile and desktop |
+| Contact | ![screenshot](documentation/lighthouse/contact-page-mobile.png) | ![screenshot](documentation/lighthouse/contact-page-desktop.png) | Good performance on mobile and desktop |
+| 404 | ![screenshot](documentation/lighthouse/pagenotfound-mobile.png) | ![screenshot](documentation/lighthouse/pagenotfound-mobile.png) | Good performance on mobile and desktop |
+| 500 | ![screenshot](documentation/lighthouse/server-error-mobile.png) | ![screenshot](documentation/lighthouse/server-error-desktop.png) | Good performance on mobile and desktop |
+| Sign In | ![screenshot](documentation/lighthouse/sign-in-mobile.png) | ![screenshot](documentation/lighthouse/sign-in-desktop.png) | Good performance on mobile and desktop |
+| Sign Out | ![screenshot](documentation/lighthouse/sign-out-mobile.png) | ![screenshot](documentation/lighthouse/sign-out-desktop.png) | Good performance on mobile and desktop |
+| Sign Up | ![screenshot](documentation/lighthouse/sign-up-mobile.png) | ![screenshot](documentation/lighthouse/sign-up-desktop.png) | Good performance on mobile and desktop |
+| Add Cow | ![screenshot](documentation/lighthouse/add-cow-mobile.png) | ![screenshot](documentation/lighthouse/add-cow-desktop.png) | Good performance on mobile and desktop |
+| View Cow | ![screenshot](documentation/lighthouse/view-cow-mobile.png) | ![screenshot](documentation/lighthouse/view-cow-desktop.png) | Good performance on mobile and desktop |
+| Edit Cow | ![screenshot](documentation/lighthouse/edit-cow-mobile.png) | ![screenshot](documentation/lighthouse/edit-cow-desktop.png) | Good performance on mobile and desktop |
+| Add Bull | ![screenshot](documentation/lighthouse/add-bull-mobile.png) | ![screenshot](documentation/lighthouse/add-bull-desktop.png) | Good performance on mobile and desktop |
+| View Bull | ![screenshot](documentation/lighthouse/view-bull-mobile.png) | ![screenshot](documentation/lighthouse/view-bull-desktop.png) | Good performance on mobile and desktop |
+| Edit Bull | ![screenshot](documentation/lighthouse/edit-bull-mobile.png) | ![screenshot](documentation/lighthouse/edit-bull-desktop.png) | Good performance on mobile and desktop |
+| Add Breeding | ![screenshot](documentation/lighthouse/add-breeding-event-mobile.png) | ![screenshot](documentation/lighthouse/add-breeding-event-desktop.png) | Good performance on mobile and desktop |
+| View Breeding | ![screenshot](documentation/lighthouse/view-breeding-mobile.png) | ![screenshot](documentation/lighthouse/view-breeding-desktop.png) | Good performance on mobile and desktop |
+| Edit Breeding | ![screenshot](documentation/lighthouse/edit-breeding-mobile.png) | ![screenshot](documentation/lighthouse/edit-breeding-desktop.png) | Good performance on mobile and desktop |
+| Add Calf | ![screenshot](documentation/lighthouse/add-calf-mobile.png) | ![screenshot](documentation/lighthouse/add-calf-desktop.png) | Good performance on mobile and desktop |
+| View Calf | ![screenshot](documentation/lighthouse/view-calf-mobile.png) | ![screenshot](documentation/lighthouse/view-calf-desktop.png) | Good performance on mobile and desktop |
+| Edit Calf | ![screenshot](documentation/lighthouse/edit-calf-mobile.png) | ![screenshot](documentation/lighthouse/edit-calf-desktop.png) | Good performance on mobile and desktop |
 
 ## User Story Testing
 
