@@ -25,10 +25,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | templates | edit_calf.html | ![screenshot](documentation/validation/html/edit_calf.png) | |
 | templates | edit_cow.html | ![screenshot](documentation/validation/html/edit_cow.png) | |
 | templates | index.html | ![screenshot](documentation/validation/html/index.png) | |
-| templates | login.html | ![screenshot](documentation/validation/html/login.png) | |
-| templates | logout.html | ![screenshot](documentation/validation/html/logout.png) | |
 | templates | send_message.html | ![screenshot](documentation/validation/html/send_message.png) | |
-| templates | signup.html | ![screenshot](documentation/validation/html/signup.png) | Having removed the need for providing an email address when signing up to the website, this has created a error as shown. However, to fix it, I would need to delve into the allauth library and change even more settings. Given that the error relates to accessibility, and that the sign up page is fully operational otherwise, I have decided that I will leave this error as is. |
 | templates | view_breeding.html | ![screenshot](documentation/validation/html/view_breeding.png) | |
 | templates | view_bull.html | ![screenshot](documentation/validation/html/view_bull.png) | |
 | templates | view_calf.html | ![screenshot](documentation/validation/html/view_calf.png) | |
@@ -41,7 +38,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | style.css | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| static | style.css | ![screenshot](documentation/validation/css/css_validation.png) | |
 
 ### JavaScript
 
@@ -49,7 +46,8 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | script.js | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| static | script.js | ![screenshot](documentation/validation/javascript/jshint_validation.png) | |
+| static | script.text.js | ![screenshot](documentation/validation/javascript/script.test.js_validation.png) | JSHint identifies some undefined variables and a warning, but these relate to the keywords of Jest rather than syntactic faults in the Javascript code |
 
 ### Python
 
@@ -57,14 +55,15 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 | Directory | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| herdhub | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| herdhub | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/forms.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| herdhub | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| herdhub | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| herdhub | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| livestock_manager | settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/livestock_manager/settings.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| livestock_manager | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/livestock_manager/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-|  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/manage.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| herdhub | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/admin.py) | ![screenshot](documentation/validation/python/admin_py.png) | |
+| herdhub | apps.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/apps.py) | ![screenshot](documentation/validation/python/apps_py.png) | |
+| herdhub | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/forms.py) | ![screenshot](documentation/validation/python/forms_py.png) | |
+| herdhub | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/models.py) | ![screenshot](documentation/validation/python/models_py.png) | |
+| herdhub | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/urls.py) | ![screenshot](documentation/validation/python/urls_py.png) | |
+| herdhub | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/herdhub/views.py) | ![screenshot](documentation/validation/python/views_py.png) | |
+| livestock_manager | settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/livestock_manager/settings.py) | ![screenshot](documentation/validation/python/setings_py.png) | |
+| livestock_manager | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/livestock_manager/urls.py) | ![screenshot](documentation/validation/python/livestock_urls_py.png) | |
+| root directory  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/cthlbrennan/herdhub/main/manage.py) | ![screenshot](documentation/validation/python/manage_py.png) | |
 
 ## Browser Compatibility
 

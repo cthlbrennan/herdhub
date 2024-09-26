@@ -19,7 +19,7 @@ import cloudinary.api
 if os.path.isfile('env.py'):
     import env
 
-# configuration for Cloudinary 
+# configuration for Cloudinary
 CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
 cloudinary.config(cloudinary_url=CLOUDINARY_URL)
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
