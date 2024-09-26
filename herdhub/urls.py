@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-#code formatted to meet PEP8 validation
+# code formatted to meet PEP8 validation
 urlpatterns = [
     path(
         '',

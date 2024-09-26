@@ -28,7 +28,7 @@ def index(request):
         # below code is used for getting data to be used to update
         # the herd overview section of the Dashboard for signed-in users
         # if user isn't authenticated, these numbers are set to zero
-        # as the Dashboard would not appear 
+        # as the Dashboard would not appear
         cow_count = cows.count()
         bull_count = bulls.count()
         breeding_count = breedings.count()
@@ -75,6 +75,8 @@ def about(request):
     return render(request, 'about.html')
 
 # login_required decorator, functionality restricted to registered users
+
+
 @login_required
 def add_cow(request):
     """
@@ -161,7 +163,7 @@ def edit_cow(request, cow_id):
 
 @login_required
 # use of require_POST based on
-# https://tinyurl.com/yey22m5r 
+# https://tinyurl.com/yey22m5r
 @require_POST
 def delete_cow(request, cow_id):
     """
@@ -544,7 +546,7 @@ def send_message(request):
         form = SendMessageForm(request.POST)
         if form.is_valid():
             # use of timezone.now to capture time message
-            # sent to admin, based on 
+            # sent to admin, based on
             # https://tinyurl.com/3pf3pe3a
             now = timezone.now()
             now_formatted = now.strftime("%H:%M %d/%m/%Y")

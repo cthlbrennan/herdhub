@@ -3,7 +3,8 @@ from cloudinary.forms import CloudinaryFileField
 from .models import (BreedChoices, HealthChoices, PregnancyStatus,
                      Cow, Bull, Calf, Breeding, Message)
 
-# use of django forms based on CI blog walkthrough 
+
+# use of django forms based on CI blog walkthrough
 class AddCowForm(forms.ModelForm):
     """Form for adding or editing a cow in the herd."""
     image = CloudinaryFileField(
@@ -15,7 +16,7 @@ class AddCowForm(forms.ModelForm):
         required=False
     )
 
-# use of Meta class based on 
+# use of Meta class based on
 # https://docs.djangoproject.com/en/5.1/topics/forms/modelforms/
 
     class Meta:
@@ -37,7 +38,7 @@ class AddCowForm(forms.ModelForm):
             'comments': 'Comments',
             'image': 'Upload Image'
         }
-# use of widgets based on 
+# use of widgets based on
 # https://docs.djangoproject.com/en/5.1/ref/forms/widgets/
 
         widgets = {
@@ -76,9 +77,9 @@ class AddBreedingForm(forms.ModelForm):
             'breeding_date': forms.DateInput(attrs={'type': 'date'}),
         }
 # init override used to ensure that user can be used as keyword argument
-# to limit breeding dropdown form options to user's animals only, not entire 
+# to limit breeding dropdown form options to user's animals only, not entire
 # database. based on code set out in https://tinyurl.com/y55a3pxt
-# 
+
     def __init__(self, *args, **kwargs):
         # Expecting the user to be passed as a keyword argument
         user = kwargs.pop('user', None)
@@ -122,4 +123,3 @@ class SendMessageForm(forms.ModelForm):
     class Meta:
         model = Message
         fields = ['message']
-        

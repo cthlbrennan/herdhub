@@ -7,9 +7,10 @@ from cloudinary.models import CloudinaryField
 # contains Regex and MinValue Validators
 # used throughout the forms for server-side validation
 # https://docs.djangoproject.com/en/5.1/ref/validators/
-
-# Django form text choices set out below, 
+# Django form text choices set out below,
 # based on https://forum.djangoproject.com/t/using-textchoices/26764
+
+
 class BreedChoices(models.TextChoices):
     """
     Choices for cattle breeds.
@@ -163,7 +164,7 @@ class Cow(models.Model):
         validators=[MinValueValidator(0)]
         )
     last_calving_date = models.DateField(
-        null=True, 
+        null=True,
         blank=True
     )
     milk_production = models.IntegerField(
