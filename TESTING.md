@@ -13,25 +13,27 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| templates | 404.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | 500.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | about.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | add_breeding_event.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | add_bull.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | add_calf.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | add_cow.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | edit_breeding.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | edit_bull.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | edit_calf.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | edit_cow.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | index.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | send_message.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | base_manage.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | usersession_list.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | view_breeding.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | view_bull.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | view_calf.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | view_cow.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| templates | 404.html | ![screenshot](documentation/validation/html/404.png) | |
+| templates | 500.html | ![screenshot](documentation/validation/html/500.png) | |
+| templates | about.html | ![screenshot](documentation/validation/html/about.png) | |
+| templates | add_breeding_event.html | ![screenshot](documentation/validation/html/add_breeding_event.png) | |
+| templates | add_bull.html | ![screenshot](documentation/validation/html/add_bull.png) | |
+| templates | add_calf.html | ![screenshot](documentation/validation/html/add_calf.png) | |
+| templates | add_cow.html | ![screenshot](documentation/validation/html/add_cow.png) | |
+| templates | edit_breeding.html | ![screenshot](documentation/validation/html/edit_breeding.png) | |
+| templates | edit_bull.html | ![screenshot](documentation/validation/html/edit_bull.png) | |
+| templates | edit_calf.html | ![screenshot](documentation/validation/html/edit_calf.png) | |
+| templates | edit_cow.html | ![screenshot](documentation/validation/html/edit_cow.png) | |
+| templates | index.html | ![screenshot](documentation/validation/html/index.png) | |
+| templates | login.html | ![screenshot](documentation/validation/html/login.png) | |
+| templates | logout.html | ![screenshot](documentation/validation/html/logout.png) | |
+| templates | send_message.html | ![screenshot](documentation/validation/html/send_message.png) | |
+| templates | signup.html | ![screenshot](documentation/validation/html/signup.png) | Having removed the need for providing an email address when signing up to the website, this has created a error as shown. However, to fix it, I would need to delve into the allauth library and change even more settings. Given that the error relates to accessibility, and that the sign up page is fully operational otherwise, I have decided that I will leave this error as is. |
+| templates | view_breeding.html | ![screenshot](documentation/validation/html/view_breeding.png) | |
+| templates | view_bull.html | ![screenshot](documentation/validation/html/view_bull.png) | |
+| templates | view_calf.html | ![screenshot](documentation/validation/html/view_calf.png) | |
+| templates | view_cow.html | ![screenshot](documentation/validation/html/view_cow.png) | |
+
 
 ### CSS
 
