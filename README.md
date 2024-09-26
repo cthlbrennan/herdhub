@@ -43,7 +43,6 @@ User stories formed a key part of the Agile methodology which guided the develop
 - As a user, I want to be able to log in through my gmail or social media account.
 - As a user, I want to be able to reset my password so that I can regain access to my database in case I forget the original.
 - As a user, I want to add photos to animal profiles so that I can include photos within my database.
-- As the product owner, if a user submits a message then I want them to receive a confirmation email telling them that their message has been submitted to improve the user experience.
 - As a user, I want to be able to log out easily so that I can be sure that my data remains secure after I have finished using the website.
 - As a user, I want to be able to change the details of a specific animal so that my database remains up-to-date.
 - As a user, I want to create profiles for each of my animals so that I can easily track their individual history and characteristics.

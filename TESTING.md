@@ -155,7 +155,7 @@ I've tested my deployed project with viewports of multiple width through DevTool
 | Home when logged out | ![screenshot](documentation/lighthouse/index-logged-out-mobile.png) | ![screenshot](documentation/lighthouse/index-logged-out-desktop.png) | Minor warnings for performance on mobile and desktop |
 | Home when logged in | ![screenshot](documentation/lighthouse/index-logged-in-mobile.png) | ![screenshot](documentation/lighthouse/index-logged-in-desktop.png) | Good performance on mobile and desktop |
 | About | ![screenshot](documentation/lighthouse/about-page-mobile.png) | ![screenshot](documentation/lighthouse/about-page-desktop.png) | Minor warnings for performance on mobile and desktop |
-| Contact | ![screenshot](documentation/lighthouse/contact-page-mobile.png) | ![screenshot](documentation/lighthouse/contact-page-desktop.png) | Good performance on mobile and desktop |
+| Contact Page | ![screenshot](documentation/lighthouse/contact-page-mobile.png) | ![screenshot](documentation/lighthouse/contact-page-desktop.png) | Good performance on mobile and desktop |
 | 404 | ![screenshot](documentation/lighthouse/pagenotfound-mobile.png) | ![screenshot](documentation/lighthouse/pagenotfound-mobile.png) | Good performance on mobile and desktop |
 | 500 | ![screenshot](documentation/lighthouse/server-error-mobile.png) | ![screenshot](documentation/lighthouse/server-error-desktop.png) | Good performance on mobile and desktop |
 | Sign In | ![screenshot](documentation/lighthouse/sign-in-mobile.png) | ![screenshot](documentation/lighthouse/sign-in-desktop.png) | Good performance on mobile and desktop |
@@ -176,17 +176,43 @@ I've tested my deployed project with viewports of multiple width through DevTool
 
 ## User Story Testing
 
-| User Story | Screenshot |
+### Users
+
+| User Story | Screenshot/Comments |
 | --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature09.png) |
+| As a new user, I want to have a clear idea of the purpose of the web application so that I can understand the value that it would provide me. | ![screenshot](documentation/features/hero-image-index.png) |
+| As a user, I want to add photos to animal profiles so that I can include photos within my database.| ![screenshot](documentation/features/add-cow-form.png) |
+| As a user, I want to be able to log out easily so that I can be sure that my data remains secure after I have finished using the website. | ![screenshot](documentation/features/sign-out.png) |
+| As a user, I want to be able to change the details of a specific animal so that my database remains up-to-date. | ![screenshot](documentation/features/edit-cow.png) |
+| As a user, I want to create profiles for each of my animals so that I can easily track their individual history and characteristics. | ![screenshot](documentation/features/add-cow-form.png) |
+| As a user, I want to view a list of all animals in my herd with key details shown, so that I can read an overview of my herd. | ![screenshot](documentation/features/dashboard.png) |
+| As a user, I want to be able to select a specific animal or breeding event and access comprehensive detailed overview of it. | ![screenshot](documentation/features/view_cow.png) |
+| As a user, I want to log breeding events so that I can monitor reproductive outcomes and optimise my breeding program. | ![screenshot](documentation/responsiveness/addbreeding.png) |
+| As a user, I want to be able to delete animals from my database in case an animal is sold, dies, etc, so that I can maintain an accurate database. | ![screenshot](documentation/features/delete-modal.png) |
+| As a user, I want to be able to register an account so that I can manage my livestock. | ![screenshot](documentation/features/sign-up.png) |
+| As a user, I want to be able to log in with a username and password so that I can securely access my data. | ![screenshot](documentation/features/sign-in.png) |
+| As a logged in user, I want to navigate my records easily so that I can easily access my data. | ![screenshot](documentation/features/internal-links-on-dashboard.png) |
+
+### Product Owner
+
+| User Story | Screenshot/Comments |
+| --- | --- |
+| As the product owner, I want to make sure that the models are full functional so that users don't experience bugs. | ![screenshot](documentation/erd/erd.drawio.png) |
+| As the product owner, I want users to get messages after they've logged in, logged out, successfully added an animal, etc so that they get immediate feedback on their interactions. | ![screenshot](documentation/features/messages-on-user-action.png) |
+| As the product owner, I want there to be an admin account so that the website can be monitored and maintained. | ![screenshot](documentation/features/admin-page.png) |
+| As the product owner, I want to make sure that all code is validated so that the code is clean, readable and maintainable. | See Code Validation seciton above |
+| As the product owner, I want to ensure that my deployed website is linked to a cloud-based database. | See Deployment Section in README.md |
+| As the product owner, I want to have the website deployed so that people can find and use my product. | See Deployment Section in README.md |
+| As the product owner, I want the website to have a robust database schema that would serve the needs of users | ![screenshot](documentation/erd/erd.drawio.png) |
+| As the product owner, I want the authentication pages to match the appearance of the rest of the site so that the site will have a coherent, consistent and professional appearance.| Sign In, Sign Out, Sign Up pages extend from base.html to fulfil this User Story |
+
+### Site Administrator 
+
+| User Story | Screenshot/Comments |
+| --- | --- |
+| As the administrator, I want to be able to securely access the admin page so that I can maintain and update the website easily. | ![screenshot](documentation/features/admin-page.png) |
+| As the administrator, I want to have CRUD functionality over all users' databases so that I can monitor and maintain the website. | Functionality provided through Admin Page shown above |
+| As the administrator, I want users to be able to submit messages to me so that I can troubleshoot any problems they might have. | ![screenshot](documentation/features/admin-message.png) |
 
 ## Defensive Programming
 
@@ -247,7 +273,7 @@ Without the following, Jest won't properly run the tests:
 
 - `npm install -D jest-environment-jsdom`
 
-All four Jest tests passed successfully. However, the third test did not work as expected, as the test could not identify the correct label element despite much bug testing. Regardless, the proper functioning of this element passed manual testing as shown in the Defensive Programming section above.
+All four Jest tests passed successfully. However, the third test did not work as expected, as the test could not identify the correct label element on the add_cow.html page despite much bug testing. Regardless, the proper functioning of this element passed manual testing as shown in the Defensive Programming section above.
 
 - Jest Testing
 ![Jest Testing](documentation/automated-testing/automated-testing.png)
