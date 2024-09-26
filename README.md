@@ -601,12 +601,28 @@ To my knowledge, there are no differences between the local and deployed version
 
 | Source | Location | Notes |
 | --- | --- | --- |
+| [Code Institute](https://www.codeinstitute.net) | entire site | lessons on HTML, Javascript, CSS and Python in previous modules|
+| [Django Project](https://docs.djangoproject.com/en/5.1/topics/forms/modelforms/) | forms | use of Meta class within Django forms |
+| [Django Project](https://docs.djangoproject.com/en/5.1/ref/forms/widgets/) | forms | use of widgets within Django forms |
+| [Django Project](https://forum.djangoproject.com/t/using-textchoices/26764) | forms | use of models.textChoices |
+| [Django Project](https://docs.djangoproject.com/en/5.1/ref/validators/) | forms | use of validators |
+| [Django Project](https://docs.djangoproject.com/en/5.1/topics/http/file-uploads/) | forms | use of request.FILES when instantiating forms |
+| [Django Project](https://tinyurl.com/yey22m5r) | delete functionality | use of require_POST decorator |
+| [Django Project](https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators) | entire site | authentication confirguration | 
+| [Django Project](https://docs.djangoproject.com/en/5.1/topics/i18n/) | settings.py | internationalisation settings |
+| [Django Project](https://docs.djangoproject.com/en/5.1/howto/static-files/) | settings.py | static file configuration |
+| [Django Project](https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field) | forms | primary key setting for forms |
+| [Django Project](https://docs.djangoproject.com/en/5.1/howto/static-files/) | entire site | setting up static files within livestock_manager.urls |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
+| [StackOverflow](https://tinyurl.com/2s493p8b) | entire project | CSS wildcard selector |
+| [StackOverflow](https://tinyurl.com/y55a3pxt) | forms | overriding init method of forms.Model | 
+| [StackOverflow](https://tinyurl.com/4jx3njdv) | 404 and 500 pages | custom 404/500.html pages in Django| 
+| [StackOverflow](https://tinyurl.com/3pf3pe3a) | contact page | use of timezone.now | 
+| [StackOverflow](https://stackoverflow.com/questions/6259775/how-to-display-the-current-year-in-a-django-template) | entire site | display current year in DTL | 
+| [StackOverflow](https://tinyurl.com/43rejs9f) | entire site | use of empty DTL tag| 
+| [Testim.io](https://www.testim.io/blog/jest-testing-a-helpful-introductory-tutorial/) | script.test.js | Jest testing |
 | [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
 
 ### Media
 
