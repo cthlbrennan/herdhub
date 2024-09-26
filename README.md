@@ -300,6 +300,7 @@ Setting up simple mail transfer protocol to allow users to reset their passwords
 - [Draw.io](https://www.draw.io) and [mermaid.live](https://www.mermaid.live) were used to create entity relationship diagrams.
 - [GIMP](https://www.gimp.org) was used to make the logo
 - [TinyURL.com](https://www.tinyurl.com) used throughout the project for shortening URL links
+- Chrome DevTools was useful for testing the website for responsiveness during development and testing. 
 
 ## Database Design
 

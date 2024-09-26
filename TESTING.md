@@ -69,24 +69,86 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-| Browser | Home | About | Contact | etc | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Chrome | ![screenshot](documentation/browsers/browser-chrome-home.png) | ![screenshot](documentation/browsers/browser-chrome-about.png) | ![screenshot](documentation/browsers/browser-chrome-contact.png) | ![screenshot](documentation/browsers/browser-chrome-etc.png) | Works as expected |
-| Firefox | ![screenshot](documentation/browsers/browser-firefox-home.png) | ![screenshot](documentation/browsers/browser-firefox-about.png) | ![screenshot](documentation/browsers/browser-firefox-contact.png) | ![screenshot](documentation/browsers/browser-firefox-etc.png) | Works as expected |
-| Edge | ![screenshot](documentation/browsers/browser-edge-home.png) | ![screenshot](documentation/browsers/browser-edge-about.png) | ![screenshot](documentation/browsers/browser-chrome-edge.png) | ![screenshot](documentation/browsers/browser-edge-etc.png) | Works as expected |
-| Safari | ![screenshot](documentation/browsers/browser-safari-home.png) | ![screenshot](documentation/browsers/browser-safari-about.png) | ![screenshot](documentation/browsers/browser-safari-contact.png) | ![screenshot](documentation/browsers/browser-safari-etc.png) | Minor CSS differences |
-| Brave | ![screenshot](documentation/browsers/browser-brave-home.png) | ![screenshot](documentation/browsers/browser-brave-about.png) | ![screenshot](documentation/browsers/browser-brave-contact.png) | ![screenshot](documentation/browsers/browser-brave-etc.png) | Works as expected |
-| Opera | ![screenshot](documentation/browsers/browser-opera-home.png) | ![screenshot](documentation/browsers/browser-opera-about.png) | ![screenshot](documentation/browsers/browser-opera-contact.png) | ![screenshot](documentation/browsers/browser-opera-etc.png) | Minor differences |
-| repeat for any other tested browsers | x | x | x | x | x |
+As can be seen below, every page of the website is both functional and fully compatible with Google Chrome, Microsoft Edge and Mozilla Firefox. 
+
+- Google Chrome
+![screenshot](documentation/compatibility/chrome-compatibility.gif)
+
+- Microsoft Edge
+![screenshot](documentation/compatibility/edge-compatibility.gif)
+
+- Mozilla Firefox
+![screenshot](documentation/compatibility/firefox-compatibility.gif)
+
 
 ## Responsiveness
 
-I've tested my deployed project on multiple devices to check for responsiveness issues.
+I've tested my deployed project with viewports of multiple width through DevTools.
+- About Page
+![About Page](documentation/responsiveness/about.gif)
 
+- Add Breeding Page
+![Add Breeding Page](documentation/responsiveness/add-breeding.gif)
+
+- Add Bull Page
+![Add Bull Page](documentation/responsiveness/add-bull.gif)
+
+- Add Calf Page
+![Add Calf Page](documentation/responsiveness/add-calf.gif)
+
+- Add Cow Page
+![Add Cow Page](documentation/responsiveness/add-cow.gif)
+
+- Contact Page
+![Contact Page](documentation/responsiveness/contact.gif)
+
+- Edit Breeding Page
+![Edit Breeding Page](documentation/responsiveness/edit-breeding.gif)
+
+- Edit Bull Page
+![Edit Bull Page](documentation/responsiveness/edit-bull.gif)
+
+- Edit Calf Page
+![Edit Calf Page](documentation/responsiveness/edit-calf.gif)
+
+- Edit Cow Page
+![Edit Cow Page](documentation/responsiveness/edit-cow.gif)
+
+- Home Page when logged out
+![Home page when logged out](documentation/responsiveness/index-logged-out.gif)
+
+- Home Page when logged in
+![Home page when logged in](documentation/responsiveness/index-logged-in.gif)
+
+- 404 Page
+![404 Page](documentation/responsiveness/pagenotfound.gif)
+
+- 500 Page
+![500 Page](documentation/responsiveness/server-error.gif)
+
+- Sign In Page
+![Sign In Page](documentation/responsiveness/sign-in.gif)
+
+- Sign Out Page
+![Sign Out Page](documentation/responsiveness/sign-out.gif)
+
+- Sign Up Page
+![Sign Up Page](documentation/responsiveness/sign-up.gif)
+
+- View Breeding Page
+![View Breeding Page](documentation/responsiveness/view-breeding.gif)
+
+- View Bull Page
+![View Bull Page](documentation/responsiveness/view-bull.gif)
+
+- View Calf Page
+![View Calf Page](documentation/responsiveness/view-calf.gif)
+
+- View Cow Page
+![View Cow Page](documentation/responsiveness/view-cow.gif)
 
 
 ## Lighthouse Audit
-
 
 
 ## Defensive Programming
