@@ -298,6 +298,8 @@ Setting up simple mail transfer protocol to allow users to reset their passwords
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 - [Draw.io](https://www.draw.io) and [mermaid.live](https://www.mermaid.live) were used to create entity relationship diagrams.
+- [GIMP](https://www.gimp.org) was used to make the logo
+- [TinyURL.com](https://www.tinyurl.com) used throughout the project for shortening URL links
 
 ## Database Design
 

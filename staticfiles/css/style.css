@@ -1,12 +1,16 @@
+/* colour palette used throughout website
+https://www.w3schools.com/css/css3_variables.asp*/
+
 :root {
     --main-bg-color: #E7EFE8;
     --main-text-color: #2D4F3A;
     --dark-accent-color: #1A3326;
     --light-text-color: #FFFFFF;
-    --brown-accent-color: #8B4513;
     --light-yellow-color: #fff8e7;
 }
 
+/* applying border box to all elements
+https://tinyurl.com/2s493p8b */
 *,
 *::before,
 *::after {
@@ -24,6 +28,8 @@ body {
     margin: 0;
 }
 
+/* keep footer at bottom of page
+taken from Code Institute PP1 */
 main {
     flex: 1 0 auto;
 }
@@ -98,6 +104,8 @@ a:hover {
     background-color: var(--light-text-color);
 }
 
+/* ensuring Hero image remains centred
+at the top of index.html */
 #hero-image {
     width: auto;
     height: 75vh;
@@ -123,6 +131,8 @@ a:hover {
     color: var(--light-text-color);
 }
 
+/* same declarations as used for Hero image 
+on index.html */
 #about-image {
     width: 100%;
     height: 50vh;
@@ -145,8 +155,7 @@ a:hover {
     z-index: 1;
 }
 
-
-
+/* applies to text directly under Hero Image */
 #elevator-pitch {
     padding: 20px;
 }
@@ -157,6 +166,7 @@ a:hover {
     margin-right: auto;
 }
 
+/* applies to every user uploaded image */
 .view_animal_image {
     max-width: 350px;
     height: auto;
@@ -183,6 +193,7 @@ a:hover {
     max-width: 480px;
 }
 
+/* used for names contained within testimonials */
 .justify-text-right {
     text-align: right;
 }
@@ -244,6 +255,7 @@ footer a:hover {
     color: var(--dark-accent-color);
 }
 
+/* applies to dashboard for signed-in users */
 .dashboard {
     max-width: 800px;
     margin: 0 auto;
@@ -270,6 +282,7 @@ footer a:hover {
     margin-bottom: 30px;
 }
 
+/* herd overview declarations */
 #dashboard-overview {
     max-width: 400px;
     background-color: var(--light-text-color);
@@ -287,10 +300,13 @@ footer a:hover {
     list-style-type: none;
 }
 
+/* makes header text on card-headers a lighter colour */
 .card-header>h3 {
     color: var(--light-text-color)
 }
 
+/* necessary for ensuring good responsiveness of elements 
+within index.html */
 @media (max-width: 576px) {
     .list-group-item {
         flex-direction: column;

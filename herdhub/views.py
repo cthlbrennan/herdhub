@@ -25,6 +25,10 @@ def index(request):
         bulls = Bull.objects.filter(user=request.user)
         breedings = Breeding.objects.filter(user=request.user)
         calfs = Calf.objects.filter(user=request.user)
+        # below code is used for getting data to be used to update
+        # the herd overview section of the Dashboard for signed-in users
+        # if user isn't authenticated, these numbers are set to zero
+        # as the Dashboard would not appear 
         cow_count = cows.count()
         bull_count = bulls.count()
         breeding_count = breedings.count()
@@ -70,7 +74,7 @@ def about(request):
     """
     return render(request, 'about.html')
 
-
+# login_required decorator, functionality restricted to registered users
 @login_required
 def add_cow(request):
     """
@@ -84,6 +88,8 @@ def add_cow(request):
                       renders the add_cow form.
     """
     if request.method == "POST":
+        # use of request.FILES to deal with image upload
+        # https://docs.djangoproject.com/en/5.1/topics/http/file-uploads/
         form = AddCowForm(request.POST, request.FILES)
         if form.is_valid():
             new_cow = form.save(commit=False)
@@ -154,6 +160,8 @@ def edit_cow(request, cow_id):
 
 
 @login_required
+# use of require_POST based on
+# https://tinyurl.com/yey22m5r 
 @require_POST
 def delete_cow(request, cow_id):
     """
@@ -265,7 +273,7 @@ def edit_breeding(request, breeding_id):
                 request,
                 f'{breeding.bull} x {breeding.cow} event updated successfully!'
                 )
-        return redirect('index')
+        return redirect('view_breeding', breeding_id=breeding.breeding_id)
     else:
         form = AddBreedingForm(instance=breeding)
 
@@ -483,7 +491,6 @@ def edit_calf(request, calf_id):
             request.POST,
             request.FILES,
             instance=calf,
-            user=request.user
             )
         if form.is_valid():
             if 'image' in request.FILES:
@@ -536,6 +543,9 @@ def send_message(request):
     if request.method == "POST":
         form = SendMessageForm(request.POST)
         if form.is_valid():
+            # use of timezone.now to capture time message
+            # sent to admin, based on 
+            # https://tinyurl.com/3pf3pe3a
             now = timezone.now()
             now_formatted = now.strftime("%H:%M %d/%m/%Y")
             new_message = Message(

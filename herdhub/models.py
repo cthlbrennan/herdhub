@@ -3,9 +3,13 @@ from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, RegexValidator
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
+# django.core.validators included above,
+# contains Regex and MinValue Validators
+# used throughout the forms for server-side validation
+# https://docs.djangoproject.com/en/5.1/ref/validators/
 
-
+# Django form text choices set out below, 
+# based on https://forum.djangoproject.com/t/using-textchoices/26764
 class BreedChoices(models.TextChoices):
     """
     Choices for cattle breeds.
@@ -94,6 +98,7 @@ class Bull(models.Model):
     image_id = CloudinaryField('image', blank=True, default='')
     registration_number = models.CharField(
         max_length=10,
+        # use of validator to ensure only alphanumeric inputs
         validators=[
             RegexValidator(
                 regex='^[A-Za-z0-9]+$',

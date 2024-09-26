@@ -1,5 +1,8 @@
 /* jshint esversion: 11 */
 
+/* code below based on CI Javascript modules */
+
+
 document.addEventListener('DOMContentLoaded', function() {
     /**
      * Sets the background image for the hero section on the home page.

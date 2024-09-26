@@ -24,3 +24,6 @@ urlpatterns = [
     path('', include('herdhub.urls')),
     path('accounts/', include('allauth.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# including static as per
+# https://docs.djangoproject.com/en/5.1/howto/static-files/

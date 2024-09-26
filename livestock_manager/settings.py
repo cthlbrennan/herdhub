@@ -19,28 +19,23 @@ import cloudinary.api
 if os.path.isfile('env.py'):
     import env
 
+# configuration for Cloudinary 
 CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
 cloudinary.config(cloudinary_url=CLOUDINARY_URL)
-
-# Configure Cloudinary for Django
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_URL = 'https://res.cloudinary.com/dbebkt6ul/'
 
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# configuration of environmental variables
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', False)
-
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ALLOWED_HOSTS = [
     '8000-cthlbrennan-herdhub-8v8u076wejz.ws.codeinstitute-ide.net',
     '.herokuapp.com'
 ]
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -93,17 +88,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'livestock_manager.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
@@ -166,6 +150,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# setting CSRF configurations, based on CI blog walkthrough
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
     "https://*.herokuapp.com"

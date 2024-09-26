@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+#code formatted to meet PEP8 validation
 urlpatterns = [
     path(
         '',
@@ -109,5 +110,7 @@ urlpatterns = [
         ),
     ]
 
+# use of custom 404 and 500 pages based on
+# https://tinyurl.com/4jx3njdv
 handler404 = 'herdhub.views.show404page'
 handler500 = 'herdhub.views.show500page'

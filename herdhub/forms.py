@@ -3,7 +3,7 @@ from cloudinary.forms import CloudinaryFileField
 from .models import (BreedChoices, HealthChoices, PregnancyStatus,
                      Cow, Bull, Calf, Breeding, Message)
 
-
+# use of django forms based on CI blog walkthrough 
 class AddCowForm(forms.ModelForm):
     """Form for adding or editing a cow in the herd."""
     image = CloudinaryFileField(
@@ -14,6 +14,9 @@ class AddCowForm(forms.ModelForm):
         },
         required=False
     )
+
+# use of Meta class based on 
+# https://docs.djangoproject.com/en/5.1/topics/forms/modelforms/
 
     class Meta:
         model = Cow
@@ -34,26 +37,13 @@ class AddCowForm(forms.ModelForm):
             'comments': 'Comments',
             'image': 'Upload Image'
         }
+# use of widgets based on 
+# https://docs.djangoproject.com/en/5.1/ref/forms/widgets/
 
         widgets = {
             'dob': forms.DateInput(attrs={'type': 'date'}),
             'last_calving_date': forms.DateInput(attrs={'type': 'date'}),
         }
-
-    def clean_number_of_calvings(self):
-        number_of_calvings = self.cleaned_data.get('number_of_calvings')
-        if number_of_calvings is not None and number_of_calvings < 0:
-            raise forms.ValidationError(
-                'Number of previous calvings cannot be less than zero.'
-            )
-        return number_of_calvings
-
-    def clean_milk_production(self):
-        milk_production = self.cleaned_data.get('milk_production')
-        if milk_production is not None and milk_production < 0:
-            raise forms.ValidationError(
-                'Milk production cannot be less than zero.')
-        return milk_production
 
 
 class AddBullForm(forms.ModelForm):
@@ -85,7 +75,10 @@ class AddBreedingForm(forms.ModelForm):
         widgets = {
             'breeding_date': forms.DateInput(attrs={'type': 'date'}),
         }
-
+# init override used to ensure that user can be used as keyword argument
+# to limit breeding dropdown form options to user's animals only, not entire 
+# database. based on code set out in https://tinyurl.com/y55a3pxt
+# 
     def __init__(self, *args, **kwargs):
         # Expecting the user to be passed as a keyword argument
         user = kwargs.pop('user', None)
