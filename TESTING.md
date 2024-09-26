@@ -150,11 +150,32 @@ I've tested my deployed project with viewports of multiple width through DevTool
 
 ## Lighthouse Audit
 
+| Page | Mobile | Desktop | Notes |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/lighthouse/mobile/index-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/index-lighthouse-desktop.png) | Minor warnings for performance on mobile and desktop |
+| Services | ![screenshot](documentation/lighthouse/mobile/services-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/services-lighthouse-desktop.png) | A minor warning for performance on mobile, good performance on desktop |
+| Contact Us | ![screenshot](documentation/lighthouse/mobile/contact-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/contact-lightouse-desktop.png) | Good performance on mobile and desktop |
+| Submission | ![screenshot](documentation/lighthouse/mobile/submission-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/submission-lighthouse-desktop.png) | Good performance on mobile and desktop |
+| Easter Egg | ![screenshot](documentation/lighthouse/mobile/easteregg-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/easteregg-lighthouse-desktop.png) | A minor warning for performance on mobile, good performance on desktop |
+| 404 | ![screenshot](documentation/lighthouse/mobile/error-lighthouse.png) | ![screenshot](documentation/lighthouse/desktop/error-lighthouse-desktop.png) | A minor warning for performance on mobile, good performance on desktop|
+
+## User Story Testing
+
+| User Story | Screenshot |
+| --- | --- |
+| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature01.png) |
+| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature02.png) |
+| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature03.png) |
+| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature04.png) |
+| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature05.png) |
+| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature06.png) |
+| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature07.png) |
+| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature08.png) |
+| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature09.png) |
 
 ## Defensive Programming
 
 Defensive programming was manually tested with the below user acceptance testing:
-
 
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
@@ -189,32 +210,10 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
 | | Click on the My Orders link | User will be redirected to the My Orders page | Pass | |
 | | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
-| repeat for all remaining pages | x | x | x | x |
-
-## User Story Testing
-
-| User Story | Screenshot |
-| --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature09.png) |
-| repeat for all remaining user stories | x |
 
 ## Automated Testing
 
-I have conducted a series of automated tests on my application.
-
-I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
-
-### JavaScript (Jest Testing)
-
-I have used the [Jest](https://jestjs.io) JavaScript testing framework to test the application functionality.
+For my project, I have used the [Jest](https://jestjs.io) JavaScript testing framework.
 
 In order to work with Jest, I first had to initialize NPM.
 
@@ -227,133 +226,24 @@ Add Jest to a list called **Dev Dependencies** in a dev environment:
 
 **IMPORTANT**: Initial configurations
 
-When creating test files, the name of the file needs to be `file-name.test.js` in order for Jest to properly work.
+When creating the test files, the name of the file needs to be `file-name.test.js` in order for Jest to properly work. In my case, as I was testing a file in the static directory called script.js, I had to name the file 'script.test.js'. This is located in the tests folder, within the js folder in the static directory.
 
 Without the following, Jest won't properly run the tests:
 
 - `npm install -D jest-environment-jsdom`
 
-Due to a change in Jest's default configuration, you'll need to add the following code to the top of the `.test.js` file:
+All four Jest tests passed successfully. However, the third test did not work as expected, as the test could not identify the correct label element despite much bug testing. Regardless, the proper functioning of this element passed manual testing as shown in the Defensive Programming section above.
 
-```js
-/**
- * @jest-environment jsdom
- */
+- Jest Testing
+![Jest Testing](documentation/automated-testing/automated-testing.png)
 
-const { test, expect } = require("@jest/globals");
-const { function1, function2, function3, etc. } = require("../script-name");
-
-beforeAll(() => {
-    let fs = require("fs");
-    let fileContents = fs.readFileSync("index.html", "utf-8");
-    document.open();
-    document.write(fileContents);
-    document.close();
-});
-```
-
-
-### Python (Unit Testing)
-
-I have used Django's built-in unit testing framework to test the application functionality.
-
-In order to run the tests, I ran the following command in the terminal each time:
-
-`python3 manage.py test name-of-app`
-
-To create the coverage report, I would then run the following commands:
-
-`pip3 install coverage`
-
-`pip3 freeze --local > requirements.txt`
-
-`coverage run --omit=*/site-packages/*,*/migrations/*,*/__init__.py,env.py manage.py test`
-
-`coverage report`
-
-To see the HTML version of the reports, and find out whether some pieces of code were missing, I ran the following commands:
-
-`coverage html`
-
-`python3 -m http.server`
-
-Below are the results from the various apps on my application that I've tested:
-
-| App | File | Coverage | Screenshot |
-| --- | --- | --- | --- |
-| Bag | test_forms.py | 99% | ![screenshot](documentation/tests/py-test-bag-forms.png) |
-| Bag | test_models.py | 89% | ![screenshot](documentation/tests/py-test-bag-models.png) |
-| Bag | test_urls.py | 100% | ![screenshot](documentation/tests/py-test-bag-urls.png) |
-| Bag | test_views.py | 71% | ![screenshot](documentation/tests/py-test-bag-views.png) |
-| Checkout | test_forms.py | 99% | ![screenshot](documentation/tests/py-test-checkout-forms.png) |
-| Checkout | test_models.py | 89% | ![screenshot](documentation/tests/py-test-checkout-models.png) |
-| Checkout | test_urls.py | 100% | ![screenshot](documentation/tests/py-test-checkout-urls.png) |
-| Checkout | test_views.py | 71% | ![screenshot](documentation/tests/py-test-checkout-views.png) |
-| Home | test_forms.py | 99% | ![screenshot](documentation/tests/py-test-home-forms.png) |
-| Home | test_models.py | 89% | ![screenshot](documentation/tests/py-test-home-models.png) |
-| Home | test_urls.py | 100% | ![screenshot](documentation/tests/py-test-home-urls.png) |
-| Home | test_views.py | 71% | ![screenshot](documentation/tests/py-test-home-views.png) |
-| Products | test_forms.py | 99% | ![screenshot](documentation/tests/py-test-products-forms.png) |
-| Products | test_models.py | 89% | ![screenshot](documentation/tests/py-test-products-models.png) |
-| Products | test_urls.py | 100% | ![screenshot](documentation/tests/py-test-products-urls.png) |
-| Products | test_views.py | 71% | ![screenshot](documentation/tests/py-test-products-views.png) |
-| Profiles | test_forms.py | 99% | ![screenshot](documentation/tests/py-test-profiles-forms.png) |
-| Profiles | test_models.py | 89% | ![screenshot](documentation/tests/py-test-profiles-models.png) |
-| Profiles | test_urls.py | 100% | ![screenshot](documentation/tests/py-test-profiles-urls.png) |
-| Profiles | test_views.py | 71% | ![screenshot](documentation/tests/py-test-profiles-views.png) |
-| x | x | x | repeat for all remaining tested apps/files |
 
 ## Bugs
 
-- JS Uncaught ReferenceError: `foobar` is undefined/not defined
 
-    ![screenshot](documentation/bugs/bug01.png)
-
-    - To fix this, I _____________________.
-
-- JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).
-
-    ![screenshot](documentation/bugs/bug02.png)
-
-    - To fix this, I _____________________.
-
-- Python `'ModuleNotFoundError'` when trying to import module from imported package
-
-    ![screenshot](documentation/bugs/bug03.png)
-
-    - To fix this, I _____________________.
-
-- Django `TemplateDoesNotExist` at /appname/path appname/template_name.html
-
-    ![screenshot](documentation/bugs/bug04.png)
-
-    - To fix this, I _____________________.
-
-- Python `E501 line too long` (93 > 79 characters)
-
-    ![screenshot](documentation/bugs/bug04.png)
-
-    - To fix this, I _____________________.
 
 ## Unfixed Bugs
 
-- On devices smaller than 375px, the page starts to have `overflow-x` scrolling.
+As noted, I could not get the third Jest test to work, despite much troubleshooting. This isn not particularly important as I was able to manually test the relevant Javascript functionally, but it is still notable as a bug of some description. 
 
-    ![screenshot](documentation/bugs/unfixed-bug01.png)
-
-    - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
-
-- For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
-
-    ![screenshot](documentation/bugs/unfixed-bug02.png)
-
-    - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
-
-- When validating HTML with a semantic `section` element, the validator warns about lacking a header `h2-h6`. This is acceptable.
-
-    ![screenshot](documentation/bugs/unfixed-bug03.png)
-
-    - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
-
-> [!NOTE]  
-> There are no remaining bugs that I am aware of.
+There are no remaining bugs that I am aware of.
