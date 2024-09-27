@@ -123,7 +123,7 @@ class AddCalfForm(forms.ModelForm):
             'calving_method': 'Calving Method',
             'comments': 'Comments',
             'image': 'Upload Image'
-        }                  
+        }
         widgets = {
             'dob': forms.DateInput(attrs={'type': 'date'}),
         }
