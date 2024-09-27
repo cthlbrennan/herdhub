@@ -235,18 +235,18 @@ Defensive programming was manually tested, with results set out below. Click on 
 | Add Cow | Go to add cow page, enter adversarial values into fields to try and undermine functionality | Regex validator in Model will prevent registration number from having special characters, max length will be 10 characters. Users won't be able to put future dates into date pickers. Milk production and number of calvings fields can't be negative number | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/add_cow_adversarial.gif) |
 | View and Edit Cow | Go to view cow page, then edit cow page, add an image | Get redirected back to view cow page, message will appear saying Cow Image added, details of cow will be updated accordingly | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/view-and-edit-cow.gif) |
 | Edit Cow | Go to edit cow page, enter adversarial values into fields to try and undermine functionality | Regex validator in Model will prevent registration number from having special characters, max length will be 10 characters. Users won't be able to put future dates into date pickers. Milk production and number of calvings fields can't be negative number | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/edit-cow-adversarial.gif) |
-| Delete Cow | Click on delete cow button | Modal will appear asking for confirmation, confirm, then message will appear saying I've successfully deleted the cow | Test concluded and passed | ![screenshot](documentation/defensive-programming/delete-cow.gif) |
+| Delete Cow | Click on delete cow button | Modal will appear asking for confirmation, confirm, then message will appear saying I've successfully deleted the cow | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/delete-cow.gif) |
 | Add Bull | Go to add bull page, enter a bull  | Get redirected to dashboard, message will appear saying I successfully added a bull to my database, details of bull will appear on dashboard, herd overview will be updated accordingly | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/add-bull.gif) |
 | Add Bull | Go to add bull page, enter adversarial values into fields to try and undermine functionality | Regex validator in Model will prevent registration number from having special characters, max length will be 10 characters. Users won't be able to put future dates into date pickers. | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/add-bull-adversarial.gif) |
 | View and Edit Bull | Go to view bull page, then edit bull page, add an image | Get redirected back to view bull page, message will appear saying Bull Image added, details of bull will be updated accordingly | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/view-and-edit-bull.gif) |
 | Edit Bull | Go to edit bull page, enter adversarial values into fields to try and undermine functionality | Regex validator in Model will prevent registration number from having special characters, max length will be 10 characters. Users won't be able to put future dates into date pickers. | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/edit-bull-adversarial.gif) |
-| Delete Bull | Click on delete bull button | Modal will appear asking for confirmation, confirm, then message will appear saying I've successfully deleted the bull | Test concluded and passed | ![screenshot](documentation/defensive-programming/delete-bull.gif) |
+| Delete Bull | Click on delete bull button | Modal will appear asking for confirmation, confirm, then message will appear saying I've successfully deleted the bull | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/delete-bull.gif) |
 | Add Breeding | Go to add breeding page, enter details of a breeding event, try to adversarially enter future date in date picker | No possibility to add future date due to Javascript in script.js. Enter correct detail, get redirected to dashboard, message will appear saying I successfully added a breeding to my database, details of breeding will appear on dashboard, herd overview will be updated accordingly | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/add-breeding.gif) |
 | View and Edit Breeding | Go to view breeding page, then edit breeding page, try to pick future date for Breeding Date | Unable to input future date in date picker due to Javascript, enter correct value, get redirected back to view breeding page, message will appear stating breeding details updated, details of breeding will be updated accordingly | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/view-and-edit-breeding.gif) |
-| Delete Breeding | Click on delete record button | Modal will appear asking for confirmation, confirm, then message will appear saying I've successfully deleted the breeding event | Test concluded and passed | ![screenshot](documentation/defensive-programming/delete-breeding.gif) |
+| Delete Breeding | Click on delete record button | Modal will appear asking for confirmation, confirm, then message will appear saying I've successfully deleted the breeding event | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/delete-breeding.gif) |
 | Add Calf | Go to add calf page, enter calf details, try adversarially to enter incorrect details for registration number and future date for date of birth | Regex validation prevents improper input for registration number, Javascript code prevents future date from being inputted through date picker. Enter correct values, get redirected to dashboard, message will appear saying I successfully added a calf to my database, details of calf will appear on dashboard, herd overview will be updated accordingly | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/add-calf.gif) |
 | View and Edit Calf | Go to view breeding page, then edit breeding page, try to pick future date for Breeding Date and input incorrect value for registration number. Add image | Unable to input future date in date picker due to Javascript or incorrect value for registration number due to Javascript. Enter correct values, get redirected back to view calf page, message will appear stating image of calf added, details of calf will be updated accordingly | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/view-and-edit-calf.gif) |
-| Delete Calf | Click on delete calf button | Modal will appear asking for confirmation, confirm, then message will appear saying I've successfully deleted the calf | Test concluded and passed | ![screenshot](documentation/defensive-programming/delete-calf.gif) |
+| Delete Calf | Click on delete calf button | Modal will appear asking for confirmation, confirm, then message will appear saying I've successfully deleted the calf | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/delete-calf.gif) |
 
 ## Automated Testing
 
@@ -269,7 +269,7 @@ Without the following, Jest won't properly run the tests:
 
 - `npm install -D jest-environment-jsdom`
 
-All four Jest tests passed successfully. However, the third test did not work as expected, as the test could not identify the correct label element on the add_cow.html page despite much bug testing. Regardless, the proper functioning of this element passed manual testing as shown in the Defensive Programming section above.
+All four Jest tests passed successfully. However, the third test did not work as expected, as the test could not identify the correct label element on the add_cow.html page despite much bug testing. Regardless, using the website it is clear that the Javascript in question does work, as it shifts the textarea associated with the comments label to the subsequent line, if a form with a comments label appears on the page. As such, this is deemed acceptable.
 
 - Jest Testing
 ![Jest Testing](documentation/automated-testing/automated-testing.png)
@@ -277,10 +277,154 @@ All four Jest tests passed successfully. However, the third test did not work as
 
 ## Bugs
 
+### 1 - Error after renaming project file 
 
+When I first created the project, I called the project 'Herdhub'. However, I then wanted the app to be called 'Herdhub', so I renamed the project to 'livestock_manager'.
+
+However, this created many issues. When you create a project, many default values in settings.py, manage.py, and other files are declared using the name of the project. When the name of the project is changed, these values must also be changed in order for the entire project to function.
+
+I first noticed this after I created the project and app file directories. I ran the 'python manage.py runserver' command in the terminal. However, it didn't work. I got an error message back telling me that the the module 'herdhub.settings' couldn't be found.
+
+![screenshot](documentation/bugs/bug-one/bug-one-one.png)
+
+However, my project file directory, called 'livestock-project', had the settings.py file. The app, called 'herdhub', would not have had the settings.py file. 
+
+![screenshot](documentation/bugs/bug-one/bug-one-two.png)
+
+This mislabelling meant that I had to go through the livestock-project file directory and change any lines written as 'herdhub.settings' to 'livestock-project.settings'. Amendments were made in the settings.py and wsgi.py files of the project
+file, and the main function  definition in manage.py. 
+
+![screenshot](documentation/bugs/bug-one/bug-one-three.png)
+
+Once these amendments were made, the server worked and I received a HttpResponse through the index route as expected.
+
+![screenshot](documentation/bugs/bug-one/bug-one-four.png)
+
+### 2 - Two requirements.txt files  
+
+When deploying, I was getting an error and couldn't see the website.
+
+![screenshot](documentation/bugs/bug-two/bug-two-one.png)
+
+After much troubleshooting and looking at the Heroku logs, I realised I had misspelled 'pip freeze --local > requirements.txt', writing 'requirments.txt' instead after installing gunicorn. Gunicorn was recorded as a dependency in the wrong file. 
+
+![screenshot](documentation/bugs/bug-two/bug-two-two.png)
+
+![screenshot](documentation/bugs/bug-two/bug-two-three.png)
+
+Once this was fixed, the deployed website worked fine. 
+
+![screenshot](documentation/bugs/bug-two/bug-two-four.png)
+
+### 3 - DTL extends tag for view_cow.html  
+
+From the dashboard, I was trying to view the details of cows I had added. 
+![screenshot](documentation/bugs/bug-three/bug-three-one.png)
+
+However, this would result in a 500 error. After debugging, I realised that for the view_cow.html template, I had forgotten to add the quotation marks around base.html in the Django Template Language code at the top of the page.
+
+![screenshot](documentation/bugs/bug-one/bug-three-two.png)
+
+![screenshot](documentation/bugs/bug-one/bug-three-three.png)
+
+Once this was fixed, view_cow.html was operational. 
+
+![screenshot](documentation/bugs/bug-one/bug-three-four.png)
+
+### 4 - URL for add_bull.html in Dashboard 
+
+From the dashboard, I was trying to access the add_bull.html page.
+![screenshot](documentation/bugs/bug-four/one.png)
+
+However, this would result in a 404 error. 
+
+![screenshot](documentation/bugs/bug-four/two.png)
+
+The correct path was set out in herhub.urls, so that wasn't the problem. 
+
+![screenshot](documentation/bugs/bug-four/three.png)
+
+Looking finally at index.html, I saw that the anchor element linked to 'add_bull.html'. This is incorrect, as '.html' should not be included as part of the href attribute. 
+
+![screenshot](documentation/bugs/bug-four/four.png)
+
+![screenshot](documentation/bugs/bug-four/five.png)
+
+Once this was corrected, add_bull.html was accessible. 
+
+![screenshot](documentation/bugs/bug-four/six.png)
+
+### 5 - Accessing send_message.html 
+
+I was trying to access the send_message.html page using the link in the navbar while logged in.
+![screenshot](documentation/bugs/bug-five/one.png)
+
+However, this would result in a 405 error. 
+
+![screenshot](documentation/bugs/bug-five/two.png)
+
+Looking at views.py, I realised I had mistakenly applied the require_POST decorator to the send_message view. 
+
+![screenshot](documentation/bugs/bug-five/three.png)
+
+Once this was removed, the Contact link to the send_message.html page worked properly.  
+
+![screenshot](documentation/bugs/bug-five/four.png)
+
+### 6 - Internal Dashboard links 
+
+I was setting up the internal links from the top of the Dashboard to the subsections underneath.
+
+![screenshot](documentation/bugs/bug-six/one.png)
+
+I had a 404 error when clicking the 'Calves' link.
+
+![screenshot](documentation/bugs/bug-six/two.png)
+
+After some troubleshooting, I realised that I had not included the # with the href attribute in the html. 
+
+![screenshot](documentation/bugs/bug-six/three.png)
+
+Once this was resolved, the internal link worked as intended. 
+
+### 7 - Designing Dashboard 
+
+In designing the Dashboard, the subsections for cows and bulls had the proper appearance. 
+
+![screenshot](documentation/bugs/bug-seven/one.png)
+
+However, the breedings and calves subsections were much wider in the page.
+
+![screenshot](documentation/bugs/bug-seven/two.png)
+
+After going through index.html, I realised that this inconsistency was caused by spare div tags within the html code. 
+
+![screenshot](documentation/bugs/bug-seven/three.png)
+
+Once the extra divs were removed, all four subsections were then included within the Dashboard container class and then had the correct appearance. 
+
+![screenshot](documentation/bugs/bug-seven/four.png)
+
+### 8 - Responsiveness for comments textarea field  
+
+Below 500 pixels, I found that the comments field on the add and edit pages did not reduce in size proportionally along with the rest of the form elements. This caused poor responsiveness.  
+
+![screenshot](documentation/bugs/bug-eight/one.png)
+
+The rows and columns of the textarea were fixed in the html code, irrespective of responsiveness concerns. 
+
+![screenshot](documentation/bugs/bug-eight/two.png)
+
+To manage this, I introduced Javascript code that would target this element if the viewport was lower than 500 pixels in width. The column and row attributes of the textarea element would change dynamically. 
+
+![screenshot](documentation/bugs/bug-eight/three.png)
+
+This had the desired effect and resolved the responsiveness issue. 
+
+![screenshot](documentation/bugs/bug-eight/four.png)
 
 ## Unfixed Bugs
 
-As noted, I could not get the third Jest test to work, despite much troubleshooting. This isn not particularly important as I was able to manually test the relevant Javascript functionally, but it is still notable as a bug of some description. 
+As noted, I could not get the third Jest test to work, despite much troubleshooting. This is not particularly important as it can be seen on the website that the Javascript relating to comments labels does work, but the flaw with the third Jest test is still notable. 
 
 There are no remaining bugs that I am aware of.
