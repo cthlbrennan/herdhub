@@ -231,8 +231,8 @@ Defensive programming was manually tested, with results set out below. Click on 
 | Sign out | Sign out of account | Sign out of account, will be redirected to home page, message will appear saying I successfully signed out | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/sign-out.gif) |
 | Admin | Go to admin url, enter credentials | Successfully sign into admin page | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/admin.gif) |
 | Send Message | Send message from contact page | Get redirected to dashboard, message will appear saying I successfully sent a message. Go to admin page, see if message appears | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/send-message.gif) |
-| Add Cow | Go to add cow page, enter a cow  | Get redirected to dashboard, message will appear saying I successfully added a cow to my database, details of cow will appear on dashboard, herd overview will be updated accordingly | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/add_cow.gif) |
-| Add Cow | Go to add cow page, enter adversarial values into fields to try and undermine functionality | Regex validator in Model will prevent registration number from having special characters, max length will be 10 characters. Users won't be able to put future dates into date pickers. Milk production and number of calvings fields can't be negative number | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/add_cow_adversarial.gif) |
+| Add Cow | Go to add cow page, enter a cow  | Get redirected to dashboard, message will appear saying I successfully added a cow to my database, details of cow will appear on dashboard, herd overview will be updated accordingly | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/add-cow.gif) |
+| Add Cow | Go to add cow page, enter adversarial values into fields to try and undermine functionality | Regex validator in Model will prevent registration number from having special characters, max length will be 10 characters. Users won't be able to put future dates into date pickers. Milk production and number of calvings fields can't be negative number | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/add-cow-adversarial.gif) |
 | View and Edit Cow | Go to view cow page, then edit cow page, add an image | Get redirected back to view cow page, message will appear saying Cow Image added, details of cow will be updated accordingly | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/view-and-edit-cow.gif) |
 | Edit Cow | Go to edit cow page, enter adversarial values into fields to try and undermine functionality | Regex validator in Model will prevent registration number from having special characters, max length will be 10 characters. Users won't be able to put future dates into date pickers. Milk production and number of calvings fields can't be negative number | The features behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/edit-cow-adversarial.gif) |
 | Delete Cow | Click on delete cow button | Modal will appear asking for confirmation, confirm, then message will appear saying I've successfully deleted the cow | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/defensive-programming/delete-cow.gif) |
@@ -323,17 +323,18 @@ From the dashboard, I was trying to view the details of cows I had added.
 
 However, this would result in a 500 error. After debugging, I realised that for the view_cow.html template, I had forgotten to add the quotation marks around base.html in the Django Template Language code at the top of the page.
 
-![screenshot](documentation/bugs/bug-one/bug-three-two.png)
+![screenshot](documentation/bugs/bug-three/bug-three-two.png)
 
-![screenshot](documentation/bugs/bug-one/bug-three-three.png)
+![screenshot](documentation/bugs/bug-three/bug-three-three.png)
 
 Once this was fixed, view_cow.html was operational. 
 
-![screenshot](documentation/bugs/bug-one/bug-three-four.png)
+![screenshot](documentation/bugs/bug-three/bug-three-four.png)
 
 ### 4 - URL for add_bull.html in Dashboard 
 
 From the dashboard, I was trying to access the add_bull.html page.
+
 ![screenshot](documentation/bugs/bug-four/one.png)
 
 However, this would result in a 404 error. 
