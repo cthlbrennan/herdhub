@@ -62,6 +62,15 @@ class AddBullForm(forms.ModelForm):
         model = Bull
         fields = ['registration_number', 'dob', 'breed', 'health_status',
                   'comments', 'image']
+
+        labels = {
+            'registration_number': 'Registration Number',
+            'dob': 'Date of Birth',
+            'breed': 'Breed',
+            'health_status': 'Health Status',
+            'comments': 'Comments',
+            'image': 'Upload Image'
+        }
         widgets = {
             'dob': forms.DateInput(attrs={'type': 'date'}),
         }
@@ -106,6 +115,15 @@ class AddCalfForm(forms.ModelForm):
         model = Calf
         fields = ['registration_number', 'dob', 'breeding', 'sex',
                   'calving_method', 'comments', 'image']
+        labels = {
+            'registration_number': 'Registration Number',
+            'dob': 'Date of Birth',
+            'breeding': 'Breeding',
+            'sex': 'Sex',
+            'calving_method': 'Calving Method',
+            'comments': 'Comments',
+            'image': 'Upload Image'
+        }                  
         widgets = {
             'dob': forms.DateInput(attrs={'type': 'date'}),
         }

@@ -57,7 +57,7 @@ User stories formed a key part of the Agile methodology which guided the develop
 ### Product Owner
 
 - As the product owner, if a user submits a message then I want them to receive a confirmation email telling them that their message has been submitted to improve the user experience.
-- As the product owner, I want to make sure that the models are full functional so that users don't experience bugs.
+- As the product owner, I want to make sure that the models are fully functional so that users don't experience bugs.
 - As the product owner, I want users to get messages after they've logged in, logged out, successfully added an animal, etc so that they get immediate feedback on their interactions.
 - As the product owner, I want there to be an admin account so that the website can be monitored and maintained.
 - As the product owner, I want to make sure that all code is validated so that the code is clean, readable and maintainable.
