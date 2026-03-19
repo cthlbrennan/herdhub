@@ -23,19 +23,31 @@ if os.path.isfile('env.py'):
 CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
 cloudinary.config(cloudinary_url=CLOUDINARY_URL)
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-MEDIA_URL = 'https://res.cloudinary.com/dbebkt6ul/'
+_cloud_name = cloudinary.config().cloud_name
+MEDIA_URL = (
+    f'https://res.cloudinary.com/{_cloud_name}/'
+    if _cloud_name
+    else 'https://res.cloudinary.com/dj9v6vlxd/'
+)
 
 
 # configuration of environmental variables
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = os.environ.get('DEBUG', False)
+_debug = os.environ.get('DEBUG', '')
+DEBUG = _debug.lower() in ('1', 'true', 'yes') if _debug else False
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ALLOWED_HOSTS = [
     '8000-cthlbrennan-herdhub-8v8u076wejz.ws.codeinstitute-ide.net',
-    '.herokuapp.com'
+    '.herokuapp.com',
+    '.onrender.com',
+    'localhost',
+    '127.0.0.1',
 ]
+_extra_host = os.environ.get('RENDER_EXTERNAL_HOSTNAME', '').strip()
+if _extra_host:
+    ALLOWED_HOSTS.append(_extra_host)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -56,6 +68,11 @@ INSTALLED_APPS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -152,6 +169,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # setting CSRF configurations, based on CI blog walkthrough
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeinstitute-ide.net/",
-    "https://*.herokuapp.com"
+    'https://*.codeinstitute-ide.net',
+    'https://*.herokuapp.com',
+    'https://*.onrender.com',
 ]
+_extra_origin = os.environ.get('CSRF_TRUSTED_ORIGIN', '').strip()
+if _extra_origin:
+    CSRF_TRUSTED_ORIGINS.append(_extra_origin)
