@@ -1,6 +1,6 @@
 ![Logo](documentation/readme_images/logo.png)
 
-[Click here for live site](https://herdhub-ef517bdcab8e.herokuapp.com)
+[Click here for live site](https://herdhub.onrender.com/)
 
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/cthlbrennan/herdhub)](https://github.com/cthlbrennan/herdhub/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/cthlbrennan/herdhub)](https://github.com/cthlbrennan/herdhub/commits/main)
